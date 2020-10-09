@@ -1,0 +1,44 @@
+.list-item{
+   display: flex;
+   align-items: center;
+   .index{
+      padding-right: 10px;
+      font-size: 16px;
+      color: #999;
+      &.top{
+         color: #df3436;
+      }
+   }
+   .content{
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid #E4E4E4;;
+      .song-info{
+         flex: 1;
+         .name{
+            font-size: 16px;
+            line-height: 1.6;
+         }
+         .singer{
+            font-size: 12px;
+            line-height: 1.5;
+            color: #999;
+         }
+      }
+      .play-btn{
+         padding: 0 10px;
+         i{
+            font-size: 20px;
+            color: #999;
+         }
+      }
+   }
+   
+   &:last-of-type{
+      .content{
+         border-bottom: none;
+      }
+   }
+}

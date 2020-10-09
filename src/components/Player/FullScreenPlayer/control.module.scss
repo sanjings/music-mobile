@@ -1,0 +1,27 @@
+.control-wrapper{
+   padding: 60px 35px;
+   .progress-bar{
+      display: flex;
+      align-items: center;
+      padding-bottom: 20px;
+      .progress-bar-wrapper{
+         flex: 1;
+         margin: 0 6px;
+      }
+   }
+   .btn-group{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .btn-item{
+         &.play-btn{
+            i{
+               font-size: 40px;
+            }
+         }
+         i{
+            font-size: 34px;
+         }
+      }
+   }
+}

@@ -1,0 +1,4 @@
+// 更新全球榜单
+export const UPDATE_GLOBAL_LIST = 'UPDATE_GLOBAL_LIST'
+// 更新官方榜单
+export const UPDATE_OFFICAIL_LIST = 'UPDATE_OFFICAIL_LIST'

@@ -1,0 +1,30 @@
+.album{
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   z-index: 99;
+   background-color: #fcfcfc;
+   &:global(.fly-enter), &:global(.fly-appear){
+      transform: translate3d(100%, 0, 0);
+   }
+   &:global(.fly-enter-active), &:global(.fly-appear-active){
+      transition: transform .3s;
+      transform: translate3d(0, 0, 0);
+   }
+   &:global(.fly-exit){
+      transform: translate3d(0, 0, 0);
+   }
+   &:global(.fly-exit-active){
+      transition: transform .3s;
+      transform: translate3d(100%, 0, 0);
+   }
+   .loading{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 999;
+      transform: translate3D(-50%, -50%, 0);
+   }
+}

@@ -1,0 +1,26 @@
+.song-list{
+  .list-item{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    .play-icon{
+      width: 12px;
+      margin-right: 6px;
+      font-size: 12px;
+      color: #DD4439;
+      i{
+        font-size: 12px;
+      }
+    }
+    .song-info{
+      flex: 1;
+      color: #BBA8A8;
+    }
+    .delete{
+      color:#DD4439;
+      i{
+        font-size: 14px;
+      }
+    }
+  }
+}

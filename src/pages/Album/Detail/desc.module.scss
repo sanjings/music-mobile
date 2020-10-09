@@ -1,0 +1,54 @@
+.desc{
+   display: flex;
+   padding: 20px 20px 0;
+   .img-wrapper{
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border-radius: 4px;
+      overflow: hidden;
+   
+      .play-count{
+         position: absolute;
+         right: 0;
+         top: 0;
+         padding: 5px 5px 10px;
+         width: 100%;
+         font-size: 12px;
+         text-align: right;
+         color: #FFF;
+         background: linear-gradient(hsla(0,0%,43%,.4),hsla(0,0%,100%,0));
+   
+         i{
+            margin-right: 2px;
+            font-size: 12px;
+         }
+      }
+   }
+   .info-wrapper{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 0 10px;
+      .title{
+         font-size: 16px;
+         font-weight: 700;
+         color: #fff;
+      }
+      .person{
+         display: flex;
+         align-items: center;
+         .avatar-wrapper{
+            margin-right: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            overflow: hidden;
+         }
+         .person-name{
+            color: #BBA8A8;
+         }
+      }
+   }
+}

@@ -1,0 +1,38 @@
+.progress-wrapper{
+  width: 100%;
+  .bar-inner{
+    position: relative;
+    height: 4px;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    .progress{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 100%;
+      background-color: #D44439;
+    }
+    .progress-btn{
+      position: absolute;
+      left: 0px;
+      top: -6px;
+      width: 16px;
+      height: 16px;
+      background-color: #eee;
+      border-radius: 50%;
+      &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #D44439;
+      }
+    }
+  }
+}

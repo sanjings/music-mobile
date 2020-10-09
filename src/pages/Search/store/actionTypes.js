@@ -1,0 +1,5 @@
+export const SET_LOADING = 'SET_LOADING'
+
+export const SET_HOT_KEYWORDS_LIST = 'SET_HOT_KEYWORDS_LIST'
+
+export const SET_SEARCH_DATA = 'SET_SEARCH_DATA'

@@ -1,0 +1,20 @@
+.nav-tab{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height: 44px;
+   background-color: #D44439;
+   a {
+      flex: 1;
+      text-align: center;
+      color: #e4e4e4;
+      &.actived {
+         span {
+            padding-bottom: 4px;
+            font-weight: 550;
+            color: #f1f1f1;
+            border-bottom: 2px solid #f1f1f1;
+         }
+      }
+   }
+}

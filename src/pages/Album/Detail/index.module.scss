@@ -1,0 +1,32 @@
+.album-detail{
+   .top{
+      position: relative;
+      padding-top: 42px;
+      .background{
+         position: absolute;
+         left: 0;
+         top: 0;
+         z-index: -1;
+         width: 100%;
+         height: 100%;
+         background-size: cover!important;
+         background-position: 0 0!important;
+         background-repeat: no-repeat!important;
+         background-size: 100% 100%!important;
+         filter: blur(20px);
+         .filter{
+            position: absolute;
+            z-index: 10;
+            top: 0; 
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(7, 17, 27, 0.3);
+         }
+      } 
+   }
+   .songs{
+      background-color: #fff;
+      border-radius: 10px;
+   }
+}

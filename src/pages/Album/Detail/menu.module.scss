@@ -1,0 +1,13 @@
+.menu{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 20px 30px;
+   .menu-item{
+      text-align: center;
+      color: #fff;
+      i{
+         font-size: 20px;
+      }
+   }
+}

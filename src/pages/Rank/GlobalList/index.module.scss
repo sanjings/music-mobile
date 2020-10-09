@@ -1,0 +1,10 @@
+.global-list{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   padding: 0 5px;
+   .list-item{
+      margin-bottom: 5px;
+      width: 32.5%;
+   }
+}

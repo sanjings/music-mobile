@@ -1,0 +1,22 @@
+.fullscreen-player{
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   display: flex;
+   flex-direction: column;
+   z-index: 999;
+   background-color: #F2F3F4;
+   &:global(.full-enter), &:global(.full-exit-done) {
+      opacity: 0;
+   }
+   &:global(.full-enter-active) {
+      opacity: 1;
+      transition: all 0.4s;
+   }
+   &:global(.full-exit-active) {
+      opacity: 0;
+      transition: all 0.4s;
+   }
+}
