@@ -1,5 +1,4 @@
 import React, { memo, useState, useEffect, useCallback, useRef } from 'react'
-
 import { useDispatch, useSelector } from 'react-redux'
 import { CSSTransition } from "react-transition-group";
 
@@ -18,13 +17,14 @@ const Singer = props => {
   const [show, setShow] = useState(true)
 
   const singerDetail = useSelector(state => state.singer.singerDetail),
-    loading = useSelector(state => state.singer.loading);
+        loading = useSelector(state => state.singer.loading),
+        playList = useSelector(state => state.player.playList);
 
   const dispatch = useDispatch()
 
   const layerRef = useRef(),
-    coverRef = useRef(),
-    buttonRef = useRef();
+        coverRef = useRef(),
+        buttonRef = useRef();
 
   /**
    * 获取歌手详情数据
@@ -46,13 +46,13 @@ const Singer = props => {
    */
   const handleScroll = useCallback(({ y }) => {
     const HEADER_HEIGHT = 42,
-      LIST_TOP = 270,
-      percent = Math.abs(y / LIST_TOP),
-      minScrollY = -LIST_TOP + HEADER_HEIGHT;
+          LIST_TOP = 270,
+          percent = Math.abs(y / LIST_TOP),
+          minScrollY = -LIST_TOP + HEADER_HEIGHT;
 
     const coverDom = coverRef.current,
-      layerDom = layerRef.current,
-      buttonDom = buttonRef.current;
+          layerDom = layerRef.current,
+          buttonDom = buttonRef.current;
 
     if (y > 0) {
       // 下拉
@@ -83,7 +83,7 @@ const Singer = props => {
       unmountOnExit
       onExited={props.history.goBack}
     >
-      <div className={styles['singer']}>
+      <div className={styles['singer-wrapper']} style={{bottom: playList.length ? '60px': 0}}>
         {
           singerDetail
           &&

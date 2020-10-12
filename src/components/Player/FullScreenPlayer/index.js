@@ -16,7 +16,14 @@ const FullScreenPlayer = props => {
   const { song, fullScreen, playingStatus, currentTime, duration, percent } = props,
         { name, album, singers } = song;
 
-  const { toggleFullScreen, togglePlayingState, onProgressChange, onClickNext, onClickPrev } = props
+  const {
+    toggleFullScreen,
+    togglePlayingState, 
+    toggleShowPlayList, 
+    onProgressChange, 
+    onClickNext, 
+    onClickPrev 
+  } = props
 
   const fullPlayerRef = useRef(),
         cdRef = useRef();
@@ -124,6 +131,7 @@ const FullScreenPlayer = props => {
           playingStatus={playingStatus}
           onProgressChange={onProgressChange} 
           togglePlayingState={togglePlayingState}
+          toggleShowPlayList={toggleShowPlayList}
           onClickNext={onClickNext} 
           onClickPrev={onClickPrev} 
         />

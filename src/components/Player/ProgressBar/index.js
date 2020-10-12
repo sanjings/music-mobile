@@ -9,7 +9,7 @@ const ProgressBar = props => {
 
   const { onChange } = props
 
-  const [touch, setTouch] = useState({}),
+  const [touchInfo, setTouchInfo] = useState({}),
         [barWidth, setBarWidth] = useState();
 
   const progressBtnWidth = 16;
@@ -59,20 +59,20 @@ const ProgressBar = props => {
       left: progressDom.clientWidth
     }
 
-    setTouch(startTouch)
+    setTouchInfo(startTouch)
   }
 
   const handleTouchMove = e => {
-    if (!touch.initiated) return;
-    const scrollX = e.touches[0].pageX - touch.startX,
-          offsetWidth = Math.min(Math.max(0, touch.left + scrollX), barWidth);
+    if (!touchInfo.initiated) return;
+    const scrollX = e.touches[0].pageX - touchInfo.startX,
+          offsetWidth = Math.min(Math.max(0, touchInfo.left + scrollX), barWidth);
 
     _offset (offsetWidth);
   }
 
   const handleTouchEnd = e => {
-    setTouch({
-      ...touch,
+    setTouchInfo({
+      ...touchInfo,
       initiated: false
     })
     _changePercent()

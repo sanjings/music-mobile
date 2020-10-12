@@ -9,11 +9,11 @@ import { reducer as playerReducer } from '../components/Player/store';
 import { reducer as searchReducer } from '../pages/Search/store';
 
 export default combineReducers({
-   recommend: recommendReducer,
-   rank: rankReducer,
-   singers: singersReducer,
-   singer: singerReducer,
-   album: albumReducer,
-   player: playerReducer,
-   search: searchReducer
+  recommend: recommendReducer,
+  rank: rankReducer,
+  singers: singersReducer,
+  singer: singerReducer,
+  album: albumReducer,
+  player: playerReducer,
+  search: searchReducer
 })

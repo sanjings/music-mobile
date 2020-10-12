@@ -1,12 +1,9 @@
 import React, { memo, useState, useEffect } from 'react';
-
 import classnames from 'classnames'
-
 import Swiper from 'swiper'
+
 import 'swiper/css/swiper.min.css';
-
 import styles from './index.module.scss'
-
 
 const Carousel = props => {
   const { banners } = props

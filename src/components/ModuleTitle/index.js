@@ -1,21 +1,21 @@
-import React, { memo} from 'react';
-
+import React, { memo } from 'react';
 import classnames from 'classnames'
 
 import styles from './index.module.scss'
 
 const ModuleTitle = props => {
-   const { title, symbol } = props;
+  const { title, symbol } = props;
 
-   return (
-      <div className={styles['title']}>
-         <h1 className={classnames([styles['title-text'], symbol && styles['symbol']])}>{ title }</h1>
-      </div>
-   )
+  return (
+    <div className={styles['title']}>
+      <h1 className={classnames([styles['title-text'], symbol && styles['symbol']])}>{title}</h1>
+    </div>
+  )
 }
 
 ModuleTitle.defaultProps = {
-   size: 'default'
+  size: 'default',
+  symbol: true
 }
 
 export default memo(ModuleTitle)

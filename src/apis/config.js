@@ -128,16 +128,9 @@ const alphaTypes = [
   }
 ];
 
-const playMode = {
-  SEQUENCE: 'SEQUENCE',
-  LOOP: 'LOOP',
-  RANDOM: 'RANDOM'
-}
-
 export {
   BASE_URL,
   TIME_OUT,
   errorHandle,
-  alphaTypes,
-  playMode
+  alphaTypes
 }

@@ -11,7 +11,7 @@ const MiniPlayer = props => {
   const { song, fullScreen, playingStatus } = props,
         { name, album, singers } = song;
 
-  const { toggleFullScreen, togglePlayingState, togglePlayList } = props
+  const { toggleFullScreen, togglePlayingState, toggleShowPlayList } = props
 
   const miniPlayerRef = useRef()
 
@@ -22,7 +22,7 @@ const MiniPlayer = props => {
 
   const handleShowPlayList = (e) => {
     e.stopPropagation();
-    togglePlayList(true)
+    toggleShowPlayList(true)
   }
 
   return (

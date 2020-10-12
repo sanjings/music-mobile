@@ -7,28 +7,34 @@ import React, {
   useImperativeHandle,
   forwardRef
 } from "react"
-
 import classnames from 'classnames'
 
-import { throttle } from '../../utils/tools'
+import { debounce } from '../../utils/tools'
 
 import styles from './index.module.scss'
 
 const SearchBox = forwardRef((props, ref) => {
-  const { searchValue } = props
+  const { keywords } = props
 
   const { clickBack, onInput } = props
 
-  const [showClear, setShowClear] = useState(false)
+  const [showClear, setShowClear] = useState(false),
+        [queryStr, setQueryStr] = useState('');
 
   const inputRef = useRef(null)
 
   /**
    * 节流处理
    */
-  const throttleOnInput = useMemo(() => {
-    return throttle(onInput, 500)
+  const debounceOnInput = useMemo(() => {
+    return debounce(onInput, 300)
   }, [onInput])
+
+  useEffect(() => {
+    if(keywords !== queryStr) {
+      setQueryStr(keywords);
+    }
+  }, [keywords])
 
   /**
    * 显示时输入框聚焦
@@ -38,26 +44,27 @@ const SearchBox = forwardRef((props, ref) => {
   }, []);
 
   /**
-   * 监听value是否有值，有值显示清空按钮，否则隐藏
+   * 监听value值的改变，并触发回调，同时显示隐藏清空按钮
    */
   useEffect(() => {
-    searchValue ? setShowClear(true) : setShowClear(false)
-  }, [searchValue])
+    debounceOnInput(queryStr);
+    queryStr ? setShowClear(true) : setShowClear(false)
+  }, [queryStr])
 
   /**
    * 输入框输入事件
    * @param {Event} e 
    */
   const handleInput = e => {
-    throttleOnInput(e.target.value.trim())
+    setQueryStr(e.target.value.trim())
   }
 
   /**
    * 清空输入框
    */
   const handleClear = () => {
-    throttleOnInput('')
-    setShowClear(false)
+    setQueryStr('')
+    debounceOnInput('')
     inputRef.current.focus()
   }
 
@@ -83,7 +90,7 @@ const SearchBox = forwardRef((props, ref) => {
         <input
           ref={inputRef}
           type="text"
-          value={searchValue}
+          value={queryStr}
           placeholder="搜索歌曲、歌手、专辑"
           className={styles['input']}
           onChange={handleInput}

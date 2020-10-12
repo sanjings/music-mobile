@@ -1,5 +1,4 @@
 import React, { memo, useState, useCallback, useEffect } from "react"
-
 import { useDispatch, useSelector } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
 import { forceCheck } from 'react-lazyload'
@@ -18,7 +17,7 @@ const { getHotKeywordsListAction, getSearchDataAction, changeSearchDataAction } 
 
 const Search = props => {
   const [show, setShow] = useState(true),
-        [searchValue, setSearchValue] = useState('');
+        [keywords, setKeywords] = useState('');
 
   const hotKeywordsList = useSelector(state => state.search.hotKeywordsList),
         loading = useSelector(state => state.search.loading),
@@ -30,6 +29,7 @@ const Search = props => {
    * 请求热门关键词数据
    */
   useEffect(() => {
+    if (hotKeywordsList.length) return;
     dispatch(getHotKeywordsListAction())
   }, [])
 
@@ -45,16 +45,15 @@ const Search = props => {
    * @param {String} value
    */
   const handleInput = useCallback(value => {
-    setSearchValue(value)
     value ? dispatch(getSearchDataAction(value)) : dispatch(changeSearchDataAction(null))
-  }, [searchValue])
+  }, [])
 
   /**
    * 热门搜索关键词点击事件处理函数
    * @param {String} value
    */
   const handleHotItemClick = useCallback(value => {
-    setSearchValue(value)
+    setKeywords(value)
     dispatch(getSearchDataAction(value))
   }, [])
 
@@ -70,26 +69,16 @@ const Search = props => {
       <div className={classnames(styles['search'], 'fly-animation')}>
         {/* 搜索框 */}
         <SearchBox
-          searchValue={ searchValue }
+          keywords={keywords}
           clickBack={ handleClickBack }
           onInput={ handleInput }
         />
         
-        {/* 热门搜索 */}
-        {
-          !searchData
-          &&
-          <HotSearch
-            onItemClick={ handleHotItemClick } 
-            listData={ hotKeywordsList } 
-          />
-        }
 
-        {/* 搜索结果列表 */}
-        
+        {/* 搜索结果或热门搜索关键词 */}
         {
-          searchData 
-          &&
+          searchData
+          ?
           <div className={styles['search-result-wrapper']}>
             <Scroll pullDownLoading={loading} onScroll={forceCheck}>
               <SearchResult
@@ -97,6 +86,11 @@ const Search = props => {
               />
             </Scroll>
           </div>
+          :
+          <HotSearch
+            onItemClick={ handleHotItemClick } 
+            listData={ hotKeywordsList } 
+          />
         }
       </div>
     </CSSTransition>

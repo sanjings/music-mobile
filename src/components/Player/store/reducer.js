@@ -1,15 +1,12 @@
 import {
   SET_FULL_SCREEN,
-  SET_PLAY_MODE,
   SET_PLAYING_STATUS,
   SET_CURRENT_INDEX,
   SET_CURRENT_SONG,
   SET_PLAY_LIST,
-  SET_SEQUENCE_PLAY_LIST,
-  SET_SHOW_PLAY_LIST
+  SET_SHOW_PLAY_LIST,
+  DELETE_SONG
 } from './actionTypes'
-
-import { playMode } from '../../../apis/config'
 
 const initialState = {
   fullScreen: false,
@@ -17,9 +14,21 @@ const initialState = {
   currentIndex: -1,
   currentSong: {},
   playList: [],
-  sequencePlayList: [],
   showPlayList: false,
-  playMode: playMode.sequence
+}
+
+const deleteSongFormPlayList = (state, index) => {
+  let currentIndex = state.currentIndex;
+  const playList = state.playList;
+
+  playList.splice(index, 1)
+  if (index < currentIndex) currentIndex--;
+
+  return {
+    ...state,
+    playList,
+    currentIndex
+  }
 }
 
 export default (state = initialState, action) => {
@@ -28,11 +37,6 @@ export default (state = initialState, action) => {
       return {
         ...state,
         fullScreen: action.payload
-      };
-    case SET_PLAY_MODE:
-      return {
-        ...state,
-        playMode: action.payload
       };
     case SET_PLAYING_STATUS:
       return {
@@ -54,16 +58,13 @@ export default (state = initialState, action) => {
         ...state,
         playList: action.payload
       };
-    case SET_SEQUENCE_PLAY_LIST:
-      return {
-        ...state,
-        sequencePlayList: action.payload
-      };
     case SET_SHOW_PLAY_LIST:
       return {
         ...state,
         showPlayList: action.payload
       };
+    case DELETE_SONG:
+      return deleteSongFormPlayList(state, action.payload)
     default:
       return state;
   }

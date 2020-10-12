@@ -7,11 +7,18 @@ import styles from './list.module.scss'
 const List = props => {
   const { listData, currentIndex } = props
 
+  const { onClickPlay, onClickDelete } = props
+
   return (
     <ul className={styles['song-list']}>
       {
         listData.map((item, index) => (
-          <li key={item.id} className={styles['list-item']}>
+          <li 
+            key={item.id} 
+            className={styles['list-item']} 
+            onClick={() => onClickPlay(index)}
+          >
+            
             {/* 当前播放图标 */}
             <div className={styles['play-icon']}>
               {
@@ -29,8 +36,8 @@ const List = props => {
             </div>
 
             {/* 删除按钮 */}
-            <div className={styles['delete']}>
-              <i className="iconfont icon-delete"></i>
+            <div className={styles['delete']} onClick={onClickDelete}>
+              <i className="iconfont icon-delete" data-index={index}></i>
             </div>
           </li>
         ))

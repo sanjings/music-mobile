@@ -10,23 +10,23 @@ import { actions } from './store'
 
 const { 
   changeFullScreenAction, 
-  changePlayModeAction,
   changePlayingStatusAction, 
   changeShowPlayListAction, 
   changeCurrentIndexAction,
-  changeCurrentSongAction 
+  changeCurrentSongAction,
+  deleteSongAction 
 } = actions
 
 const Player = () => {
   const fullScreen = useSelector(state => state.player.fullScreen),
-        playMode = useSelector(state => state.player.playMode),
         playingStatus = useSelector(state => state.player.playingStatus),
         currentIndex = useSelector(state => state.player.currentIndex),
         currentSong = useSelector(state => state.player.currentSong),
         showPlayList = useSelector(state => state.player.showPlayList),
         playList = useSelector(state => state.player.playList);
 
-  const [currentTime, setCurrentTime] = useState(0),
+  const [preSongId, setPreSongId] = useState(),
+        [currentTime, setCurrentTime] = useState(0),
         [duration, setDuration] = useState(0);
 
   const percent = isNaN(currentTime / duration) ? 0 : currentTime / duration;
@@ -36,10 +36,18 @@ const Player = () => {
   const audioRef = useRef()
 
   useEffect(() => {
-    if (!playList.length || !playList[currentIndex] || currentIndex === -1) return;
+    if (
+      !playList.length || 
+      !playList[currentIndex] || 
+      currentIndex === -1 || 
+      playList[currentIndex].id === preSongId) 
+    return;
+    
     const audioDom = audioRef.current
     const curSong = playList[currentIndex]
+
     dispatch(changeCurrentSongAction(curSong))
+    setPreSongId(curSong.id)
     audioDom.src = getSongUrl(curSong.id)
     togglePlayingState(true)
     setCurrentTime(0);
@@ -51,10 +59,6 @@ const Player = () => {
     playingStatus ? audioDom.play() : audioDom.pause()
   }, [playingStatus]);
 
-  const handleChangeMode = useCallback(() => {
-    
-  }, [])
-
   const toggleFullScreen = useCallback((state) => {
     dispatch(changeFullScreenAction(state))
   }, [])
@@ -63,7 +67,7 @@ const Player = () => {
     dispatch(changePlayingStatusAction(state))
   }, [])
 
-  const togglePlayList = useCallback((state) => {
+  const toggleShowPlayList = useCallback((state) => {
     dispatch(changeShowPlayListAction(state))
   }, [])
 
@@ -72,7 +76,7 @@ const Player = () => {
     if (index < 0) {
       index = playList.length - 1
     }
-    dispatch(changeCurrentIndexAction(index))
+    changeCurrentIndex()
   }, [currentIndex])
 
   const onClickNext = useCallback(() => {
@@ -80,8 +84,19 @@ const Player = () => {
     if (index === playList.length) {
       index = 0
     }
-    dispatch(changeCurrentIndexAction(index))
+    changeCurrentIndex()
   }, [currentIndex])
+
+  const changeCurrentIndex = index => {
+    if (index === currentIndex) return;
+    dispatch(changeCurrentIndexAction(index))
+  }
+
+  const handleDelete = e => {
+    e.stopPropagation();
+    const index = Number(e.target.dataset.index)
+    dispatch(deleteSongAction(index))
+  }
 
   /**
    * 控制进度条
@@ -94,8 +109,19 @@ const Player = () => {
     !playingStatus && togglePlayingState(true)
   }, [duration])
 
-  const updateTime = e => {
+  /**
+   * 更新当前时间
+   * @param {Event} e 
+   */
+  const handleUpdateTime = e => {
     setCurrentTime(e.target.currentTime)
+  }
+
+  /**
+   * 当前歌曲播放完成后的处理函数
+   */
+  const handlePlayEnd = () => {
+    onClickNext()
   }
 
   return (
@@ -113,8 +139,7 @@ const Player = () => {
           playingStatus={playingStatus}
           toggleFullScreen={toggleFullScreen}
           togglePlayingState={togglePlayingState}
-          togglePlayList={togglePlayList}
-          onModeChange={handleChangeMode}
+          toggleShowPlayList={toggleShowPlayList}
           onProgressChange={handleProgressChange}
           onClickNext={onClickNext} 
           onClickPrev={onClickPrev}
@@ -131,7 +156,7 @@ const Player = () => {
           playingStatus={playingStatus}
           toggleFullScreen={toggleFullScreen}
           togglePlayingState={togglePlayingState}
-          togglePlayList={togglePlayList}
+          toggleShowPlayList={toggleShowPlayList}
         />
       }
 
@@ -142,14 +167,16 @@ const Player = () => {
         <PlayList
           currentIndex={currentIndex} 
           playList={playList}
-          togglePlayList={togglePlayList}
+          toggleShowPlayList={toggleShowPlayList}
+          onClickDelete={handleDelete}
         />
       }
-
+      
       <audio 
         ref={audioRef} 
         autoPlay={true}
-        onTimeUpdate={updateTime} 
+        onTimeUpdate={handleUpdateTime}
+        onEnded={handlePlayEnd} 
       />
     </div>
   )

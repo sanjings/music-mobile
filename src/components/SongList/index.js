@@ -4,11 +4,12 @@ import { useDispatch } from 'react-redux'
 import ListItem from './item'
 import ListMenu from './menu'
 
+import { deepClone } from '../../utils/tools'
 import { actions } from '../Player/store'
 
 import styles from './index.module.scss'
 
-const  { changeCurrentIndexAction, changePlayListAction, changeSequencePlayListAction } = actions
+const  { changeCurrentIndexAction, changePlayListAction } = actions
 
 const SongList = props => {
   const {
@@ -23,9 +24,13 @@ const SongList = props => {
   const dispatch = useDispatch()
 
   const handleClickPlay = index => {
-    dispatch(changePlayListAction(listData))
-    dispatch(changeSequencePlayListAction(listData))
+    dispatch(changePlayListAction(deepClone(listData)))
     dispatch(changeCurrentIndexAction(index))
+  }
+
+  const handlePlayAll = () => {
+    dispatch(changePlayListAction(deepClone(listData)))
+    dispatch(changeCurrentIndexAction(0))
   }
 
   return (
@@ -38,6 +43,7 @@ const SongList = props => {
           songCount={listData.length}
           showCollect={showCollect}
           subscribedCount={subscribedCount}
+          onClickPlayAll={handlePlayAll}
         />
       }
 
