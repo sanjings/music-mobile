@@ -31,3 +31,8 @@ export const GET_ALBUM_DETAIL_BY_ID = '/playlist/detail' // 歌单详情
 export const GET_HOT_KEYWORDS_LIST = '/search/hot' // 热门搜索关键词
 export const GET_SEARCH_LIST_BY_KEYWORDS = '/search' // 搜索
 export const GET_SEARCH_SUGGEST_BY_KEYWORDS = '/search/suggest' // 搜索建议
+
+/**
+ * 歌曲相关
+ */
+export const GET_LYRIC = '/lyric' // 歌词

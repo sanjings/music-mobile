@@ -30,3 +30,22 @@ export const formatNumber = num => {
 export const formatSingerName = singerList => {
   return singerList.map(item => item.name).join(' / ')
 }
+
+/**
+ * 组装歌曲的url
+ * @param {String | Number} id 
+ */
+export const formatSongUrl = id => {
+  return `https://music.163.com/song/media/outer/url?id=${id}.mp3`;
+}
+
+/**
+ * 转换歌曲播放时间
+ * @param {Number} interval 
+ */
+export const formatPlayTime = interval => {
+  interval = interval | 0; // 向下取整
+  const minute = (interval / 60) | 0;
+  const second = (interval % 60).toString().padStart(2, "0");
+  return `${minute}:${second}`;
+};

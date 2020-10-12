@@ -1,11 +1,11 @@
-import React, { memo, useRef } from "react"
-
+import React, { memo, useCallback, useRef, useState } from "react"
 import { CSSTransition } from 'react-transition-group'
 import animations from 'create-keyframe-animation'
 
 import Background from './background'
 import Top from './top'
 import CD from './cd'
+import Lyric from './lyric'
 import Control from './control'
 
 import { formatSingerName } from '../../../utils/filters'
@@ -13,8 +13,18 @@ import { formatSingerName } from '../../../utils/filters'
 import styles from './index.module.scss'
 
 const FullScreenPlayer = props => {
-  const { song, fullScreen, playingStatus, currentTime, duration, percent } = props,
-        { name, album, singers } = song;
+  const { 
+    song, 
+    fullScreen, 
+    playingStatus, 
+    currentTime, 
+    duration, 
+    percent,
+    currentLyric,
+    currentPlayingLyric,
+    currentLineNum 
+  } = props
+  const { name, album, singers } = song
 
   const {
     toggleFullScreen,
@@ -25,8 +35,14 @@ const FullScreenPlayer = props => {
     onClickPrev 
   } = props
 
+  const [showCd, setShowCd] = useState(true)
+
   const fullPlayerRef = useRef(),
         cdRef = useRef();
+
+  const toggleCd = useCallback(status => {
+    setShowCd(status)
+  }, [])
 
   // 计算偏移的辅助函数
   const _getPosAndScale = () => {
@@ -116,12 +132,25 @@ const FullScreenPlayer = props => {
           toggleFullScreen={ toggleFullScreen } 
         />
 
-        {/* cd封面 */}
-        <CD
-          ref={cdRef} 
-          picUrl={ album.picUrl } 
-          playingStatus={playingStatus} 
-        />
+        {/* cd封面或全屏歌词 */}
+        {
+          showCd
+          ?
+          <CD
+            ref={cdRef} 
+            picUrl={ album.picUrl } 
+            playingStatus={playingStatus}
+            toggleCd={toggleCd}
+            currentPlayingLyric={currentPlayingLyric} 
+          />
+          :
+          <Lyric
+            currentLyric={currentLyric}
+            currentLineNum={currentLineNum} 
+            toggleCd={toggleCd} 
+          />
+        }
+        
 
         {/* 控制器 */}
         <Control

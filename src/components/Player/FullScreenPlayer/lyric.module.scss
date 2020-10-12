@@ -1,0 +1,15 @@
+.lyric-wrapper{
+  flex: 1;
+  overflow: hidden;
+  .lyric-list{
+    text-align: center;
+    .lyric-item{
+      padding: 6px 0;
+      font-size: 16px;
+      color: #bbb;
+      &.highlight{
+        color: #fff;
+      }
+    }
+  }
+}

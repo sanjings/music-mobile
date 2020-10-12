@@ -4,7 +4,7 @@ import { GET_ALBUM_DETAIL_BY_ID } from '../url'
 /**
  * 请求歌单详情
  */
-const getAlbumDetailRequest = (id) => {
+const getAlbumDetailRequest = id => {
   return axiosGet(GET_ALBUM_DETAIL_BY_ID, { id })
     .then(res => {
       const list = res.playlist;

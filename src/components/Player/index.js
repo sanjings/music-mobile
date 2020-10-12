@@ -5,7 +5,10 @@ import FullScreenPlayer from './FullScreenPlayer'
 import MiniPlayer from './MiniPlayer'
 import PlayList from './PlayList'
 
-import { isEmptyObject, getSongUrl } from '../../utils/tools'
+import { isEmptyObject } from '../../utils/tools'
+import { formatSongUrl } from '../../utils/filters'
+import { getLyricRequest } from '../../apis/requests/song'
+import LyricParser from '../../plugins/LyricParser'
 import { actions } from './store'
 
 const { 
@@ -27,13 +30,16 @@ const Player = () => {
 
   const [preSongId, setPreSongId] = useState(),
         [currentTime, setCurrentTime] = useState(0),
-        [duration, setDuration] = useState(0);
+        [duration, setDuration] = useState(0),
+        [currentPlayingLyric, setPlayingLyric] = useState('');
 
   const percent = isNaN(currentTime / duration) ? 0 : currentTime / duration;
   
   const dispatch = useDispatch()
 
-  const audioRef = useRef()
+  const audioRef = useRef(),
+        currentLyric = useRef(),
+        currentLineNum = useRef(0);
 
   useEffect(() => {
     if (
@@ -48,8 +54,9 @@ const Player = () => {
 
     dispatch(changeCurrentSongAction(curSong))
     setPreSongId(curSong.id)
-    audioDom.src = getSongUrl(curSong.id)
+    audioDom.src = formatSongUrl(curSong.id)
     togglePlayingState(true)
+    getLyric(curSong.id)
     setCurrentTime(0);
     setDuration((curSong.dt / 1000) || 0)
   }, [currentIndex, playList]);
@@ -59,13 +66,36 @@ const Player = () => {
     playingStatus ? audioDom.play() : audioDom.pause()
   }, [playingStatus]);
 
+  const handleLyric = ({lineNum, txt}) => {
+    if (!currentLyric.current) return;
+    currentLineNum.current = lineNum;
+    setPlayingLyric(txt);
+  };
+
+  const getLyric = async (id) => {
+    const resp = await getLyricRequest(id),
+          lyric = resp.lrc.lyric;
+    
+    if (!lyric) {
+      currentLyric.current = null;
+      return;
+    }
+    currentLyric.current = new LyricParser(lyric, handleLyric)
+    currentLyric.current.play();
+    currentLineNum.current = 0;
+    currentLyric.current.seek(0);
+  }
+
   const toggleFullScreen = useCallback((state) => {
     dispatch(changeFullScreenAction(state))
   }, [])
 
   const togglePlayingState = useCallback((state) => {
     dispatch(changePlayingStatusAction(state))
-  }, [])
+    if(currentLyric.current) {
+      currentLyric.current.togglePlay(currentTime * 1000);
+    }
+  }, [currentTime])
 
   const toggleShowPlayList = useCallback((state) => {
     dispatch(changeShowPlayListAction(state))
@@ -76,7 +106,7 @@ const Player = () => {
     if (index < 0) {
       index = playList.length - 1
     }
-    changeCurrentIndex()
+    changeCurrentIndex(index)
   }, [currentIndex])
 
   const onClickNext = useCallback(() => {
@@ -84,7 +114,7 @@ const Player = () => {
     if (index === playList.length) {
       index = 0
     }
-    changeCurrentIndex()
+    changeCurrentIndex(index)
   }, [currentIndex])
 
   const changeCurrentIndex = index => {
@@ -107,6 +137,9 @@ const Player = () => {
     setCurrentTime(newTime)
     audioRef.current.currentTime = newTime
     !playingStatus && togglePlayingState(true)
+    if(currentLyric.current) {
+      currentLyric.current.seek (newTime * 1000);
+    }
   }, [duration])
 
   /**
@@ -137,6 +170,9 @@ const Player = () => {
           currentTime={currentTime}
           percent={percent}
           playingStatus={playingStatus}
+          currentLyric={currentLyric.current}
+          currentPlayingLyric={currentPlayingLyric}
+          currentLineNum={currentLineNum.current}
           toggleFullScreen={toggleFullScreen}
           togglePlayingState={togglePlayingState}
           toggleShowPlayList={toggleShowPlayList}

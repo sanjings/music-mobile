@@ -9,7 +9,7 @@ import {
  * 请求banner数据
  * @param {Number} type  
  */
-const getBannersRequest = (type) => {
+const getBannersRequest = type => {
   return axiosGet(GET_BANNERS, { type })
 }
 
@@ -17,7 +17,7 @@ const getBannersRequest = (type) => {
  * 请求推荐歌单数据
  * @param {Number} limit 取出数量
  */
-const getRecommendListRequest = (limit) => {
+const getRecommendListRequest = limit => {
   return axiosGet(GET_RECOMMEND_LIST, { limit })
 }
 
@@ -34,7 +34,7 @@ const getRecommendNewSongsRequest = () => {
           name: item.name,
           album: item.song.album,
           singers: item.song.artists,
-          dt: item.dt
+          dt: item.song.duration
         }
       })
     })
