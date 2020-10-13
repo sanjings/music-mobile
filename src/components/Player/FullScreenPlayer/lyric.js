@@ -18,8 +18,8 @@ const Lyric = props => {
 
     const bScroll = scrollRef.current.getBScroll()
     if (!bScroll) return ;
-    if (currentLineNum > 5) {
-      const curLineDom = lyricLineRefs.current[currentLineNum - 5].current
+    if (currentLineNum > 6) {
+      const curLineDom = lyricLineRefs.current[currentLineNum - 6].current
       bScroll.scrollToElement(curLineDom, 1000);
     } else {
       bScroll.scrollTo(0, 0, 200)

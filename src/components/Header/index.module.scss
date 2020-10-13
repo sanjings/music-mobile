@@ -1,19 +1,19 @@
 .header{
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   height: 50px;
-   background-color: #D44439;
-   .title{
-      color: #f1f1f1;
-      font-size: 20px;
-   }
-   .menu,.search{
-      width: 50px;
-      text-align: center;
-      color: #f1f1f1;
-      i{
-         font-size: 24px;
-      }
-   }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: #D44439;
+  .title{
+    color: #f1f1f1;
+    font-size: 20px;
+  }
+  .menu,.search{
+    width: 50px;
+    text-align: center;
+    color: #f1f1f1;
+    i{
+        font-size: 24px;
+    }
+  }
 }

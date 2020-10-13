@@ -14,17 +14,17 @@ import styles from './index.module.scss'
 const { getSingerDetailAction } = actions
 
 const Singer = props => {
-  const [show, setShow] = useState(true)
-
   const singerDetail = useSelector(state => state.singer.singerDetail),
         loading = useSelector(state => state.singer.loading),
         playList = useSelector(state => state.player.playList);
 
-  const dispatch = useDispatch()
+  const [show, setShow] = useState(true)
 
   const layerRef = useRef(),
         coverRef = useRef(),
         buttonRef = useRef();
+
+  const dispatch = useDispatch()
 
   /**
    * 获取歌手详情数据
@@ -121,7 +121,7 @@ const Singer = props => {
         }
 
         {/* 加载loading */}
-        {loading && <div className={styles['loading']}><Loading /></div>}
+        {loading && <Loading />}
       </div>
     </CSSTransition>
   )

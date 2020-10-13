@@ -1,16 +1,16 @@
-import { UPDATE_GLOBAL_LIST, UPDATE_OFFICAIL_LIST } from './actionTypes'
+import { SET_LOADING, SET_RANK_DATA } from './actionTypes'
 import { getRankListRequest } from '../../../apis/requests/rank'
 
-export const updateGlobalList = (payload) => {
+export const changeLoading = payload => {
   return {
-    type: UPDATE_GLOBAL_LIST,
+    type: SET_LOADING,
     payload
   }
 }
 
-export const updateOfficailList = (payload) => {
+export const changeRankData = payload => {
   return {
-    type: UPDATE_OFFICAIL_LIST,
+    type: SET_RANK_DATA,
     payload
   }
 }
@@ -20,12 +20,13 @@ export const updateOfficailList = (payload) => {
  */
 export const getRankListAction = () => {
   return async (dispatch) => {
-    const resp = await getRankListRequest(),
-      list = resp.list,
-      globalList = list.filter(item => !item.tracks.length),
-      officailList = list.filter(item => item.tracks.length);
+    dispatch(changeLoading(true))
+    const resp = await getRankListRequest()
 
-    dispatch(updateGlobalList(globalList))
-    dispatch(updateOfficailList(officailList))
+    const list = resp.list,
+          globalList = list.filter(item => !item.tracks.length),
+          officailList = list.filter(item => item.tracks.length);
+
+    dispatch(changeRankData({globalList, officailList}))
   }
 }

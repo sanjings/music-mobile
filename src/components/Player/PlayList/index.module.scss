@@ -1,66 +1,66 @@
 .play-list{
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100vw;
-   height: 100vh;
-   z-index: 1001;
-   &:global(.move-enter), &:global(.move-appear) {
-      opacity: 0;
-      .list-wrapper{
-         transform: translate3d(0, 100%, 0);
-      }
-   }
-   &:global(.move-enter-active), &:global(.move-appear-active){
-      opacity: 1;
-      transition: opacity .3s;
-      .list-wrapper{
-         transform: translate3d(0, 0, 0);
-         transition: transform 0.3s;
-      }
-   }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1001;
+  &:global(.move-enter), &:global(.move-appear) {
+    opacity: 0;
+    .list-wrapper{
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+  &:global(.move-enter-active), &:global(.move-appear-active){
+    opacity: 1;
+    transition: opacity .3s;
+    .list-wrapper{
+      transform: translate3d(0, 0, 0);
+      transition: transform 0.3s;
+    }
+  }
+
+  &:global(.move-exit-active){
+    opacity: 0;
+    transition: opacity .3s;
+    .list-wrapper{
+      transform: translate3d(0, 100%, 0);
+      transition: transform .3s;
+    }
+  }
   
-   &:global(.move-exit-active){
-      opacity: 0;
-      transition: opacity .3s;
-      .list-wrapper{
-         transform: translate3d(0, 100%, 0);
-         transition: transform .3s;
+  .mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .list-wrapper{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0 20px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+    opacity: 1;
+    .list-header{
+      padding: 10px 0;
+      .play-mode{
+        display: flex;
+        align-items: center;
+        i{
+          margin-right: 8px;
+          font-size: 18px;
+          color: #D44439;
+        }
       }
-   }
-   
-   .mask{
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-   }
-   .list-wrapper{
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      padding: 0 20px;
-      width: 100%;
-      background-color: #fff;
-      border-radius: 10px 10px 0 0;
-      opacity: 1;
-      .list-header{
-         padding: 10px 0;
-         .play-mode{
-            display: flex;
-            align-items: center;
-            i{
-               margin-right: 8px;
-               font-size: 18px;
-               color: #D44439;
-            }
-         }
-      }
-      .list-scroll-wrapper{
-         height: 380px;
-         overflow: hidden;
-      }
-   }
+    }
+    .list-scroll-wrapper{
+      height: 380px;
+      overflow: hidden;
+    }
+  }
 }

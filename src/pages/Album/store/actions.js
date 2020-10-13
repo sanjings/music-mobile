@@ -1,25 +1,28 @@
-import { UPDATE_ALBUM_DETAIL, UPDATE_LOADING } from './actionTypes'
+import { SET_ALBUM_DETAIL, SET_ALBUM_LOADING } from './actionTypes'
 import { getAlbumDetailRequest } from '../../../apis/requests/album'
 
-export const updateAlbumDetailAction = (payload) => {
+export const changeLoadingAction = payload => {
   return {
-    type: UPDATE_ALBUM_DETAIL,
-    payload: payload
-  }
-}
-
-export const updateLoadingAction = (payload) => {
-  return {
-    type: UPDATE_LOADING,
+    type: SET_ALBUM_LOADING,
     payload
   }
 }
 
+export const changeAlbumDetailAction = payload => {
+  return {
+    type: SET_ALBUM_DETAIL,
+    payload: payload
+  }
+}
 
-export const getAlbumDetailAction = (id) => {
+/**
+ * 请求榜单详情数据
+ * @param {Number} id 
+ */
+export const getAlbumDetailAction = id => {
   return async (dispatch) => {
-    dispatch(updateLoadingAction(true))
+    dispatch(changeLoadingAction(true))
     const resp = await getAlbumDetailRequest(id)
-    dispatch(updateAlbumDetailAction(resp))
+    dispatch(changeAlbumDetailAction(resp))
   }
 }

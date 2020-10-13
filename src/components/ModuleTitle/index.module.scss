@@ -1,19 +1,19 @@
 .title{
-   padding-left: 10px;
-   padding-top: 20px;
-   padding-bottom: 20px;
-   .title-text{
-      position: relative;
-      font-size: 16px;
-      font-weight: 700;
-      &.symbol::before{
-         content: '';
-         position: absolute;
-         left: -10px;
-         top: 0;
-         width: 2px;
-         height: 100%;
-         background-color: #d33a31;
-      }
-   }
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .title-text{
+    position: relative;
+    font-size: 16px;
+    font-weight: 700;
+    &.symbol::before{
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: #d33a31;
+    }
+  }
 }

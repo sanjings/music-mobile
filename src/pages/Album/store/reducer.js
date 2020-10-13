@@ -1,4 +1,4 @@
-import { UPDATE_ALBUM_DETAIL, UPDATE_LOADING } from './actionTypes'
+import { SET_ALBUM_DETAIL, SET_ALBUM_LOADING } from './actionTypes'
 
 const initialState = {
   loading: false,
@@ -7,16 +7,16 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case UPDATE_ALBUM_DETAIL:
+    case SET_ALBUM_LOADING:
+      return {
+        ...state,
+        loading: action.payload
+      };
+    case SET_ALBUM_DETAIL:
       return {
         ...state,
         albumDetail: action.payload,
         loading: false
-      };
-    case UPDATE_LOADING:
-      return {
-        ...state,
-        loading: action.payload
       };
     default:
       return state;

@@ -6,7 +6,7 @@ import styles from './item.module.scss'
 
 const ListItem = props => {
   const { itemData } = props,
-    { id, name, picUrl } = itemData;
+        { id, name, picUrl } = itemData;
 
   return (
     <Link to={`/singers/${id}`} className={styles['list-item']}>

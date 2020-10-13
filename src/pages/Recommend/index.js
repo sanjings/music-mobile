@@ -4,6 +4,7 @@ import { renderRoutes } from 'react-router-config';
 import { forceCheck } from 'react-lazyload';
 
 import Scroll from '../../components/Scroll'
+import Loading from '../../components/Loading'
 import Carousel from '../../components/Carousel'
 import ModuleTitle from '../../components/ModuleTitle'
 import SongList from '../../components/SongList'
@@ -11,8 +12,15 @@ import RecommendList from './List'
 
 import { actions } from './store';
 
+const {
+  getBannersAction,
+  getRecommendListAction,
+  getRecommendNewSongsAction
+} = actions;
+
 const Recommend = props => {
-  const banners = useSelector(state => state.recommend.banners),
+  const loading = useSelector(state => state.recommend.loading),
+        banners = useSelector(state => state.recommend.banners),
         recommendList = useSelector(state => state.recommend.recommendList),
         newSongs = useSelector(state => state.recommend.recommendNewSongs),
         playList = useSelector(state => state.player.playList);
@@ -25,17 +33,14 @@ const Recommend = props => {
    * 获取banner、recommend数据
    */
   useEffect(() => {
-    const {
-      getBannersAction,
-      getRecommendListAction,
-      getRecommendNewSongsAction
-    } = actions;
-
     dispatch(getBannersAction(2))
     dispatch(getRecommendListAction(12))
     dispatch(getRecommendNewSongsAction())
   }, []);
 
+  /**
+   * 根据播放状态动态改变滚动高度
+   */
   const wrapperStyle = {
     flex: 1,
     overflow: 'hidden',
@@ -58,7 +63,11 @@ const Recommend = props => {
           <SongList listData={newSongs}></SongList>
         </div>
       </Scroll>
+      
       { renderRoutes(props.route.routes)}
+
+      {/* loading */}
+      { loading && <Loading /> }
     </div>
   )
 }

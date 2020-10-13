@@ -1,8 +1,11 @@
-// 更新banners
-export const UPDATE_BANNERS = 'UPDATE_BANNERS' 
+// 设置loading
+export const SET_LOADING = 'SET_LOADING' 
 
-// 更新recommendList
-export const UPDATE_RECOMMEND_LIST = 'UPDATE_RECOMMEND_LIST'
+// 设置banners
+export const SET_BANNERS = 'SET_BANNERS' 
 
-// 更新recommendNewSongs
-export const UPDATE_RECOMMEND_NEW_SONGS = 'UPDATE_RECOMMEND_NEW_SONGS'
+// 设置recommendList
+export const SET_RECOMMEND_LIST = 'SET_RECOMMEND_LIST'
+
+// 设置recommendNewSongs
+export const SET_RECOMMEND_NEW_SONGS = 'SET_RECOMMEND_NEW_SONGS'

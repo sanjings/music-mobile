@@ -16,12 +16,11 @@ import styles from './index.module.scss'
 const { getHotKeywordsListAction, getSearchDataAction, changeSearchDataAction } = actions
 
 const Search = props => {
+  const hotKeywordsList = useSelector(state => state.search.hotKeywordsList),
+        searchData = useSelector(state => state.search.searchData);
+
   const [show, setShow] = useState(true),
         [keywords, setKeywords] = useState('');
-
-  const hotKeywordsList = useSelector(state => state.search.hotKeywordsList),
-        loading = useSelector(state => state.search.loading),
-        searchData = useSelector(state => state.search.searchData);
 
   const dispatch = useDispatch()
 
@@ -74,13 +73,12 @@ const Search = props => {
           onInput={ handleInput }
         />
         
-
         {/* 搜索结果或热门搜索关键词 */}
         {
           searchData
           ?
           <div className={styles['search-result-wrapper']}>
-            <Scroll pullDownLoading={loading} onScroll={forceCheck}>
+            <Scroll onScroll={forceCheck}>
               <SearchResult
                 data={searchData} 
               />

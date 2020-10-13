@@ -1,10 +1,12 @@
 import {
-  UPDATE_BANNERS,
-  UPDATE_RECOMMEND_LIST,
-  UPDATE_RECOMMEND_NEW_SONGS
+  SET_LOADING,
+  SET_BANNERS,
+  SET_RECOMMEND_LIST,
+  SET_RECOMMEND_NEW_SONGS
 } from './actionTypes';
 
 const initialState = {
+  loading: false,
   banners: [],
   recommendList: [],
   recommendNewSongs: []
@@ -12,17 +14,23 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case UPDATE_BANNERS:
+    case SET_LOADING:
+      return {
+        ...state,
+        loading: action.payload
+      };
+    case SET_BANNERS:
       return {
         ...state,
         banners: action.payload
       };
-    case UPDATE_RECOMMEND_LIST:
+    case SET_RECOMMEND_LIST:
       return {
         ...state,
-        recommendList: action.payload
+        recommendList: action.payload,
+        loading: false
       };
-    case UPDATE_RECOMMEND_NEW_SONGS:
+    case SET_RECOMMEND_NEW_SONGS:
       return {
         ...state,
         recommendNewSongs: action.payload

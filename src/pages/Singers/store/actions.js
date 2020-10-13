@@ -1,14 +1,14 @@
 import {
-  UPDATE_SINGER_LIST,
+  SET_SINGER_LIST,
   CONCAT_SINGER_LIST,
-  UPDATE_PULL_DOWN_LOADING,
-  UPDATE_PULL_UP_LOADING
+  SET_PULL_DOWN_LOADING,
+  SET_PULL_UP_LOADING
 } from './actionTypes'
 import { getSingerListRequest } from '../../../apis/requests/singer'
 
-export const updateSingerListAction = (payload) => {
+export const changeSingerListAction = (payload) => {
   return {
-    type: UPDATE_SINGER_LIST,
+    type: SET_SINGER_LIST,
     payload
   }
 }
@@ -20,31 +20,40 @@ export const concatSingerListAction = (payload) => {
   }
 }
 
-export const updatePullDownLoadingAction = (payload) => {
+export const changePullDownLoadingAction = (payload) => {
   return {
-    type: UPDATE_PULL_DOWN_LOADING,
+    type: SET_PULL_DOWN_LOADING,
     payload
   }
 }
 
-export const updatePullUpLoadingAction = (payload) => {
+export const changePullUpLoadingAction = (payload) => {
   return {
-    type: UPDATE_PULL_UP_LOADING,
+    type: SET_PULL_UP_LOADING,
     payload
   }
 }
 
-export const getSingerListAction = (initial) => {
+/**
+ * 请求歌手列表
+ * @param {String} initial 首字母 
+ */
+export const getSingerListAction = initial => {
   return async (dispatch) => {
-    dispatch(updatePullDownLoadingAction(true))
+    dispatch(changePullDownLoadingAction(true))
     const resp = await getSingerListRequest(0, initial)
-    dispatch(updateSingerListAction(resp.artists))
+    dispatch(changeSingerListAction(resp.artists))
   }
 }
 
+/**
+ * 请求更多歌手列表
+ * @param {Number} offset 分页开始值
+ * @param {String} initial 首字母 
+ */
 export const getMoreSingerListAction = (offset, initial) => {
   return async (dispatch) => {
-    dispatch(updatePullUpLoadingAction(true))
+    dispatch(changePullUpLoadingAction(true))
     const resp = await getSingerListRequest(offset, initial)
     dispatch(concatSingerListAction(resp.artists))
   }

@@ -1,11 +1,11 @@
 .singers-wrapper{
-   display: flex;
-   flex-direction: column;
-   flex: 1;
-   padding: 0 5px;
-   overflow: hidden;
-   .tab-wrapper{
-      width: 100%;
-      height: 32px;
-   }
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 5px;
+  overflow: hidden;
+  .tab-wrapper{
+    width: 100%;
+    height: 32px;
+  }
 }

@@ -1,22 +1,22 @@
 .list-item{
-   display: flex;
-   align-items: center;
-   padding: 5px 0;
-   border-bottom: 1px solid #E4E4E4;
-   &:last-of-type{
-      border-bottom: none;
-   }
-   .img-wrapper{
-      margin-right: 20px;
-      width: 50px;
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #E4E4E4;
+  &:last-of-type{
+    border-bottom: none;
+  }
+  .img-wrapper{
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 2px;
+    overflow: hidden;
+    img{
       height: 50px;
-      border-radius: 2px;
-      overflow: hidden;
-      img{
-         height: 50px;
-      }
-   }
-   .name{
-      font-weight: 500;
-   }
+    }
+  }
+  .name{
+    font-weight: 500;
+  }
 }

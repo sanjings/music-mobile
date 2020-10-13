@@ -1,52 +1,52 @@
 .cd-wrapper{
-   position: relative;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   flex: 1;
-   align-items: center;
-   overflow: hidden;
-   .needle{
-      position: absolute;
-      top: -6vw;
-      left: 48vw;
-      width: 25vw;
-      height: 40vw;
-      background-image: url('../../../assets/images//needle.png');
-      background-position: 50% center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      transform-origin: 4.5vw 4.5vw;
-      transition: all 0.3s ease 0s;
-      transform: rotate(-30deg);
-   }
-   .cd-cover{
-      width: 270px;
-      height: 270px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  align-items: center;
+  overflow: hidden;
+  .needle{
+    position: absolute;
+    top: -6vw;
+    left: 48vw;
+    width: 25vw;
+    height: 40vw;
+    background-image: url('../../../assets/images//needle.png');
+    background-position: 50% center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform-origin: 4.5vw 4.5vw;
+    transition: all 0.3s ease 0s;
+    transform: rotate(-30deg);
+  }
+  .cd-cover{
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    border: 4px solid rgba(228, 228, 228, 0.1);
+    animation: spin 20s infinite linear;
+    &.pause{
+      animation-play-state: paused;
+    }
+    .img-cover{
+      width: 100%;
+      height: 100%;
+      border: 40px solid #161616;
       border-radius: 50%;
-      border: 4px solid rgba(228, 228, 228, 0.1);
-      animation: spin 20s infinite linear;
-      &.pause{
-         animation-play-state: paused;
-      }
-      .img-cover{
-         width: 100%;
-         height: 100%;
-         border: 40px solid #161616;
-         border-radius: 50%;
-      }
-   }
-   .lyrics{
-      margin-top: 40px;
-      color: #ccc;
-   }
+    }
+  }
+  .lyrics{
+    margin-top: 40px;
+    color: #ccc;
+  }
 
-   @keyframes spin {
-      0% {
-         transform: rotate(0);
-      }
-      100%{
-         transform: rotate(360deg);
-      }
-   }
+  @keyframes spin {
+    0% {
+      transform: rotate(0);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
 }

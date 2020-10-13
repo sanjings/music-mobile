@@ -1,5 +1,5 @@
-// 更新全球榜单
-export const UPDATE_GLOBAL_LIST = 'UPDATE_GLOBAL_LIST'
+// 设置loading
+export const SET_LOADING = 'SET_LOADING'
 
-// 更新官方榜单
-export const UPDATE_OFFICAIL_LIST = 'UPDATE_OFFICAIL_LIST'
+// 设置榜单数据
+export const SET_RANK_DATA = 'SET_RANK_DATA'

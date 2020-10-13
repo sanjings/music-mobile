@@ -3,7 +3,6 @@ import React, { memo } from 'react';
 import styles from './menu.module.scss'
 
 const AlbumMenu = () => {
-
   return (
     <div className={styles['menu']}>
       <button className={styles['menu-item']} onClick={() => alert('暂未开发')}>

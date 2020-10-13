@@ -10,7 +10,7 @@ const AlbumHeader = forwardRef((props, ref) => {
   return (
     <header className={styles['header']} ref={ref}>
       <i className="iconfont icon-leftarrow" onClick={clickBack}></i>
-      <h1>{title}</h1>
+      <h1>{ title }</h1>
     </header>
   )
 })

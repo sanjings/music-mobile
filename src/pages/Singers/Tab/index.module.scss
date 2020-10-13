@@ -1,17 +1,17 @@
 .tab-list{
-   display: flex;
-   align-items: center;
-   padding: 5px 0;
-   .list-item{
-      flex: 0 0 auto;
-      padding: 2px 6px;
-      transform: translateY(1px);
-      border: 1px solid transparent;
-      border-radius: 10px;
-      &.actived{
-         border: 1px solid #D44439;
-         color:  #D44439;
-      }
-   }
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  .list-item{
+    flex: 0 0 auto;
+    padding: 2px 6px;
+    transform: translateY(1px);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    &.actived{
+        border: 1px solid #D44439;
+        color:  #D44439;
+    }
+  }
 }
 

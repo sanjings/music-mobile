@@ -9,7 +9,7 @@ const suggest = props => {
 
   return (
     <div className={styles['suggest']}>
-      <h1 className={styles['title']}>相关{type}</h1>
+      <h1 className={styles['title']}>相关{ type }</h1>
       <div className={styles['list']}>
         {
           listData.map(item => (
@@ -19,11 +19,13 @@ const suggest = props => {
               className={styles['item']}
             >
               <div className={styles['img-wrapper']}>
-                <LazyLoad placeholder={<img src={require('../../../assets/images/music.png')} height="100%" alt="cover" />}>
+                <LazyLoad 
+                  placeholder={<img src={require('../../../assets/images/music.png')} height="100%" alt="cover" />}
+                >
                   <img src={type === '歌手' ? item.picUrl : item.coverImgUrl} alt="cover" />
                 </LazyLoad>
               </div>
-              <div className={styles['item-desc']}>{item.name}</div>
+              <div className={styles['item-desc']}>{ item.name }</div>
             </Link>
           ))
         }

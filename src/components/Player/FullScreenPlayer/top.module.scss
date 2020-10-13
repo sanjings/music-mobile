@@ -1,25 +1,25 @@
 .top{
-   display: flex;
-   align-items: center;
-   width: 100%;
-   height: 50px;
-   border-bottom: 1px solid rgba(228, 228, 228, 0.1);
-   .back{
-      width: 40px;
-      height: 100%;
-      line-height: 50px;
-      text-align: center;
-      i{
-         font-size: 30px;
-      }
-   }
-   .song-info{
-      .song-name{
-         margin-bottom: 2px;
-         font-size: 16px;
-      }
-      .singer-name{
-         color: #555;
-      }
-   }
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid rgba(228, 228, 228, 0.1);
+  .back{
+    width: 40px;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    i{
+      font-size: 30px;
+    }
+  }
+  .song-info{
+    .song-name{
+      margin-bottom: 2px;
+      font-size: 16px;
+    }
+    .singer-name{
+      color: #555;
+    }
+  }
 }

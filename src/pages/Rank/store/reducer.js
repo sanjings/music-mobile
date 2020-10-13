@@ -1,21 +1,24 @@
-import { UPDATE_GLOBAL_LIST, UPDATE_OFFICAIL_LIST } from './actionTypes'
+import { SET_LOADING, SET_RANK_DATA } from './actionTypes'
 
 const initialState = {
+  loading: false,
   globalList: [],
   officailList: []
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case UPDATE_GLOBAL_LIST:
+    case SET_LOADING:
       return {
         ...state,
-        globalList: action.payload
+        loading: action.payload
       };
-    case UPDATE_OFFICAIL_LIST:
+    case SET_RANK_DATA:
       return {
         ...state,
-        officailList: action.payload
+        globalList: action.payload.globalList,
+        officailList: action.payload.officailList,
+        loading: false
       };
     default:
       return state;

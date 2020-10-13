@@ -1,27 +1,27 @@
 import {
-  UPDATE_SINGER_DETAIL,
-  UPDATE_LOADING
+  SET_SINGER_DETAIL,
+  SET_SINGER_LOADING
 } from './actionTypes'
 import { getSingerDetailRequest } from '../../../apis/requests/singer'
 
-export const updateSingerDetailAction = (payload) => {
+export const changeSingerDetailAction = (payload) => {
   return {
-    type: UPDATE_SINGER_DETAIL,
+    type: SET_SINGER_DETAIL,
     payload
   }
 }
 
-export const updateLoadingAction = (payload) => {
+export const changeLoadingAction = (payload) => {
   return {
-    type: UPDATE_LOADING,
+    type: SET_SINGER_LOADING,
     payload
   }
 }
 
 export const getSingerDetailAction = id => {
   return async (dispatch) => {
-    dispatch(updateLoadingAction(true))
+    dispatch(changeLoadingAction(true))
     const resp = await getSingerDetailRequest(id)
-    dispatch(updateSingerDetailAction(resp))
+    dispatch(changeSingerDetailAction(resp))
   }
 }

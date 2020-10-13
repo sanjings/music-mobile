@@ -18,35 +18,51 @@ const {
 } = actions;
 
 const Singers = props => {
-  const [currentTabType, setCurrentTabType] = useState('')
-
   const singerList = useSelector(state => state.singers.singerList),
         pullDownLoading = useSelector(state => state.singers.pullDownLoading),
         pullUpLoading = useSelector(state => state.singers.pullUpLoading),
         playList = useSelector(state => state.player.playList);
 
-  const dispatch = useDispatch();
+  const [currentTabType, setCurrentTabType] = useState('')
 
   const scrollRef = useRef(null)
 
+  const dispatch = useDispatch()
+
+  /**
+   * 获取歌手数据
+   */
   useEffect(() => {
     dispatch(getSingerListAction())
   }, [])
 
+  /**
+   * 切换tab
+   * @param {String} type 首字母
+   */
   const changeTabType = useCallback((type) => {
     setCurrentTabType(type)
     dispatch(getSingerListAction(type))
     scrollRef.current.refresh()
   }, [])
 
+  /**
+   * 下拉刷新
+   */
   const handlePullDown = useCallback(() => {
     dispatch(getSingerListAction(currentTabType))
   }, [currentTabType])
 
+  /**
+   * 上拉加载更多
+   */
   const handlePullUp = useCallback(() => {
     dispatch(getMoreSingerListAction(singerList.length, currentTabType))
   }, [singerList, currentTabType])
 
+  /**
+   * 根据播放状态动态改变滚动高度
+   */
   const wrapperStyle = {
     flex: 1,
     overflow: 'hidden',

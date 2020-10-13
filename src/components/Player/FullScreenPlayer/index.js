@@ -150,7 +150,6 @@ const FullScreenPlayer = props => {
             toggleCd={toggleCd} 
           />
         }
-        
 
         {/* 控制器 */}
         <Control

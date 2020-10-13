@@ -18,7 +18,7 @@ const Tab = props => {
   useEffect(() => {
     if (listData.length) {
       const listDom = listRef.current,
-        itemsDom = listDom.querySelectorAll("li");
+            itemsDom = listDom.querySelectorAll("li");
 
       let width = 0;
       Array.from(itemsDom).forEach(el => {
@@ -29,12 +29,12 @@ const Tab = props => {
   }, [listData])
 
   /**
-   * 点击事件
+   * item点击事件
    * @param {Event} e 
    */
   const clickHandle = (e) => {
     const target = e.target,
-      itemValue = target.dataset.value;
+          itemValue = target.dataset.value;
 
     itemValue != undefined && handleClick(itemValue)
   }

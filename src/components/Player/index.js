@@ -122,9 +122,7 @@ const Player = () => {
     dispatch(changeCurrentIndexAction(index))
   }
 
-  const handleDelete = e => {
-    e.stopPropagation();
-    const index = Number(e.target.dataset.index)
+  const handleDelete = index => {
     dispatch(deleteSongAction(index))
   }
 

@@ -9,6 +9,12 @@ const List = props => {
 
   const { onClickPlay, onClickDelete } = props
 
+  const handleDelete = e => {
+    e.stopPropagation();
+    const index = Number(e.target.dataset.index)
+    onClickDelete(index)
+  }
+
   return (
     <ul className={styles['song-list']}>
       {
@@ -36,7 +42,7 @@ const List = props => {
             </div>
 
             {/* 删除按钮 */}
-            <div className={styles['delete']} onClick={onClickDelete}>
+            <div className={styles['delete']} onClick={handleDelete}>
               <i className="iconfont icon-delete" data-index={index}></i>
             </div>
           </li>

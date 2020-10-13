@@ -1,8 +1,8 @@
 import {
-  UPDATE_SINGER_LIST,
+  SET_SINGER_LIST,
   CONCAT_SINGER_LIST,
-  UPDATE_PULL_DOWN_LOADING,
-  UPDATE_PULL_UP_LOADING
+  SET_PULL_DOWN_LOADING,
+  SET_PULL_UP_LOADING
 } from './actionTypes'
 
 const initialState = {
@@ -13,7 +13,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case UPDATE_SINGER_LIST:
+    case SET_SINGER_LIST:
       return {
         ...state,
         singerList: action.payload,
@@ -25,12 +25,12 @@ export default (state = initialState, action) => {
         singerList: state.singerList.concat(action.payload),
         pullUpLoading: false
       };
-    case UPDATE_PULL_DOWN_LOADING:
+    case SET_PULL_DOWN_LOADING:
       return {
         ...state,
         pullDownLoading: action.payload
       };
-    case UPDATE_PULL_UP_LOADING:
+    case SET_PULL_UP_LOADING:
       return {
         ...state,
         pullUpLoading: action.payload

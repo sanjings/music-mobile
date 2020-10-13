@@ -1,6 +1,6 @@
 import {
-  UPDATE_SINGER_DETAIL,
-  UPDATE_LOADING
+  SET_SINGER_DETAIL,
+  SET_SINGER_LOADING
 } from './actionTypes'
 
 const initialState = {
@@ -10,13 +10,13 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case UPDATE_SINGER_DETAIL:
+    case SET_SINGER_DETAIL:
       return {
         ...state,
         singerDetail: action.payload,
         loading: false
       };
-    case UPDATE_LOADING:
+    case SET_SINGER_LOADING:
       return {
         ...state,
         loading: action.payload

@@ -1,7 +1,8 @@
 import {
-  UPDATE_BANNERS,
-  UPDATE_RECOMMEND_LIST,
-  UPDATE_RECOMMEND_NEW_SONGS
+  SET_LOADING,
+  SET_BANNERS,
+  SET_RECOMMEND_LIST,
+  SET_RECOMMEND_NEW_SONGS
 } from './actionTypes';
 
 import {
@@ -10,36 +11,42 @@ import {
   getRecommendNewSongsRequest
 } from '../../../apis/requests/recommend';
 
-
-export const updateBanners = (payload) => {
+export const changeLoading = payload => {
   return {
-    type: UPDATE_BANNERS,
+    type: SET_LOADING,
+    payload
+  }
+}
+
+export const changeBanners = (payload) => {
+  return {
+    type: SET_BANNERS,
     payload
   }
 };
 
-export const updateRecommendList = (payload) => {
+export const changeRecommendList = payload => {
   return {
-    type: UPDATE_RECOMMEND_LIST,
+    type: SET_RECOMMEND_LIST,
     payload
   }
 };
 
-export const updateRecommendNewSongs = (payload) => {
+export const changeRecommendNewSongs = payload => {
   return {
-    type: UPDATE_RECOMMEND_NEW_SONGS,
+    type: SET_RECOMMEND_NEW_SONGS,
     payload
   }
 };
 
 /**
  * 获取banner数据
- * @param {Number} type 
+ * @param {Number} type 客户端类型
  */
-export const getBannersAction = (type) => {
+export const getBannersAction = type => {
   return async (dispatch) => {
     const resp = await getBannersRequest(type);
-    dispatch(updateBanners(resp.banners))
+    dispatch(changeBanners(resp.banners))
   }
 }
 
@@ -47,10 +54,11 @@ export const getBannersAction = (type) => {
  * 获取推荐歌单数据
  * @param {Number} limit 
  */
-export const getRecommendListAction = (limit) => {
+export const getRecommendListAction = limit => {
   return async (dispatch) => {
+    dispatch(changeLoading(true))
     const resp = await getRecommendListRequest(limit);
-    dispatch(updateRecommendList(resp.result))
+    dispatch(changeRecommendList(resp.result))
   }
 }
 
@@ -60,6 +68,6 @@ export const getRecommendListAction = (limit) => {
 export const getRecommendNewSongsAction = () => {
   return async (dispatch) => {
     const resp = await getRecommendNewSongsRequest();
-    dispatch(updateRecommendNewSongs(resp))
+    dispatch(changeRecommendNewSongs(resp))
   }
 }

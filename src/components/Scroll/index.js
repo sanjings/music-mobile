@@ -10,7 +10,7 @@ import React,
 } from 'react'
 import BScroll from 'better-scroll'
 
-import Loading from '../../components/Loading'
+import LoadingV3 from '../../components/LoadingV3'
 import LoadingV2 from '../../components/LoadingV2'
 
 import { debounce } from '../../utils/tools'
@@ -141,7 +141,7 @@ const Scroll = forwardRef((props, ref) => {
   return (
     <div ref={scrollRef} className={styles['scroll-wrapper']}>
       { children}
-      { pullDownLoading && <div className={styles['pulldown-loading']}><Loading /></div>}
+      { pullDownLoading && <div className={styles['pulldown-loading']}><LoadingV3 /></div>}
       { pullUpLoading && <div className={styles['pullup-loading']}><LoadingV2 label="加载中" /></div>}
     </div>
   )

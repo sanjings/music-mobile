@@ -14,13 +14,13 @@ import styles from './index.module.scss'
 const { getAlbumDetailAction } = actions;
 
 const Album = props => {
-  const [title, setTitle] = useState('歌单'),
-        [isTitleMarquee, setIsTitleMarquee] = useState(false),
-        [show, setShow] = useState(true);
-
   const albumDetail = useSelector(state => state.album.albumDetail),
         loading = useSelector(state => state.album.loading),
         playList = useSelector(state => state.player.playList);
+
+  const [title, setTitle] = useState('歌单'),
+        [isTitleMarquee, setIsTitleMarquee] = useState(false),
+        [show, setShow] = useState(true);
 
   const headerRef = useRef();
 
@@ -40,7 +40,6 @@ const Album = props => {
   const handleClickBack = useCallback(() => {
     setShow(false)
   }, [])
-
 
   /**
    * 列表滚动时改变页头
@@ -88,7 +87,7 @@ const Album = props => {
         }
 
         {/* 加载loading */}
-        {loading && <div className={styles['loading']}><Loading /></div>}
+        {loading && <Loading />}
       </div>
     </CSSTransition>
   )
