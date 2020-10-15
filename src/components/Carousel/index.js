@@ -1,4 +1,5 @@
 import React, { memo, useState, useEffect } from 'react';
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import Swiper from 'swiper'
 
@@ -51,6 +52,14 @@ const Carousel = props => {
       </div>
     </div>
   )
+}
+
+Carousel.defaultProps = {
+  banners: []
+}
+
+Carousel.propTypes = {
+  banners: PropTypes.array
 }
 
 export default memo(Carousel)

@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 import styles from './index.module.scss'
@@ -19,6 +20,14 @@ const Header = props => {
       </Link>
     </header>
   )
+}
+
+Header.defaultProps = {
+  title: 'DD音乐台'
+}
+
+Header.propTypes = {
+  title: PropTypes.string
 }
 
 export default memo(Header)

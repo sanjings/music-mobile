@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types'
 import LazyLoad from "react-lazyload";
 
 import styles from './index.module.scss'
@@ -13,9 +14,14 @@ const Cover = props => {
       >
         <img src={coverImgUrl} height="100%" alt="榜单封面" />
       </LazyLoad>
-      <div className={styles['update-frequency']}>{updateFrequency}</div>
+      <p className={styles['update-frequency']}>{ updateFrequency }</p>
     </div>
   )
+}
+
+Cover.propTypes = {
+  coverImgUrl: PropTypes.string,
+  updateFrequency: PropTypes.string
 }
 
 export default memo(Cover)

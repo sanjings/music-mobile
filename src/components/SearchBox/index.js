@@ -7,6 +7,7 @@ import React, {
   useImperativeHandle,
   forwardRef
 } from "react"
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { debounce } from '../../utils/tools'
@@ -105,5 +106,11 @@ const SearchBox = forwardRef((props, ref) => {
     </div>
   )
 })
+
+SearchBox.propTypes = {
+  keywords: PropTypes.string,
+  clickBack: PropTypes.func,
+  onInput: PropTypes.func
+}
 
 export default memo(SearchBox)

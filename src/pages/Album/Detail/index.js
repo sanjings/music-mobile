@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types'
 
 import SongList from '../../../components/SongList'
 import AlbumDesc from './desc'
@@ -39,6 +40,10 @@ const AlbumDetail = props => {
       </div>
     </div>
   )
+}
+
+AlbumDetail.propTypes = {
+  data: PropTypes.object
 }
 
 export default memo(AlbumDetail)

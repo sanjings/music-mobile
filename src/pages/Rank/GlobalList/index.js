@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
 import Cover from '../Cover'
@@ -22,6 +23,14 @@ const GlobalList = props => {
       }
     </div>
   )
+}
+
+GlobalList.defaultProps = {
+  listData: []
+}
+
+GlobalList.propTypes = {
+  listData: PropTypes.array
 }
 
 export default memo(GlobalList)

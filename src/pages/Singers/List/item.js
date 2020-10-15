@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import LazyLoad from 'react-lazyload'
 
@@ -23,7 +24,10 @@ const ListItem = props => {
       <p className={styles['name']}>{name}</p>
     </Link>
   )
+}
 
+ListItem.propTypes = {
+  itemData: PropTypes.object
 }
 
 export default memo(ListItem)

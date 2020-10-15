@@ -89,7 +89,7 @@ const Singer = props => {
           &&
           <>
             <Header
-              clickBack={handleClickBack}
+              onClickBack={handleClickBack}
               title={singerDetail.name}
             />
             {/* 歌手封面 */}

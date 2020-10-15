@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 
 import ListItem from './item'
@@ -69,9 +70,21 @@ const SongList = props => {
 }
 
 SongList.defaultProps = {
+  listData: [],
   showIndex: true,
+  showMenu: false,
   showCollect: false,
-  showPlay: true
+  showPlay: true,
+  subscribedCount: 0
+};
+
+SongList.propTypes = {
+  listData: PropTypes.array,
+  showIndex: PropTypes.bool,
+  showMenu: PropTypes.bool,
+  showCollect: PropTypes.bool,
+  showPlay: PropTypes.bool,
+  subscribedCount: PropTypes.number
 };
 
 export default memo(SongList)

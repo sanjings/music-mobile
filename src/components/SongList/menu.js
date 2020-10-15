@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types'
 
 import { formatCount } from '../../utils/filters'
 
@@ -26,6 +27,15 @@ const ListMenu = props => {
       }
     </div>
   )
+}
+
+ListMenu.defaultProps = {
+  songCount: 0
+}
+
+ListMenu.propTypes = {
+  songCount: PropTypes.number,
+  onClickPlayAll: PropTypes.func
 }
 
 export default memo(ListMenu)

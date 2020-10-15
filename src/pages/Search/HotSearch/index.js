@@ -1,4 +1,5 @@
 import React, { memo } from "react"
+import PropTypes from 'prop-types'
 
 import styles from './index.module.scss'
 
@@ -34,6 +35,15 @@ const HotSearch = props => {
       </ul>
     </div>
   )
+}
+
+HotSearch.defaultProps = {
+  listData: []
+}
+
+HotSearch.propTypes = {
+  listData: PropTypes.array,
+  onItemClick: PropTypes.func
 }
 
 export default memo(HotSearch)

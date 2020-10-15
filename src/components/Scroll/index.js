@@ -8,6 +8,7 @@ import React,
   useRef,
   forwardRef
 } from 'react'
+import PropTypes from 'prop-types'
 import BScroll from 'better-scroll'
 
 import LoadingV3 from '../../components/LoadingV3'
@@ -19,8 +20,8 @@ import styles from './index.module.scss'
 
 const Scroll = forwardRef((props, ref) => {
   const {
-    click,
     direction,
+    click,
     bounceTop,
     bounceBottom,
     bounceLeft,
@@ -154,6 +155,23 @@ Scroll.defaultProps = {
   bounceBottom: true,
   bounceLeft: true,
   bounceRight: true,
+  pullDownLoading: false,
+  pullUpLoading: false
+};
+
+Scroll.propTypes = {
+  direction: PropTypes.oneOf(['horizontal', 'vertical']),
+  click: PropTypes.bool,
+  bounceTop: PropTypes.bool,
+  bounceBottom: PropTypes.bool,
+  bounceLeft: PropTypes.bool,
+  bounceRight: PropTypes.bool,
+  pullDownLoading: PropTypes.bool,
+  pullUpLoading: PropTypes.bool,
+  onScroll: PropTypes.func, 
+  onPullDown: PropTypes.func, 
+  onPullUp: PropTypes.func,
+  children: PropTypes.element
 };
 
 export default memo(Scroll)

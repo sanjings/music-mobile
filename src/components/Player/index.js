@@ -31,7 +31,7 @@ const Player = () => {
   const [preSongId, setPreSongId] = useState(),
         [currentTime, setCurrentTime] = useState(0),
         [duration, setDuration] = useState(0),
-        [currentPlayingLyric, setPlayingLyric] = useState('');
+        [currentPlayingLyric, setPlayingLyric] = useState();
 
   const percent = isNaN(currentTime / duration) ? 0 : currentTime / duration;
   
@@ -74,7 +74,7 @@ const Player = () => {
 
   const getLyric = async (id) => {
     const resp = await getLyricRequest(id),
-          lyric = resp.lrc.lyric;
+          lyric = resp.lrc ? resp.lrc.lyric : null;
     
     if (!lyric) {
       currentLyric.current = null;
@@ -124,6 +124,10 @@ const Player = () => {
 
   const handleDelete = index => {
     dispatch(deleteSongAction(index))
+  }
+
+  const handleClickPlay = index => {
+    this.changeCurrentIndex(index)
   }
 
   /**
@@ -203,6 +207,7 @@ const Player = () => {
           playList={playList}
           toggleShowPlayList={toggleShowPlayList}
           onClickDelete={handleDelete}
+          onClickPlay={handleClickPlay}
         />
       }
       

@@ -1,4 +1,5 @@
 import React, { memo } from "react"
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import LazyLoad from "react-lazyload";
 
@@ -32,6 +33,16 @@ const suggest = props => {
       </div>
     </div>
   )
+}
+
+suggest.defaultProps = {
+  listData: [],
+  type: '歌手'
+}
+
+suggest.propTypes = {
+  listData: PropTypes.array,
+  type: PropTypes.oneOf(['歌手', '歌单'])
 }
 
 export default memo(suggest)

@@ -75,7 +75,7 @@ const Album = props => {
           ref={headerRef}
           title={title}
           isTitleMarquee={isTitleMarquee}
-          clickBack={handleClickBack}
+          onClickBack={handleClickBack}
         />
 
         {

@@ -1,4 +1,5 @@
 import React, { memo, useCallback, useRef, useState } from "react"
+import PropTypes from 'prop-types'
 import { CSSTransition } from 'react-transition-group'
 import animations from 'create-keyframe-animation'
 
@@ -40,11 +41,16 @@ const FullScreenPlayer = props => {
   const fullPlayerRef = useRef(),
         cdRef = useRef();
 
+  /**
+   * 切换cd和歌词显示
+   */
   const toggleCd = useCallback(status => {
     setShowCd(status)
   }, [])
 
-  // 计算偏移的辅助函数
+  /**
+   * 计算偏移的辅助函数
+   */
   const _getPosAndScale = () => {
     const targetWidth = 40;
     const paddingLeft = 30;
@@ -123,13 +129,13 @@ const FullScreenPlayer = props => {
     >
       <div ref={fullPlayerRef} className={styles['fullscreen-player']}>
         {/* 背景 */}
-        <Background picUrl={ album.picUrl }  />
+        <Background picUrl={album.picUrl}  />
 
         {/* 顶部 */}
         <Top 
-          songName={ name } 
-          singerName={ formatSingerName(singers) }
-          toggleFullScreen={ toggleFullScreen } 
+          songName={name} 
+          singerName={formatSingerName(singers)}
+          toggleFullScreen={toggleFullScreen} 
         />
 
         {/* cd封面或全屏歌词 */}
@@ -138,7 +144,7 @@ const FullScreenPlayer = props => {
           ?
           <CD
             ref={cdRef} 
-            picUrl={ album.picUrl } 
+            picUrl={album.picUrl} 
             playingStatus={playingStatus}
             toggleCd={toggleCd}
             currentPlayingLyric={currentPlayingLyric} 
@@ -166,6 +172,29 @@ const FullScreenPlayer = props => {
       </div>
     </CSSTransition>
   )
+}
+
+FullScreenPlayer.defaultProps = {
+  playingStatus: false,
+  currentPlayingLyric: '纯音乐，暂无歌词'
+}
+
+FullScreenPlayer.propTypes = {
+  song: PropTypes.object, 
+  fullScreen: PropTypes.bool, 
+  playingStatus: PropTypes.bool,
+  currentTime: PropTypes.number, 
+  duration: PropTypes.number, 
+  percent: PropTypes.number,
+  currentLyric: PropTypes.object,
+  currentPlayingLyric: PropTypes.string,
+  currentLineNum: PropTypes.number,
+  toggleFullScreen: PropTypes.func,
+  togglePlayingState: PropTypes.func,
+  toggleShowPlayList: PropTypes.func,
+  onProgressChange: PropTypes.func, 
+  onClickNext: PropTypes.func, 
+  onClickPrev: PropTypes.func 
 }
 
 export default memo(FullScreenPlayer)

@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
 import Cover from "../Cover"
@@ -34,6 +35,10 @@ const ListItem = props => {
       </ul>
     </Link>
   )
+}
+
+ListItem.propTypes = {
+  itemData: PropTypes.object
 }
 
 

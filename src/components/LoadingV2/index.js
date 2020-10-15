@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types'
 
 import styles from './index.module.scss'
 
@@ -16,6 +17,14 @@ const LoadingV2 = props => {
       <span className={styles['loading-text']}>{label}</span>
     </div>
   )
+}
+
+LoadingV2.defaultProps = {
+  label: '加载中...'
+}
+
+LoadingV2.propTypes = {
+  label: PropTypes.string
 }
 
 export default memo(LoadingV2)

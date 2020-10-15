@@ -9,10 +9,14 @@ const List = props => {
 
   const { onClickPlay, onClickDelete } = props
 
-  const handleDelete = e => {
+  /**
+   * 删除
+   * @param {Event} e 
+   * @param {Number | String} index 
+   */
+  const handleDelete = (e, index) => {
     e.stopPropagation();
-    const index = Number(e.target.dataset.index)
-    onClickDelete(index)
+    onClickDelete(Number(index))
   }
 
   return (
@@ -42,8 +46,8 @@ const List = props => {
             </div>
 
             {/* 删除按钮 */}
-            <div className={styles['delete']} onClick={handleDelete}>
-              <i className="iconfont icon-delete" data-index={index}></i>
+            <div className={styles['delete']} onClick={(e) => handleDelete(e, index)}>
+              <i className="iconfont icon-delete"></i>
             </div>
           </li>
         ))

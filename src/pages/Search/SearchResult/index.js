@@ -1,4 +1,5 @@
 import React, { memo } from "react"
+import PropTypes from 'prop-types'
 
 import Suggest from './suggest'
 import SongList from '../../../components/SongList'
@@ -32,6 +33,10 @@ const SearchResult = props => {
       />
     </div>
   )
+}
+
+SearchResult.propTypes = {
+  data: PropTypes.object
 }
 
 export default memo(SearchResult)

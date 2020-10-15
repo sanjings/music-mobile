@@ -1,4 +1,5 @@
 import React, { memo, useRef } from "react"
+import PropTypes from 'prop-types'
 import { CSSTransition } from 'react-transition-group'
 import classnames from 'classnames'
 
@@ -14,11 +15,19 @@ const MiniPlayer = props => {
 
   const miniPlayerRef = useRef()
 
+  /**
+   * 歌曲播放/暂停
+   * @param {Event} e 
+   */
   const handleTogglePlayStatus = (e) => {
     e.stopPropagation();
     togglePlayingState(!playingStatus)
   }
 
+  /**
+   * 显示播放列表
+   * @param {Event} e 
+   */
   const handleShowPlayList = (e) => {
     e.stopPropagation();
     toggleShowPlayList(true)
@@ -67,6 +76,19 @@ const MiniPlayer = props => {
       </div>
     </CSSTransition>
   )
+}
+
+MiniPlayer.defaultProps = {
+  playingStatus: false
+}
+
+MiniPlayer.propTypes = {
+  song: PropTypes.object, 
+  fullScreen: PropTypes.bool, 
+  playingStatus: PropTypes.bool,
+  toggleFullScreen: PropTypes.func,
+  togglePlayingState: PropTypes.func,
+  toggleShowPlayList: PropTypes.func
 }
 
 export default memo(MiniPlayer)

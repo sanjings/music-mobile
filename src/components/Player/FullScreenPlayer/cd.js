@@ -1,4 +1,5 @@
 import React, { memo, forwardRef } from "react"
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import styles from './cd.module.scss'
@@ -18,5 +19,10 @@ const CD = forwardRef((props, ref) => {
     </div>
   )
 })
+
+CD.propTypes = {
+  picUrl: PropTypes.string,
+  toggleCd: PropTypes.func
+}
 
 export default memo(CD)

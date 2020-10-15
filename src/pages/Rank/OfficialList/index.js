@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types'
 
 import ListItem from './item'
 
@@ -16,6 +17,15 @@ const OfficialList = (props) => {
       }
     </div>
   )
+}
+
+
+OfficialList.defaultProps = {
+  listData: []
+}
+
+OfficialList.propTypes = {
+  listData: PropTypes.array
 }
 
 export default memo(OfficialList)

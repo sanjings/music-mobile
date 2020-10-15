@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { formatNumber, formatSingerName } from '../../utils/filters'
@@ -12,7 +13,7 @@ const ListItem = props => {
   const { onClickPlay } = props
 
   return (
-    <li className={styles['list-item']} data-index={index} onClick={() => onClickPlay(index)}>
+    <li className={styles['list-item']} onClick={() => onClickPlay(index)}>
       {/* 序号 */}
       {
         showIndex
@@ -48,5 +49,14 @@ const ListItem = props => {
   )
 }
 
+ListItem.defaultProps = {
+  index: 0
+}
+
+ListItem.propTypes = {
+  itemData: PropTypes.object,
+  index: PropTypes.number,
+  onClickPlay: PropTypes.func
+}
 
 export default memo(ListItem)

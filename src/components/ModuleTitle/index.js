@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import styles from './index.module.scss'
@@ -14,8 +15,12 @@ const ModuleTitle = props => {
 }
 
 ModuleTitle.defaultProps = {
-  size: 'default',
   symbol: true
+}
+
+ModuleTitle.propTypes = {
+  size: PropTypes.string,
+  symbol: PropTypes.bool
 }
 
 export default memo(ModuleTitle)

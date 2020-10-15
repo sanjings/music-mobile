@@ -1,4 +1,5 @@
 import React, { memo, useEffect, useRef } from 'react'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import Scroll from '../../../components/Scroll'
@@ -8,7 +9,7 @@ import styles from './index.module.scss'
 const Tab = props => {
   const { currentType, listData } = props;
 
-  const { handleClick } = props;
+  const { onItemClick } = props;
 
   const listRef = useRef(null);
 
@@ -32,16 +33,16 @@ const Tab = props => {
    * item点击事件
    * @param {Event} e 
    */
-  const clickHandle = (e) => {
+  const handleClick = (e) => {
     const target = e.target,
           itemValue = target.dataset.value;
 
-    itemValue != undefined && handleClick(itemValue)
+    itemValue != undefined && onItemClick(itemValue)
   }
 
   return (
     <Scroll direction="horizontal">
-      <ul className={styles['tab-list']} ref={listRef} onClick={clickHandle}>
+      <ul className={styles['tab-list']} ref={listRef} onClick={handleClick}>
         {
           listData.map(item => (
             <li
@@ -56,6 +57,12 @@ const Tab = props => {
       </ul>
     </Scroll>
   )
+}
+
+Tab.propTypes = {
+  currentType: PropTypes.string,
+  listData: PropTypes.array,
+  onItemClick: PropTypes.func
 }
 
 export default memo(Tab)

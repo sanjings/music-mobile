@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types'
 
 import ListItem from './item'
 
@@ -14,7 +15,15 @@ const SingerList = props => {
       }
     </div>
   )
-
 }
+
+SingerList.defaultProps = {
+  listData: []
+}
+
+SingerList.propTypes = {
+  listData: PropTypes.array
+}
+
 
 export default memo(SingerList)

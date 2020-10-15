@@ -1,20 +1,16 @@
 import React, { memo, useCallback, useState, useRef } from "react"
+import PropTypes from 'prop-types'
 import { CSSTransition } from 'react-transition-group'
-import { useDispatch } from 'react-redux'
 
 import Scroll from '../../../components/Scroll'
 import List from './list'
 
-import { actions } from '../store'
-
 import styles from './index.module.scss'
-
-const  { changeCurrentIndexAction } = actions
 
 const PlayList = props => {
   const { playList, currentIndex } = props
 
-  const { toggleShowPlayList, onClickDelete } = props
+  const { toggleShowPlayList, onClickPlay, onClickDelete } = props
 
   const [show, setShow] = useState(true),
         [canTouch, setCanTouch] = useState(true),
@@ -22,16 +18,17 @@ const PlayList = props => {
 
   const listRef = useRef()
 
-  const dispatch = useDispatch()
-
+  /**
+   * bScroll滚动事件回调
+   */
   const handleScroll = useCallback(({y}) => {
     setCanTouch(y === 0)
   }, [])
 
-  const handleClickPlay = index => {
-    dispatch(changeCurrentIndexAction(index))
-  }
-
+  /**
+   * 列表容器touchStart事件
+   * @param {Event} e 
+   */
   const handleTouchStart = e => {
     if (!canTouch || touchInfo.initiated) return;
     setTouchInfo({
@@ -41,6 +38,10 @@ const PlayList = props => {
     })
   }
 
+  /**
+   * 列表容器touchMove事件
+   * @param {Event} e 
+   */
   const handleTouchMove = e => {
     if (!canTouch || !touchInfo.initiated) return;
 
@@ -53,6 +54,10 @@ const PlayList = props => {
     listRef.current.style.transform = `translate3d(0, ${distance}px, 0)`
   }
 
+  /**
+   * 列表容器touchEnd事件
+   * @param {Event} e 
+   */
   const handleTouchEnd = e => {
     setTouchInfo({
       ...touchInfo,
@@ -102,7 +107,7 @@ const PlayList = props => {
                 listData={playList} 
                 currentIndex={currentIndex}
                 onClickDelete={onClickDelete}
-                onClickPlay={handleClickPlay} 
+                onClickPlay={onClickPlay} 
               />
             </Scroll>
           </div>
@@ -110,6 +115,19 @@ const PlayList = props => {
       </div>
     </CSSTransition>
   )
+}
+
+PlayList.defaultProps = {
+  playList: [],
+  currentIndex: 0
+}
+
+PlayList.propTypes = {
+  playList: PropTypes.array,
+  currentIndex: PropTypes.number,
+  toggleShowPlayList: PropTypes.func,
+  onClickPlay: PropTypes.func,
+  onClickDelete: PropTypes.func
 }
 
 export default memo(PlayList)

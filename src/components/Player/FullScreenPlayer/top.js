@@ -1,4 +1,5 @@
 import React, { memo } from "react"
+import PropTypes from 'prop-types'
 
 import styles from './top.module.scss'
 
@@ -9,7 +10,7 @@ const Top = props => {
 
   return (
     <div className={styles['top']}>
-      <div className={styles['back']} onClick={ () => toggleFullScreen(false) }>
+      <div className={styles['back']} onClick={() => toggleFullScreen(false)}>
         <i className="iconfont icon-downarrow"></i>
       </div>
       <div className={styles['song-info']}>
@@ -18,6 +19,12 @@ const Top = props => {
       </div>
     </div>
   )
+}
+
+Top.propTypes = {
+  songName: PropTypes.string,
+  singerName: PropTypes.string,
+  toggleFullScreen: PropTypes.func
 }
 
 export default memo(Top)

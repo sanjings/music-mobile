@@ -77,7 +77,7 @@ const Singers = props => {
           <Tab
             currentType={currentTabType}
             listData={alphaTypes}
-            handleClick={changeTabType}
+            onItemClick={changeTabType}
           />
         </div>
 

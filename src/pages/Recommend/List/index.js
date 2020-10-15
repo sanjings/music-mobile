@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types'
 
 import ListItem from './item'
 
@@ -17,6 +18,15 @@ const RecommendList = props => {
     </div>
   )
 }
+
+RecommendList.defaultProps = {
+  listData: []
+}
+
+RecommendList.propTypes = {
+  listData: PropTypes.array
+}
+
 
 
 export default memo(RecommendList)

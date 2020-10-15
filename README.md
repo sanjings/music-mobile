@@ -8,7 +8,8 @@
 
 ### todoList
 
-defaultProps和propType
+// defaultProps和propType
+搜索列表列表在播放状态下显示不完全bug
 滚动歌曲进度条bug
 播放列表上下滑动不流畅bug
 删除当前正在播放的歌曲bug
