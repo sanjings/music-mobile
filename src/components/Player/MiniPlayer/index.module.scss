@@ -36,6 +36,9 @@
   }
   .text{
     flex: 1;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
     .name{
       margin-bottom: 5px;
     }

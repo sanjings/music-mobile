@@ -55,7 +55,7 @@ const MiniPlayer = props => {
           <img className={styles['cover']} src={ album.picUrl + '?param=100x100' } width="40" height="40"></img>
         </div>
         <div className={styles['text']}>
-        <p className={styles['name']}>{ name }</p>
+          <p className={styles['name']}>{ name }</p>
           <p className={styles['singer']}>{ formatSingerName(singers) }</p>
         </div>
         <div className={styles['control']} onClick={handleTogglePlayStatus}>

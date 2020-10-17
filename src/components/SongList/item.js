@@ -21,7 +21,7 @@ const ListItem = props => {
         <div
           className={classnames([styles['index'], index < 3 && styles['top']])}
         >
-          {formatNumber(index + 1)}
+          { formatNumber(index + 1) }
         </div>
       }
 
@@ -30,9 +30,9 @@ const ListItem = props => {
         <div className={styles['song-info']}>
           <p className={styles['name']}>{name}</p>
           <p className={styles['singer']}>
-            <span>{formatSingerName(singers)}</span>
+            <span>{ formatSingerName(singers) }</span>
             <span> - </span>
-            <span>{album.name}</span>
+            <span>{ album.name }</span>
           </p>
         </div>
 

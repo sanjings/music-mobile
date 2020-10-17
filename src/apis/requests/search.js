@@ -23,6 +23,11 @@ const getSearchListRequest = keywords => {
       return list.map(item => {
         return {
           ...item,
+          album: {
+            ...item.album,
+            picUrl: 'https://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg'
+          },
+          dt: item.duration,
           singers: item.artists
         }
       })

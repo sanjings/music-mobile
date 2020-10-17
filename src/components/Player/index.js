@@ -41,7 +41,8 @@ const Player = () => {
         currentLyric = useRef(),
         currentLineNum = useRef(0);
 
-  useEffect(() => {
+        
+  useEffect(() => {  
     if (
       !playList.length || 
       !playList[currentIndex] || 
@@ -59,7 +60,7 @@ const Player = () => {
     getLyric(curSong.id)
     setCurrentTime(0);
     setDuration((curSong.dt / 1000) || 0)
-  }, [currentIndex, playList]);
+  }, [currentIndex, playList, currentSong]);
 
   useEffect(() => {
     const audioDom = audioRef.current
@@ -127,7 +128,7 @@ const Player = () => {
   }
 
   const handleClickPlay = index => {
-    this.changeCurrentIndex(index)
+    changeCurrentIndex(index)
   }
 
   /**

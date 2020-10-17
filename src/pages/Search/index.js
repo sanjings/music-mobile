@@ -17,7 +17,8 @@ const { getHotKeywordsListAction, getSearchDataAction, changeSearchDataAction } 
 
 const Search = props => {
   const hotKeywordsList = useSelector(state => state.search.hotKeywordsList),
-        searchData = useSelector(state => state.search.searchData);
+        searchData = useSelector(state => state.search.searchData),
+        playList = useSelector(state => state.player.playList);
 
   const [show, setShow] = useState(true),
         [keywords, setKeywords] = useState('');
@@ -56,6 +57,15 @@ const Search = props => {
     dispatch(getSearchDataAction(value))
   }, [])
 
+  /**
+   * 根据播放状态动态改变滚动高度
+   */
+  const wrapperStyle = {
+    flex: 1,
+    overflow: 'hidden',
+    marginBottom: playList.length ? '60px' : 0
+  }
+
   return (
     <CSSTransition
       in={show}
@@ -77,7 +87,7 @@ const Search = props => {
         {
           searchData
           ?
-          <div className={styles['search-result-wrapper']}>
+          <div style={wrapperStyle}>
             <Scroll onScroll={forceCheck}>
               <SearchResult
                 data={searchData} 

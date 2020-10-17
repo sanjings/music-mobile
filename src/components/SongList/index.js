@@ -10,7 +10,7 @@ import { actions } from '../Player/store'
 
 import styles from './index.module.scss'
 
-const  { changeCurrentIndexAction, changePlayListAction } = actions
+const { changeCurrentIndexAction, changePlayListAction } = actions
 
 const SongList = props => {
   const {

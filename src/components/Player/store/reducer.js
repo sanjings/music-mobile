@@ -22,11 +22,13 @@ const deleteSongFormPlayList = (state, index) => {
   const playList = state.playList;
 
   playList.splice(index, 1)
+
   if (index < currentIndex) currentIndex--;
 
   return {
     ...state,
     playList,
+    currentSong: playList[currentIndex],
     currentIndex
   }
 }

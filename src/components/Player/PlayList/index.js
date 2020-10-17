@@ -31,6 +31,7 @@ const PlayList = props => {
    */
   const handleTouchStart = e => {
     if (!canTouch || touchInfo.initiated) return;
+    listRef.current.style["transition"] = "";
     setTouchInfo({
       initiated: true,
       startY: e.nativeEvent.touches[0].pageY,
@@ -67,7 +68,7 @@ const PlayList = props => {
     if (touchInfo.distance >= 200) {
       setShow(false)
     } else {
-      listRef.current.style.transition = `transform .3s`
+      listRef.current.style.transition = `all .3s`
       listRef.current.style.transform = `translate3d(0, 0, 0)`
     }
   }

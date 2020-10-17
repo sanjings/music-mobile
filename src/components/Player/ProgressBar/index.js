@@ -1,7 +1,5 @@
-import React, { memo, useState, useRef, useEffect, useMemo } from 'react';
+import React, { memo, useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types'
-
-import { debounce } from '../../../utils/tools'
 
 import styles from './index.module.scss'
 
@@ -32,8 +30,10 @@ const ProgressBar = props => {
   useEffect(() => {
     if (!barWidth) return ;
 
-    const offsetWidth = barWidth * percent;
-    _offset(offsetWidth)
+    if (percent >= 0 && percent <= 1 && !touchInfo.initiated) {
+      const offsetWidth = (barWidth - progressBtnWidth) * percent;
+      _offset(offsetWidth)
+    }
   }, [percent, barWidth]);
 
   /**
@@ -42,6 +42,7 @@ const ProgressBar = props => {
   const _changePercent = () => {
     const progressDom = progressRef.current,
           curPercent = progressDom.clientWidth / (barWidth - progressBtnWidth);
+          
 
     onChange(curPercent)
   }
@@ -59,6 +60,7 @@ const ProgressBar = props => {
     } else if (offsetWidth >= barWidth - progressBtnWidth) {
       offsetWidth = barWidth - progressBtnWidth
     }
+
     progressDom.style.width = `${offsetWidth}px`;
     progressBtnDom.style.left = `${offsetWidth}px`;
   }
@@ -108,9 +110,10 @@ const ProgressBar = props => {
    * @param {Event} e 
    */
   const handleClick = e => {
+    e.stopPropagation()
     const offsetLeft = barRef.current.offsetLeft;
-    const offsetWidth = e.pageX - offsetLeft - (progressBtnWidth / 2);
-    _offset (offsetWidth);
+    const offsetWidth = e.pageX - offsetLeft;
+    _offset(offsetWidth);
     _changePercent()
   }
 

@@ -14,6 +14,9 @@
     }
   }
   .song-info{
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
     .song-name{
       margin-bottom: 2px;
       font-size: 16px;

@@ -7,6 +7,7 @@ import {
   SET_SHOW_PLAY_LIST,
   DELETE_SONG
 } from './actionTypes'
+import { getSongDetailRequest } from '../../../apis/requests/song'
 
 export const changeFullScreenAction = payload => ({
   type: SET_FULL_SCREEN,

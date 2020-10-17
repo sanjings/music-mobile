@@ -38,7 +38,9 @@
   }
   .lyrics{
     margin-top: 40px;
+    padding: 0 40px;
     color: #ccc;
+    word-break: break-all;
   }
 
   @keyframes spin {
