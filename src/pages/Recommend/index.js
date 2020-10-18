@@ -3,11 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { renderRoutes } from 'react-router-config';
 import { forceCheck } from 'react-lazyload';
 
-import Scroll from '../../components/Scroll'
-import Loading from '../../components/Loading'
-import Carousel from '../../components/Carousel'
-import ModuleTitle from '../../components/ModuleTitle'
-import SongList from '../../components/SongList'
+import Scroll from 'components/Scroll'
+import Loading from 'components/Loading'
+import Carousel from 'components/Carousel'
+import ModuleTitle from 'components/ModuleTitle'
+import SongList from 'components/SongList'
 import RecommendList from './List'
 
 import { actions } from './store';
@@ -33,9 +33,9 @@ const Recommend = props => {
    * 获取banner、recommend数据
    */
   useEffect(() => {
-    dispatch(getBannersAction(2))
-    dispatch(getRecommendListAction(12))
-    dispatch(getRecommendNewSongsAction())
+    !banners.length && dispatch(getBannersAction(2))
+    !recommendList.length && dispatch(getRecommendListAction(12))
+    !newSongs.length && dispatch(getRecommendNewSongsAction())
   }, []);
 
   /**

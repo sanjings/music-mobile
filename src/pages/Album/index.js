@@ -2,8 +2,8 @@ import React, { memo, useCallback, useEffect, useState, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { CSSTransition } from "react-transition-group";
 
-import Scroll from '../../components/Scroll'
-import Loading from '../../components/Loading'
+import Scroll from 'components/Scroll'
+import Loading from 'components/Loading'
 import Header from './Header'
 import Detail from './Detail'
 
@@ -49,7 +49,7 @@ const Album = props => {
     const headerDom = headerRef.current
     if (pos.y < -MaxHeight) {
       const percent = Math.abs(pos.y / MaxHeight)
-      headerDom.style.backgroundColor = '#D44439'
+      headerDom.style.backgroundColor = '$color-red'
       headerDom.style.opacity = Math.min(1, (percent - 1) / 2);
       setTitle(albumDetail.name)
       setIsTitleMarquee(true)

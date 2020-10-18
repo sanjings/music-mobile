@@ -2,12 +2,12 @@ import React, { memo, useEffect, useRef, createRef } from "react"
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import Scroll from '../../../components/Scroll'
+import Scroll from 'components/Scroll'
 
 import styles from './lyric.module.scss'
 
 const Lyric = props => {
-  const { currentLyric, currentLineNum } = props
+  const { show, currentLyric, currentLineNum } = props
 
   const { toggleCd } = props
 
@@ -31,7 +31,11 @@ const Lyric = props => {
   }, [currentLineNum])
 
   return (
-    <div className={styles['lyric-wrapper']} onClick={() => toggleCd(true)}>
+    <div
+      style={{display: show ? 'block' : 'none'}} 
+      className={styles['lyric-wrapper']} 
+      onClick={() => toggleCd(true)}
+    >
       <Scroll ref={scrollRef}>
         <div className={styles['lyric-list']}>
           {
@@ -58,7 +62,12 @@ const Lyric = props => {
   )
 }
 
+Lyric.defaultProps = {
+  show: true
+}
+
 Lyric.propTypes = {
+  show: PropTypes.bool,
   toggleCd: PropTypes.func
 }
 

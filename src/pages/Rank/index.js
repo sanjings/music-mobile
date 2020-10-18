@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { renderRoutes } from 'react-router-config';
 import { forceCheck } from 'react-lazyload'
 
-import Scroll from '../../components/Scroll'
-import Loading from '../../components/Loading'
-import ModuleTitle from '../../components/ModuleTitle'
+import Scroll from 'components/Scroll'
+import Loading from 'components/Loading'
+import ModuleTitle from 'components/ModuleTitle'
 import GlobalList from './GlobalList'
 import OfficialList from './OfficialList'
 
@@ -25,7 +25,9 @@ const Rank = props => {
    * 获取榜单数据
    */
   useEffect(() => {
-    dispatch(getRankListAction())
+    if (!globalList.length || !officialList.length) {
+      dispatch(getRankListAction())
+    }
   }, [])
 
   /**

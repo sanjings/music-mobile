@@ -1,9 +1,9 @@
-import { SET_LOADING, SET_RANK_DATA } from './actionTypes'
-import { getRankListRequest } from '../../../apis/requests/rank'
+import { SET_RANK_LOADING, SET_RANK_DATA } from './actionTypes'
+import { getRankListRequest } from 'requests/rank'
 
 export const changeLoading = payload => {
   return {
-    type: SET_LOADING,
+    type: SET_RANK_LOADING,
     payload
   }
 }

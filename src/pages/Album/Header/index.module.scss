@@ -8,13 +8,13 @@
   width: 100%;
   height: 42px;
   padding: 0 5px;
-  font-size: 16px;
+  font-size: $font-size-large;
   color: #fff;
   background-color: transparent;
   .back{
     margin-right: 5px;
     i{
-        font-size: 24px;
+        font-size: $font-size-max;
         font-weight: 700;
     }
   }

@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types'
 
-import SongList from '../../../components/SongList'
+import SongList from 'components/SongList'
 import AlbumDesc from './desc'
 import AlbumMenu from './menu'
 

@@ -14,14 +14,14 @@
       top: 0;
       padding: 5px 5px 10px;
       width: 100%;
-      font-size: 12px;
+      font-size: $font-size-mini;
       text-align: right;
       color: #FFF;
       background: linear-gradient(hsla(0,0%,43%,.4),hsla(0,0%,100%,0));
 
       i{
         margin-right: 2px;
-        font-size: 12px;
+        font-size: $font-size-mini;
       }
     }
   }
@@ -32,7 +32,7 @@
     justify-content: space-around;
     padding: 0 10px;
     .title{
-      font-size: 16px;
+      font-size: $font-size-large;
       font-weight: 700;
       color: #fff;
     }
@@ -47,7 +47,7 @@
         overflow: hidden;
       }
       .person-name{
-        color: #BBA8A8;
+        color: $color-gold;
       }
     }
   }

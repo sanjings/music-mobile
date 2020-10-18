@@ -2,7 +2,7 @@ import {
   SET_SINGER_DETAIL,
   SET_SINGER_LOADING
 } from './actionTypes'
-import { getSingerDetailRequest } from '../../../apis/requests/singer'
+import { getSingerDetailRequest } from 'requests/singer'
 
 export const changeSingerDetailAction = (payload) => {
   return {

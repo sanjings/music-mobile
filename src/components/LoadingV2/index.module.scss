@@ -9,7 +9,7 @@
       margin-right: 2px;
       width: 1px;
       height: 10px;
-      background-color: #D44439;
+      background-color: $color-red;
       animation: move 0.8s infinite ease-in;
     }
     .line:nth-child(2) {
@@ -23,8 +23,8 @@
     }
   }
   .loading-text{
-    font-size: 12px;
-    color: #888;
+    font-size: $font-size-mini;
+    color: $color-light-gray;
   }
   @keyframes move {
     0% {

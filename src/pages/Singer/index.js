@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { CSSTransition } from "react-transition-group";
 
 import Header from './Header'
-import Scroll from '../../components/Scroll'
-import SongList from '../../components/SongList'
-import Loading from '../../components/Loading'
+import Scroll from 'components/Scroll'
+import SongList from 'components/SongList'
+import Loading from 'components/Loading'
 
 import { actions } from './store'
 

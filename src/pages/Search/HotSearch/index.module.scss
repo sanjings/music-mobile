@@ -2,7 +2,7 @@
   padding: 30px 0;
   .title{
     padding: 0 20px;
-    color: #BBA8A8;
+    color: $color-gold;
   }
   .list{
     display: flex;
@@ -13,7 +13,7 @@
       padding: 2px 10px;
       background-color: #fff;
       border-radius: 8px;
-      box-shadow: 1px 1px 1px 1px rgba($color: #999, $alpha: 0.1);
+      box-shadow: 1px 1px 1px 1px rgba($color: $color-light-gray, $alpha: 0.1);
       &:active{
         background-color: rgba(238, 238, 238, 0.2);
       }

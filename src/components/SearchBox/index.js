@@ -10,7 +10,7 @@ import React, {
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { debounce } from '../../utils/tools'
+import { debounce } from 'utils/tools'
 
 import styles from './index.module.scss'
 

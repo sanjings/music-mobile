@@ -1,5 +1,5 @@
 // 设置loading
-export const SET_LOADING = 'SET_LOADING' 
+export const SET_RECOM_LOADING = 'SET_RECOM_LOADING' 
 
 // 设置banners
 export const SET_BANNERS = 'SET_BANNERS' 

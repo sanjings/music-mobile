@@ -1,5 +1,5 @@
 import {
-  SET_LOADING,
+  SET_RECOM_LOADING,
   SET_BANNERS,
   SET_RECOMMEND_LIST,
   SET_RECOMMEND_NEW_SONGS
@@ -14,7 +14,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SET_LOADING:
+    case SET_RECOM_LOADING:
       return {
         ...state,
         loading: action.payload

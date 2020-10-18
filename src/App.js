@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { HashRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import { Provider } from 'react-redux'
@@ -9,7 +9,9 @@ const App = () => {
   return (
     <Provider store={store}>
       <HashRouter>
-        { renderRoutes(router) }
+        <Suspense fallback={null}>
+          { renderRoutes(router) }
+        </Suspense>
       </HashRouter>
     </Provider>
   );

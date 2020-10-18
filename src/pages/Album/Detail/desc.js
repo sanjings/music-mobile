@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types'
 
-import { formatCount } from '../../../utils/filters'
+import { formatCount } from 'utils/filters'
 
 import styles from './desc.module.scss'
 

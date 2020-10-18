@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { Redirect } from "react-router-dom";
 
-import HomeLayout from '../layouts/HomeLayout';
-import Recommend from '../pages/Recommend';
-import Rank from '../pages/Rank';
-import Singers from '../pages/Singers';
-import Singer from '../pages/Singer';
-import Album from '../pages/Album'
-import Search from '../pages/Search'
+const HomeLayout = lazy(() => import(/* webpackChunkName: "HomeLayout" */'../layouts/HomeLayout'))
+const Recommend = lazy(() => import(/* webpackChunkName: "Recommend" */'pages/Recommend'))
+const Rank = lazy(() => import(/* webpackChunkName: "Rank" */'pages/Rank'))
+const Singers = lazy(() => import(/* webpackChunkName: "Singers" */'pages/Singers'))
+const Singer = lazy(() => import(/* webpackChunkName: "Singer" */'pages/Singer'))
+const Album = lazy(() => import(/* webpackChunkName: "Album" */'pages/Album'))
+const Search = lazy(() => import(/* webpackChunkName: "Search" */'pages/Search'))
 
 export default [
   {

@@ -9,8 +9,8 @@
     border: 1px solid transparent;
     border-radius: 10px;
     &.actived{
-        border: 1px solid #D44439;
-        color:  #D44439;
+        border: 1px solid $color-red;
+        color:  $color-red;
     }
   }
 }

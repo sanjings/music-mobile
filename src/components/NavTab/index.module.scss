@@ -3,17 +3,17 @@
   justify-content: space-between;
   align-items: center;
   height: 44px;
-  background-color: #D44439;
+  background-color: $color-red;
   a {
     flex: 1;
     text-align: center;
-    color: #e4e4e4;
+    color: $color-deep-white;
     &.actived {
       span {
         padding-bottom: 4px;
         font-weight: 550;
         color: #f1f1f1;
-        border-bottom: 2px solid #f1f1f1;
+        border-bottom: 2px solid $color-deep-white;
       }
     }
   }

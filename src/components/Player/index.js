@@ -5,10 +5,10 @@ import FullScreenPlayer from './FullScreenPlayer'
 import MiniPlayer from './MiniPlayer'
 import PlayList from './PlayList'
 
-import { isEmptyObject } from '../../utils/tools'
-import { formatSongUrl } from '../../utils/filters'
-import { getLyricRequest } from '../../apis/requests/song'
-import LyricParser from '../../plugins/LyricParser'
+import { isEmptyObject } from 'utils/tools'
+import { formatSongUrl } from 'utils/filters'
+import { getLyricRequest } from 'requests/song'
+import LyricParser from 'plugins/LyricParser'
 import { actions } from './store'
 
 const { 

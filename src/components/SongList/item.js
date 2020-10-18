@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { formatNumber, formatSingerName } from '../../utils/filters'
+import { formatNumber, formatSingerName } from 'utils/filters'
 
 import styles from './item.module.scss'
 

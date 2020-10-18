@@ -1,6 +1,7 @@
 .top{
   display: flex;
   align-items: center;
+  padding-right: 10px;
   width: 100%;
   height: 50px;
   border-bottom: 1px solid rgba(228, 228, 228, 0.1);
@@ -19,10 +20,10 @@
     text-overflow: ellipsis;
     .song-name{
       margin-bottom: 2px;
-      font-size: 16px;
+      font-size: $font-size-normal;
     }
     .singer-name{
-      color: #555;
+      color: $color-gray;
     }
   }
 }

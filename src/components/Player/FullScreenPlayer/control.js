@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 import ProgressBar from '../ProgressBar'
 
-import { formatPlayTime } from '../../../utils/filters'
+import { formatPlayTime } from 'utils/filters'
 
 import styles from './control.module.scss'
 

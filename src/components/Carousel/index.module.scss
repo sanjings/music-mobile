@@ -10,14 +10,14 @@
     top: -320px;
     height: 400px;
     width: 100%;
-    background: #D44439;
+    background: $color-red;
   }
   .swiper-container {
     width: 98%;
     height: 150px;
     margin: auto;
     border-radius: 6px;
-    --swiper-theme-color: #D44439;
+    --swiper-theme-color: $color-red;
     .slider-item{
       width: 100%;
       height: 100%;

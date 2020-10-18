@@ -1,6 +1,6 @@
 import React, { memo } from "react"
 
-import { formatSingerName } from '../../../utils/filters'
+import { formatSingerName } from 'utils/filters'
 
 import styles from './list.module.scss'
 

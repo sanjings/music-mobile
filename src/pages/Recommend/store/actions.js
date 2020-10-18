@@ -1,5 +1,5 @@
 import {
-  SET_LOADING,
+  SET_RECOM_LOADING,
   SET_BANNERS,
   SET_RECOMMEND_LIST,
   SET_RECOMMEND_NEW_SONGS
@@ -9,11 +9,11 @@ import {
   getBannersRequest,
   getRecommendListRequest,
   getRecommendNewSongsRequest
-} from '../../../apis/requests/recommend';
+} from 'requests/recommend';
 
 export const changeLoading = payload => {
   return {
-    type: SET_LOADING,
+    type: SET_RECOM_LOADING,
     payload
   }
 }

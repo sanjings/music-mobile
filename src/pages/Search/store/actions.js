@@ -7,7 +7,7 @@ import {
   getHotKeywordsListRequest,
   getSearchListRequest,
   getSearchSuggestRequest
-} from '../../../apis/requests/search'
+} from 'requests/search'
 
 
 export const changeHotKeywordsListAction = payload => ({

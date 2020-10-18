@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { CSSTransition } from 'react-transition-group'
 import classnames from 'classnames'
 
-import { formatSingerName } from '../../../utils/filters'
+import { formatSingerName } from 'utils/filters'
 
 import styles from './index.module.scss'
 

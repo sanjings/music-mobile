@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import { renderRoutes } from 'react-router-config';
 
-import Header from '../../components/Header'
-import NavTab from '../../components/NavTab'
-import Player from '../../components/Player'
+import Header from 'components/Header'
+import NavTab from 'components/NavTab'
+import Player from 'components/Player'
 
 
 const HomeLayout = props => {

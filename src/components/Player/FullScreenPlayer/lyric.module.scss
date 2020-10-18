@@ -6,8 +6,8 @@
     text-align: center;
     .lyric-item{
       padding: 6px 0;
-      font-size: 16px;
-      color: #bbb;
+      font-size: $font-size-normal;
+      color: rgba($color: #fff, $alpha: 0.5);
       &.highlight{
         color: #fff;
       }

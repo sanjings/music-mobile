@@ -14,7 +14,7 @@ const ListItem = props => {
       {/* 照片 */}
       <div className={styles['img-wrapper']}>
         <LazyLoad 
-          placeholder={<img src={require('../../../assets/images/singer.png')} width="100%" height="100%" alt="歌手" />}
+          placeholder={<img src={require('assets/images/singer.png')} width="100%" height="100%" alt="歌手" />}
         >
           <img src={picUrl + '?param=100x100'} width="100%" height="100%" alt="歌手" />
         </LazyLoad>

@@ -43,15 +43,15 @@
       margin-bottom: 5px;
     }
     .singer{
-      font-size: 12px;
-      color: #999;
+      font-size: $font-size-mini;
+      color: $color-light-gray;
     }
   }
   .control{
     margin-left: 10px;
     i{
       font-size: 30px;
-      color: #D44439;
+      color: $color-red;
     }
   }
 

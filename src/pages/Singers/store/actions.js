@@ -4,7 +4,7 @@ import {
   SET_PULL_DOWN_LOADING,
   SET_PULL_UP_LOADING
 } from './actionTypes'
-import { getSingerListRequest } from '../../../apis/requests/singer'
+import { getSingerListRequest } from 'requests/singer'
 
 export const changeSingerListAction = (payload) => {
   return {

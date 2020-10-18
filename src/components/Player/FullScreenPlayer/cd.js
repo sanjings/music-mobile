@@ -5,12 +5,17 @@ import classnames from 'classnames'
 import styles from './cd.module.scss'
 
 const CD = forwardRef((props, ref) => {
-  const { picUrl, playingStatus, currentPlayingLyric } = props
+  const { show, picUrl, playingStatus, currentPlayingLyric } = props
 
   const { toggleCd } = props
 
   return (
-    <div className={styles['cd-wrapper']} ref={ref} onClick={() => toggleCd(false)}>
+    <div
+      style={{display: show ? 'flex' : 'none'}} 
+      className={styles['cd-wrapper']} 
+      ref={ref} 
+      onClick={() => toggleCd(false)}
+    >
       <div className={styles['needle']}></div>
       <div className={classnames([styles['cd-cover'], !playingStatus && styles['pause']])}>
         <img src={ picUrl + '?param=400x400' } className={styles['img-cover']} alt="cover" />
@@ -20,7 +25,12 @@ const CD = forwardRef((props, ref) => {
   )
 })
 
+CD.defaultProps = {
+  show: true
+}
+
 CD.propTypes = {
+  show: PropTypes.bool,
   picUrl: PropTypes.string,
   toggleCd: PropTypes.func
 }

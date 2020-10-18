@@ -26,8 +26,10 @@
     "swiper": "^5.4.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start:server": "cd NeteaseCloudMusicApi && cross-env PORT=3300 node app.js",
+    "start:react": "react-app-rewired start",
+    "start": "concurrently \"npm run start:server\" \"npm run start:react\"",
+    "build": "react-app-rewired build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -47,6 +49,10 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.14.1"
+    "cross-env": "^7.0.2",
+    "customize-cra": "^1.0.0",
+    "node-sass": "^4.14.1",
+    "react-app-rewired": "^2.1.6",
+    "sass-resources-loader": "^2.1.1"
   }
 }

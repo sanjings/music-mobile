@@ -35,5 +35,4 @@ export const GET_SEARCH_SUGGEST_BY_KEYWORDS = '/search/suggest' // 搜索建议
 /**
  * 歌曲相关
  */
-export const GET_SONG_DETAIL = '/song/detail' // 歌曲详情
 export const GET_LYRIC = '/lyric' // 歌词

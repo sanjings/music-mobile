@@ -1,5 +1,5 @@
 .control-wrapper{
-  padding: 35px;
+  padding: 25px 35px;
   .progress-bar{
     display: flex;
     align-items: center;
@@ -16,7 +16,7 @@
     .btn-item{
       &.play-btn{
         i{
-            font-size: 36px;
+          font-size: 36px;
         }
       }
       i{

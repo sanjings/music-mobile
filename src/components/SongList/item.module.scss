@@ -3,10 +3,10 @@
   align-items: center;
   .index{
     padding-right: 10px;
-    font-size: 16px;
-    color: #999;
+    font-size: $font-size-normal;
+    color: $color-light-gray;
     &.top{
-      color: #df3436;
+      color: $color-red;
     }
   }
   .content{
@@ -14,24 +14,25 @@
     display: flex;
     align-items: center;
     padding: 6px 0;
-    border-bottom: 1px solid #E4E4E4;;
+    border-bottom: 1px solid $color-deep-white;;
     .song-info{
       flex: 1;
       .name{
-        font-size: 16px;
+        font-size: $font-size-normal;
         line-height: 1.6;
+      
       }
       .singer{
-        font-size: 12px;
+        font-size: $font-size-mini;
         line-height: 1.5;
-        color: #999;
+        color: $color-light-gray;
       }
     }
     .play-btn{
       padding: 0 10px;
       i{
-        font-size: 20px;
-        color: #999;
+        font-size: $font-size-bigger;
+        color: $color-light-gray;
       }
     }
   }

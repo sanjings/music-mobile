@@ -2,7 +2,7 @@ import React, { memo, useCallback, useState, useRef } from "react"
 import PropTypes from 'prop-types'
 import { CSSTransition } from 'react-transition-group'
 
-import Scroll from '../../../components/Scroll'
+import Scroll from 'components/Scroll'
 import List from './list'
 
 import styles from './index.module.scss'

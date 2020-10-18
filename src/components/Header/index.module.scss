@@ -3,17 +3,17 @@
   justify-content: space-between;
   align-items: center;
   height: 50px;
-  background-color: #D44439;
+  background-color: $color-red;
   .title{
-    color: #f1f1f1;
-    font-size: 20px;
+    color: $color-deep-white;
+    font-size: $font-size-bigger;
   }
   .menu,.search{
     width: 50px;
     text-align: center;
-    color: #f1f1f1;
+    color: $color-deep-white;
     i{
-        font-size: 24px;
+      font-size: $font-size-max;
     }
   }
 }

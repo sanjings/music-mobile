@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   padding: 5px 0;
-  border-bottom: 1px solid #E4E4E4;
+  border-bottom: 1px solid $color-deep-white;
   &:last-of-type{
     border-bottom: none;
   }

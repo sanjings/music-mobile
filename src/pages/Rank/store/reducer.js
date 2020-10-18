@@ -1,4 +1,4 @@
-import { SET_LOADING, SET_RANK_DATA } from './actionTypes'
+import { SET_RANK_LOADING, SET_RANK_DATA } from './actionTypes'
 
 const initialState = {
   loading: false,
@@ -8,7 +8,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SET_LOADING:
+    case SET_RANK_LOADING:
       return {
         ...state,
         loading: action.payload

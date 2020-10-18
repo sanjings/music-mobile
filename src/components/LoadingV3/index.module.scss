@@ -4,7 +4,7 @@
     width: 12px;
     height: 12px;
     border-radius: 100%;
-    background-color: #D44439;
+    background-color: $color-red;
     transform: scale(0.6);
     animation: loading 1s infinite ease-in-out;
     animation-fill-mode: both;

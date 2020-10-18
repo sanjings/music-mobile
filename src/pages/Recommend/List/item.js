@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import LazyLoad from "react-lazyload";
 import classnames from 'classnames'
 
-import { formatCount } from '../../../utils/filters'
+import { formatCount } from 'utils/filters'
 
 import styles from './item.module.scss'
 
@@ -22,7 +22,7 @@ const ListItem = props => {
           <span className={styles['count']}>{ formatCount(playCount) }</span>
         </div>
         <LazyLoad 
-          placeholder={<img width="100%" height="100%" src={require('../../../assets/images/music.png')} alt="music" />}
+          placeholder={<img width="100%" height="100%" src={require('assets/images/music.png')} alt="music" />}
         >
           <img src={picUrl} width="100%" height="100%" alt="歌单封面" />
         </LazyLoad>

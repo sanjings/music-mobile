@@ -9,7 +9,7 @@ import CD from './cd'
 import Lyric from './lyric'
 import Control from './control'
 
-import { formatSingerName } from '../../../utils/filters'
+import { formatSingerName } from 'utils/filters'
 
 import styles from './index.module.scss'
 
@@ -70,6 +70,7 @@ const FullScreenPlayer = props => {
 
   const enter = () => {
     fullPlayerRef.current.style.display = "flex";
+    setShowCd(true)
     const { x, y, scale } = _getPosAndScale();
     const animation = {
       0: {
@@ -138,24 +139,23 @@ const FullScreenPlayer = props => {
           toggleFullScreen={toggleFullScreen} 
         />
 
-        {/* cd封面或全屏歌词 */}
-        {
-          showCd
-          ?
-          <CD
-            ref={cdRef} 
-            picUrl={album.picUrl} 
-            playingStatus={playingStatus}
-            toggleCd={toggleCd}
-            currentPlayingLyric={currentPlayingLyric} 
-          />
-          :
-          <Lyric
-            currentLyric={currentLyric}
-            currentLineNum={currentLineNum} 
-            toggleCd={toggleCd} 
-          />
-        }
+        {/* cd封面 */}
+        <CD
+          ref={cdRef}
+          show={showCd} 
+          picUrl={album.picUrl} 
+          playingStatus={playingStatus}
+          toggleCd={toggleCd}
+          currentPlayingLyric={currentPlayingLyric} 
+        />
+
+        {/* 全屏歌词 */}
+        <Lyric
+          show={!showCd} 
+          currentLyric={currentLyric}
+          currentLineNum={currentLineNum} 
+          toggleCd={toggleCd} 
+        />
 
         {/* 控制器 */}
         <Control

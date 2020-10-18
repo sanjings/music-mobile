@@ -4,8 +4,8 @@ import { CSSTransition } from 'react-transition-group'
 import { forceCheck } from 'react-lazyload'
 import classnames from 'classnames'
 
-import Scroll from '../../components/Scroll'
-import SearchBox from '../../components/SearchBox'
+import Scroll from 'components/Scroll'
+import SearchBox from 'components/SearchBox'
 import HotSearch from './HotSearch'
 import SearchResult from './SearchResult'
 
