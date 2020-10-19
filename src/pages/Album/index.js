@@ -51,6 +51,7 @@ const Album = props => {
       const percent = Math.abs(pos.y / MaxHeight)
       headerDom.style.backgroundColor = '$color-red'
       headerDom.style.opacity = Math.min(1, (percent - 1) / 2);
+      headerDom.style.backgroundColor = '#D44439';
       setTitle(albumDetail.name)
       setIsTitleMarquee(true)
     } else {
