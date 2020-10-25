@@ -25,8 +25,8 @@ export const getRankListAction = () => {
 
     const list = resp.list,
           globalList = list.filter(item => !item.tracks.length),
-          officailList = list.filter(item => item.tracks.length);
+          officialList = list.filter(item => item.tracks.length);
 
-    dispatch(changeRankData({globalList, officailList}))
+    dispatch(changeRankData({globalList, officialList}))
   }
 }

@@ -14,9 +14,11 @@ import styles from './index.module.scss'
 const { getSingerDetailAction } = actions
 
 const Singer = props => {
-  const singerDetail = useSelector(state => state.singer.singerDetail),
-        loading = useSelector(state => state.singer.loading),
-        playList = useSelector(state => state.player.playList);
+  const { loading, singerDetail, playList } = useSelector(state => ({
+    loading: state.singer.loading,
+    singerDetail: state.singer.singerDetail,
+    playList: state.player.playList
+  }))
 
   const [show, setShow] = useState(true)
 

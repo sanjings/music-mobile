@@ -18,10 +18,12 @@ const {
 } = actions;
 
 const Singers = props => {
-  const singerList = useSelector(state => state.singers.singerList),
-        pullDownLoading = useSelector(state => state.singers.pullDownLoading),
-        pullUpLoading = useSelector(state => state.singers.pullUpLoading),
-        playList = useSelector(state => state.player.playList);
+  const { pullDownLoading, pullUpLoading, singerList, playList } = useSelector(state => ({
+    pullDownLoading: state.singers.pullDownLoading,
+    pullUpLoading: state.singers.pullUpLoading,
+    singerList: state.singers.singerList,
+    playList: state.player.playList
+  }))
 
   const [currentTabType, setCurrentTabType] = useState('')
 

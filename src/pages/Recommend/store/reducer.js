@@ -4,6 +4,7 @@ import {
   SET_RECOMMEND_LIST,
   SET_RECOMMEND_NEW_SONGS
 } from './actionTypes';
+import { produce } from 'immer'
 
 const initialState = {
   loading: false,
@@ -12,30 +13,22 @@ const initialState = {
   recommendNewSongs: []
 };
 
-export default (state = initialState, action) => {
+export default produce((state, action) => {
   switch (action.type) {
     case SET_RECOM_LOADING:
-      return {
-        ...state,
-        loading: action.payload
-      };
+      state.loading = action.payload;
+      break;
     case SET_BANNERS:
-      return {
-        ...state,
-        banners: action.payload
-      };
+      state.banners = action.payload;
+      break;
     case SET_RECOMMEND_LIST:
-      return {
-        ...state,
-        recommendList: action.payload,
-        loading: false
-      };
+      state.recommendList = action.payload;
+      state.loading = false;
+      break;
     case SET_RECOMMEND_NEW_SONGS:
-      return {
-        ...state,
-        recommendNewSongs: action.payload
-      };
-    default:
-      return state;
+      state.recommendNewSongs = action.payload;
+      break;
+    default: 
+      break;
   }
-}
+}, initialState)

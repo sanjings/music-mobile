@@ -65,7 +65,7 @@ const PlayList = props => {
       initiated: false
     })
 
-    if (touchInfo.distance >= 200) {
+    if (touchInfo.distance >= 150) {
       setShow(false)
     } else {
       listRef.current.style.transition = `all .3s`

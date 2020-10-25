@@ -19,7 +19,7 @@ const ListItem = props => {
         showIndex
         &&
         <div
-          className={classnames([styles['index'], index < 3 && styles['top']])}
+          className={classnames(styles['index'], index < 3 && styles['top'])}
         >
           { formatNumber(index + 1) }
         </div>

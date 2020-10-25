@@ -4,6 +4,7 @@ import {
   SET_PULL_DOWN_LOADING,
   SET_PULL_UP_LOADING
 } from './actionTypes'
+import { produce } from 'immer'
 
 const initialState = {
   pullDownLoading: false,
@@ -11,31 +12,23 @@ const initialState = {
   singerList: []
 }
 
-export default (state = initialState, action) => {
+export default produce((state, action) => {
   switch (action.type) {
     case SET_SINGER_LIST:
-      return {
-        ...state,
-        singerList: action.payload,
-        pullDownLoading: false
-      };
+      state.singerList = action.payload;
+      state.pullDownLoading = false;
+      break;
     case CONCAT_SINGER_LIST:
-      return {
-        ...state,
-        singerList: state.singerList.concat(action.payload),
-        pullUpLoading: false
-      };
+      state.singerList.push(...action.payload);
+      state.pullUpLoading = false;
+      break;
     case SET_PULL_DOWN_LOADING:
-      return {
-        ...state,
-        pullDownLoading: action.payload
-      };
+      state.pullDownLoading = action.payload;
+      break;
     case SET_PULL_UP_LOADING:
-      return {
-        ...state,
-        pullUpLoading: action.payload
-      };
+      state.pullUpLoading = action.payload;
+      break;
     default:
-      return state;
+      break;
   }
-}
+}, initialState)

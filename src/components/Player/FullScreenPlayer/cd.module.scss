@@ -9,7 +9,8 @@
   .needle{
     position: absolute;
     top: -6vw;
-    left: 48vw;
+    left: 45vw;
+    z-index: 10;
     width: 25vw;
     height: 40vw;
     background-image: url('../../../assets/images//needle.png');
@@ -17,8 +18,11 @@
     background-size: contain;
     background-repeat: no-repeat;
     transform-origin: 4.5vw 4.5vw;
-    transition: all 0.3s ease 0s;
-    transform: rotate(-30deg);
+    transition: all 0.3s;
+    transform: rotate(5deg);
+    &.pause{
+      transform: rotate(-30deg);
+    }
   }
   .cd-cover{
     width: 270px;

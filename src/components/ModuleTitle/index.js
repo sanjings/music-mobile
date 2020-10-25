@@ -9,7 +9,7 @@ const ModuleTitle = props => {
 
   return (
     <div className={styles['title']}>
-      <h1 className={classnames([styles['title-text'], symbol && styles['symbol']])}>{title}</h1>
+      <h1 className={classnames(styles['title-text'], symbol && styles['symbol'])}>{title}</h1>
     </div>
   )
 }

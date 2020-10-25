@@ -16,8 +16,8 @@ const CD = forwardRef((props, ref) => {
       ref={ref} 
       onClick={() => toggleCd(false)}
     >
-      <div className={styles['needle']}></div>
-      <div className={classnames([styles['cd-cover'], !playingStatus && styles['pause']])}>
+      <div className={classnames(styles['needle'], !playingStatus && styles['pause'])}></div>
+      <div className={classnames(styles['cd-cover'], !playingStatus && styles['pause'])}>
         <img src={ picUrl + '?param=400x400' } className={styles['img-cover']} alt="cover" />
       </div>
       <p className={styles['lyrics']}>{ currentPlayingLyric }</p>

@@ -1,26 +1,23 @@
 import { SET_RANK_LOADING, SET_RANK_DATA } from './actionTypes'
+import { produce } from 'immer'
 
 const initialState = {
   loading: false,
   globalList: [],
-  officailList: []
+  official: []
 }
 
-export default (state = initialState, action) => {
+export default produce((state, action) => {
   switch (action.type) {
     case SET_RANK_LOADING:
-      return {
-        ...state,
-        loading: action.payload
-      };
+      state.loading = action.payload;
+      break;
     case SET_RANK_DATA:
-      return {
-        ...state,
-        globalList: action.payload.globalList,
-        officailList: action.payload.officailList,
-        loading: false
-      };
+      state.globalList = action.payload.globalList;
+      state.officialList = action.payload.officialList;
+      state.loading = false;
+      break;
     default:
-      return state;
+      break;
   }
-}
+}, initialState)

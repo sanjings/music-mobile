@@ -51,7 +51,7 @@ const MiniPlayer = props => {
         className={styles['mini-player']} 
         onClick={ () => toggleFullScreen(true) }
       >
-        <div className={classnames([styles['img-wrapper'], !playingStatus && styles['pause']])}>
+        <div className={classnames(styles['img-wrapper'], !playingStatus && styles['pause'])}>
           <img className={styles['cover']} src={ album.picUrl + '?param=100x100' } width="40" height="40"></img>
         </div>
         <div className={styles['text']}>

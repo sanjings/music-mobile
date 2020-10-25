@@ -97,7 +97,7 @@ const SearchBox = forwardRef((props, ref) => {
           onChange={handleInput}
         />
         <div
-          className={classnames([styles['clear'], showClear && styles['visible']])}
+          className={classnames(styles['clear'], showClear && styles['visible'])}
           onClick={handleClear}
         >
           <i className="iconfont icon-clear" />

@@ -16,9 +16,11 @@ import styles from './index.module.scss'
 const { getHotKeywordsListAction, getSearchDataAction, changeSearchDataAction } = actions
 
 const Search = props => {
-  const hotKeywordsList = useSelector(state => state.search.hotKeywordsList),
-        searchData = useSelector(state => state.search.searchData),
-        playList = useSelector(state => state.player.playList);
+  const { hotKeywordsList, searchData, playList } = useSelector(state => ({
+    hotKeywordsList: state.search.hotKeywordsList,
+    searchData: state.search.searchData,
+    playList: state.player.playList
+  }))
 
   const [show, setShow] = useState(true),
         [keywords, setKeywords] = useState('');

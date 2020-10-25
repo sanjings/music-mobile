@@ -21,12 +21,21 @@ const {
 } = actions
 
 const Player = () => {
-  const fullScreen = useSelector(state => state.player.fullScreen),
-        playingStatus = useSelector(state => state.player.playingStatus),
-        currentIndex = useSelector(state => state.player.currentIndex),
-        currentSong = useSelector(state => state.player.currentSong),
-        showPlayList = useSelector(state => state.player.showPlayList),
-        playList = useSelector(state => state.player.playList);
+  const { 
+    fullScreen,
+    playingStatus,
+    currentIndex,
+    currentSong,
+    showPlayList,
+    playList
+  } = useSelector(state => ({
+    fullScreen: state.player.fullScreen,
+    playingStatus: state.player.playingStatus,
+    currentIndex: state.player.currentIndex,
+    currentSong: state.player.currentSong,
+    showPlayList: state.player.showPlayList,
+    playList: state.player.playList
+  }))
 
   const [preSongId, setPreSongId] = useState(),
         [currentTime, setCurrentTime] = useState(0),
@@ -34,22 +43,21 @@ const Player = () => {
         [currentPlayingLyric, setPlayingLyric] = useState();
 
   const percent = isNaN(currentTime / duration) ? 0 : currentTime / duration;
-  
-  const dispatch = useDispatch()
 
   const audioRef = useRef(),
         currentLyric = useRef(),
         currentLineNum = useRef(0);
 
+  const dispatch = useDispatch()
         
-  useEffect(() => {  
+  useEffect(() => {
     if (
       !playList.length || 
       !playList[currentIndex] || 
       currentIndex === -1 || 
       playList[currentIndex].id === preSongId) 
     return;
-    
+
     const audioDom = audioRef.current
     const curSong = playList[currentIndex]
 
@@ -60,7 +68,7 @@ const Player = () => {
     getLyric(curSong.id)
     setCurrentTime(0);
     setDuration((curSong.dt / 1000) || 0)
-  }, [currentIndex, playList, currentSong]);
+  }, [currentIndex, playList]);
 
   useEffect(() => {
     const audioDom = audioRef.current

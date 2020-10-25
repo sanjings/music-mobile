@@ -46,7 +46,7 @@ const Lyric = props => {
               return (
                 <p
                   ref={lyricLineRefs.current[index]} 
-                  className={classnames([styles['lyric-item'], index === currentLineNum && styles['highlight']])} 
+                  className={classnames(styles['lyric-item'], index === currentLineNum && styles['highlight'])} 
                   key={index}
                 >
                   { item.txt }

@@ -14,10 +14,12 @@ import { actions } from './store'
 const { getRankListAction } = actions;
 
 const Rank = props => {
-  const loading = useSelector(state => state.rank.loading),
-        officialList = useSelector(state => state.rank.officailList),
-        globalList = useSelector(state => state.rank.globalList),
-        playList = useSelector(state => state.player.playList);
+  const { loading, officialList, globalList, playList } = useSelector(state => ({
+    loading: state.rank.loading,
+    officialList: state.rank.officialList,
+    globalList: state.rank.globalList,
+    playList: state.player.playList
+  }))
 
   const dispatch = useDispatch()
 

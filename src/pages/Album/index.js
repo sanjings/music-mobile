@@ -14,9 +14,11 @@ import styles from './index.module.scss'
 const { getAlbumDetailAction } = actions;
 
 const Album = props => {
-  const albumDetail = useSelector(state => state.album.albumDetail),
-        loading = useSelector(state => state.album.loading),
-        playList = useSelector(state => state.player.playList);
+  const { loading, albumDetail, playList } = useSelector(state => ({
+    loading: state.album.loading,
+    albumDetail: state.album.albumDetail,
+    playList: state.player.playList
+  }))
 
   const [title, setTitle] = useState('歌单'),
         [isTitleMarquee, setIsTitleMarquee] = useState(false),

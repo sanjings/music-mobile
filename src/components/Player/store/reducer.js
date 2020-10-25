@@ -7,6 +7,7 @@ import {
   SET_SHOW_PLAY_LIST,
   DELETE_SONG
 } from './actionTypes'
+import { produce } from 'immer'
 
 const initialState = {
   fullScreen: false,
@@ -18,56 +19,39 @@ const initialState = {
 }
 
 const deleteSongFormPlayList = (state, index) => {
-  let currentIndex = state.currentIndex;
-  const playList = state.playList;
+  const { playList, currentIndex } = state
 
   playList.splice(index, 1)
 
-  if (index < currentIndex) currentIndex--;
-
-  return {
-    ...state,
-    playList,
-    currentSong: playList[currentIndex],
-    currentIndex
+  if (index < currentIndex) {
+    state.currentIndex--;
   }
 }
 
-export default (state = initialState, action) => {
+export default produce((state, action) => {
   switch (action.type) {
     case SET_FULL_SCREEN:
-      return {
-        ...state,
-        fullScreen: action.payload
-      };
+      state.fullScreen = action.payload;
+      break;
     case SET_PLAYING_STATUS:
-      return {
-        ...state,
-        playingStatus: action.payload
-      };
+      state.playingStatus = action.payload;
+      break;
     case SET_CURRENT_INDEX:
-      return {
-        ...state,
-        currentIndex: action.payload
-      };
+      state.currentIndex = action.payload;
+      break;
     case SET_CURRENT_SONG:
-      return {
-        ...state,
-        currentSong: action.payload
-      };
+      state.currentSong = action.payload;
+      break;
     case SET_PLAY_LIST:
-      return {
-        ...state,
-        playList: action.payload
-      };
+      state.playList = action.payload;
+      break;
     case SET_SHOW_PLAY_LIST:
-      return {
-        ...state,
-        showPlayList: action.payload
-      };
+      state.showPlayList = action.payload;
+      break;
     case DELETE_SONG:
-      return deleteSongFormPlayList(state, action.payload)
+      deleteSongFormPlayList(state, action.payload);
+      break;
     default:
-      return state;
+      break;
   }
-}
+}, initialState)

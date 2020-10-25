@@ -19,11 +19,13 @@ const {
 } = actions;
 
 const Recommend = props => {
-  const loading = useSelector(state => state.recommend.loading),
-        banners = useSelector(state => state.recommend.banners),
-        recommendList = useSelector(state => state.recommend.recommendList),
-        newSongs = useSelector(state => state.recommend.recommendNewSongs),
-        playList = useSelector(state => state.player.playList);
+  const { loading, banners, recommendList, newSongs, playList } = useSelector(state => ({
+    loading: state.recommend.loading,
+    banners: state.recommend.banners,
+    recommendList: state.recommend.recommendList,
+    newSongs: state.recommend.recommendNewSongs,
+    playList: state.player.playList
+  }))
 
   const scrollRef = useRef(null)
 

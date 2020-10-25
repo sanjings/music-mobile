@@ -2,26 +2,23 @@ import {
   SET_SINGER_DETAIL,
   SET_SINGER_LOADING
 } from './actionTypes'
+import { produce } from 'immer'
 
 const initialState = {
   singerDetail: null,
   loading: false
 }
 
-export default (state = initialState, action) => {
+export default produce((state, action) => {
   switch (action.type) {
     case SET_SINGER_DETAIL:
-      return {
-        ...state,
-        singerDetail: action.payload,
-        loading: false
-      };
+      state.singerDetail = action.payload;
+      state.loading = false;
+      break;
     case SET_SINGER_LOADING:
-      return {
-        ...state,
-        loading: action.payload
-      };
+      state.loading = action.payload;
+      break;
     default:
-      return state;
+      break;
   }
-}
+}, initialState)
