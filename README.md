@@ -77,15 +77,26 @@
     - 使用react-redux hooks的useSelector和useDispatch，不再使用connect
     
 ### 项目运行
-#### 安装依赖
+### clone项目
 ```
-yarn install or npm install
+git clone https://github.com/sanjing14/react-hooks-music-h5.git
+```
+### 拉取后端项目
+```
+git submodule init
+git submodule update
 ```
 **如果没有yarn推荐使用cnpm**
 ```
 npm install cnpm -g --registry=https://registry.npm.taobao.org
-cnpm install
 ```
+#### 安装依赖
+```
+yarn install or cnpm install
+cd NeteaseCloudMusicApi
+yarn install or cnpm install
+```
+
 #### 本地运行
 ```
 yarn start or npm run start
