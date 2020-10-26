@@ -90,8 +90,9 @@ git submodule update
 ```
 如果没有yarn推荐使用cnpm
 npm install cnpm -g --registry=https://registry.npm.taobao.org
-yarn install or cnpm install
 cd NeteaseCloudMusicApi
+yarn install or cnpm install
+cd ..
 yarn install or cnpm install
 ```
 
