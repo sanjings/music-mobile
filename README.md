@@ -89,9 +89,8 @@ cd react-hooks-music-h5
 git submodule init
 git submodule update
 ```
-#### 安装依赖
+#### 安装依赖（如果没有yarn推荐使用cnpm）
 ```
-如果没有yarn推荐使用cnpm
 npm install cnpm -g --registry=https://registry.npm.taobao.org
 cd NeteaseCloudMusicApi
 yarn install or cnpm install
