@@ -1,3 +1,5 @@
+# react+hooks+redux+immer打造音乐webapp
+
 ### 项目简介
 使用react hooks+redux+immer.js编写的仿网易云音乐移动端web项目。  
 特别鸣谢huangyi大佬的课程[Vue2.0开发企业级移动端音乐Web App](https://coding.imooc.com/learn/list/107.html)，以及神三元大佬的小册[React Hooks 与 Immutable 数据流实战](https://juejin.im/book/6844733816460804104)
@@ -58,10 +60,10 @@
 7. 插件统一放在plugins文件夹中；
 8. 页面组件和业务模块组件统一放在pages文件夹中，页面组件作为容器组件，用于处理数据、逻辑和布局，业务模块组件是对应页面的UI组件，只负责UI不负责逻辑；
 9. 通用组件和其它UI组件统一放在components中；
-6. 不使用class组件，统一使用函数式组件和hooks；  
-7. 所有组件使用memo进行包裹，避免不必要的渲染；
-8. 组件内部状态使用useState，业务数据全部用redux管理；  
-9. 组件内部书写顺序：
+10. 不使用class组件，统一使用函数式组件和hooks；  
+11. 所有组件使用memo进行包裹，避免不必要的渲染；
+12. 组件内部状态使用useState，业务数据全部用redux管理；  
+13. 组件内部书写顺序：
    - 解构props的属性
    - 解构props的方法
    - 解构redux中的数据
@@ -70,7 +72,7 @@
    - useEffect
    - 其他逻辑代码
    - jsx代码
-10. redux规范：
+14. redux规范：
     - redux结合immerjs
     - 每个页面模块有自己独立的reducer，放在对应文件夹下的store文件夹下，在全局的store中通过combineReducer合并
     - ajax请求放在actions中，由redux-thunk处理
