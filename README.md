@@ -83,6 +83,7 @@ git clone https://github.com/sanjing14/react-hooks-music-h5.git
 ```
 #### 拉取后端项目
 ```
+cd react-hooks-music-h5
 git submodule init
 git submodule update
 ```
