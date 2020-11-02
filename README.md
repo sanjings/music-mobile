@@ -64,14 +64,14 @@
 11. 所有组件使用memo进行包裹，避免不必要的渲染；
 12. 组件内部状态使用useState，业务数据全部用redux管理；  
 13. 组件内部书写顺序：
-   - 解构props的属性
-   - 解构props的方法
-   - 解构redux中的数据
-   - useState管理组件内部状态
-   - useRef
-   - useEffect
-   - 其他逻辑代码
-   - jsx代码
+    - 解构props的属性
+    - 解构props的方法
+    - 解构redux中的数据
+    - useState管理组件内部状态
+    - useRef
+    - useEffect
+    - 其他逻辑代码
+    - jsx代码
 14. redux规范：
     - redux结合immerjs
     - 每个页面模块有自己独立的reducer，放在对应文件夹下的store文件夹下，在全局的store中通过combineReducer合并
