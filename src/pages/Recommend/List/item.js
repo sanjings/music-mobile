@@ -9,8 +9,7 @@ import { formatCount } from 'utils/filters'
 import styles from './item.module.scss'
 
 const ListItem = props => {
-  const { itemData } = props,
-        { id, picUrl, playCount, name } = itemData;
+  const { itemData: { id, picUrl, playCount, name } } = props;
 
   return (
     <Link to={`/recommend/${id}`} className={styles['list-item']}>

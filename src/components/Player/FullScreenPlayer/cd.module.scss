@@ -2,19 +2,17 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   flex: 1;
   align-items: center;
   overflow: hidden;
   .needle{
     position: absolute;
-    top: -6vw;
+    top: -18px;
     left: 45vw;
     z-index: 10;
     width: 25vw;
-    height: 40vw;
+    height: 40vh;
     background-image: url('../../../assets/images//needle.png');
-    background-position: 50% center;
     background-size: contain;
     background-repeat: no-repeat;
     transform-origin: 4.5vw 4.5vw;
@@ -25,6 +23,7 @@
     }
   }
   .cd-cover{
+    margin-top: 11vh;
     width: 270px;
     height: 270px;
     border-radius: 50%;

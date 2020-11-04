@@ -8,8 +8,7 @@ import AlbumMenu from './menu'
 import styles from './index.module.scss'
 
 const AlbumDetail = props => {
-  const { data } = props,
-        { coverImgUrl, subscribedCount, name, creator, tracks } = data;
+  const { data: { coverImgUrl, subscribedCount, name, creator, tracks } } = props;
 
   return (
     <div className={styles['album-detail']}>

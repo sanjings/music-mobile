@@ -5,9 +5,12 @@ import Suggest from './suggest'
 import SongList from 'components/SongList'
 
 const SearchResult = props => {
-  const { data } = props,
-        { suggest, songList } = data,
-        { artists, playlists } = suggest;
+  const { 
+    data: { 
+      suggest: { artists, playlists }, 
+      songList 
+    } 
+  } = props;
 
   return (
     <div className="result-wrapper">

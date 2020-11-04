@@ -15,7 +15,7 @@ import styles from './index.module.scss'
 
 const FullScreenPlayer = props => {
   const { 
-    song, 
+    song: { name, album, singers }, 
     fullScreen, 
     playingStatus, 
     currentTime, 
@@ -25,7 +25,6 @@ const FullScreenPlayer = props => {
     currentPlayingLyric,
     currentLineNum 
   } = props
-  const { name, album, singers } = song
 
   const {
     toggleFullScreen,

@@ -8,8 +8,7 @@ import { formatSingerName } from 'utils/filters'
 import styles from './index.module.scss'
 
 const MiniPlayer = props => {
-  const { song, fullScreen, playingStatus } = props,
-        { name, album, singers } = song;
+  const { song: { name, album, singers }, fullScreen, playingStatus } = props
 
   const { toggleFullScreen, togglePlayingState, toggleShowPlayList } = props
 

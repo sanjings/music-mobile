@@ -7,8 +7,7 @@ import Cover from "../Cover"
 import styles from './item.module.scss'
 
 const ListItem = props => {
-  const { itemData } = props,
-        { id, coverImgUrl, updateFrequency, tracks } = itemData;
+  const { itemData: { id, coverImgUrl, updateFrequency, tracks } } = props;
 
   return (
     <Link to={`/rank/${id}`} className={styles['list-item']}>

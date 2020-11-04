@@ -7,8 +7,12 @@ import { formatNumber, formatSingerName } from 'utils/filters'
 import styles from './item.module.scss'
 
 const ListItem = props => {
-  const { itemData, index, showPlay, showIndex } = props,
-        { name, album, singers } = itemData;
+  const { 
+    itemData: { name, album, singers }, 
+    index, 
+    showPlay, 
+    showIndex 
+  } = props
 
   const { onClickPlay } = props
 
