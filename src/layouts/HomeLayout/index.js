@@ -12,7 +12,7 @@ const HomeLayout = props => {
   return (
     <>
       {/* 页头 */}
-      <Header title="DD音乐台" />
+      <Header title="DD音乐" />
 
       {/* 导航栏 */}
       <NavTab />
