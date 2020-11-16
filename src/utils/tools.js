@@ -5,6 +5,7 @@
 export const deepClone = data => {
   return JSON.parse(JSON.stringify(data))
 }
+
 /**
  * 防抖函数
  * @params {Function} fn 要执行的函数
