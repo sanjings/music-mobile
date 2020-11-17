@@ -1,13 +1,24 @@
 const {
   override,
   addWebpackAlias,
+  addWebpackPlugin,
   adjustStyleLoaders
 } = require('customize-cra');
 const path = require("path");
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
 
 const resolve = dir => path.join(__dirname, dir);
 
 module.exports = override(
+  addWebpackPlugin(
+    new CompressionWebpackPlugin({
+      algorithm: 'gzip',
+      test: /\.js$|\.html$|\.css/,
+      threshold: 10240,
+      minRatio: 0.8,
+      deleteOriginalAssets: false
+    })
+  ),
   addWebpackAlias({
     '@': resolve('src'),
     'requests': resolve('src/apis/requests'),
