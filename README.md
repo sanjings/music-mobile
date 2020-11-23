@@ -1,7 +1,7 @@
-# react+hooks+redux+immer打造音乐webapp
+# react+hooks+redux+immerjs打造音乐webapp
 
 ### 项目简介
-使用react hooks+redux+immer.js编写的仿网易云音乐移动端web项目。  
+使用react hooks+redux+immerjs编写的仿网易云音乐移动端web项目。  
 特别鸣谢huangyi大佬的课程[Vue2.0开发企业级移动端音乐Web App](https://coding.imooc.com/learn/list/107.html)，以及神三元大佬的小册[React Hooks 与 Immutable 数据流实战](https://juejin.im/book/6844733816460804104)
 
 #### 技术栈
