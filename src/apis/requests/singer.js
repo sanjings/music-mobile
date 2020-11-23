@@ -1,4 +1,4 @@
-import { axiosGet } from '../axios.js'
+import { httpGet } from '../http.js'
 import { GET_SINGER_LIST, GET_SINGER_DETAIL_AND_HOT_SONGS } from '../url'
 
 /**
@@ -7,7 +7,7 @@ import { GET_SINGER_LIST, GET_SINGER_DETAIL_AND_HOT_SONGS } from '../url'
  * @param {String} initial 首字母
  */
 const getSingerListRequest = (offset, initial) => {
-  return axiosGet(GET_SINGER_LIST, { offset, initial })
+  return httpGet(GET_SINGER_LIST, { offset, initial })
 }
 
 /**
@@ -15,7 +15,7 @@ const getSingerListRequest = (offset, initial) => {
  * @param {String} id 歌手id
  */
 const getSingerDetailRequest = id => {
-  return axiosGet(GET_SINGER_DETAIL_AND_HOT_SONGS, { id })
+  return httpGet(GET_SINGER_DETAIL_AND_HOT_SONGS, { id })
     .then(res => ({
       ...res.artist,
       hotSongs: res.hotSongs.map(item => {

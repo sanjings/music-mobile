@@ -1,4 +1,4 @@
-import { axiosGet } from '../axios.js'
+import { httpGet } from '../http.js'
 import {
   GET_BANNERS,
   GET_RECOMMEND_LIST,
@@ -10,7 +10,7 @@ import {
  * @param {Number} type  
  */
 const getBannersRequest = type => {
-  return axiosGet(GET_BANNERS, { type })
+  return httpGet(GET_BANNERS, { type })
 }
 
 /**
@@ -18,14 +18,14 @@ const getBannersRequest = type => {
  * @param {Number} limit 取出数量
  */
 const getRecommendListRequest = limit => {
-  return axiosGet(GET_RECOMMEND_LIST, { limit })
+  return httpGet(GET_RECOMMEND_LIST, { limit })
 }
 
 /**
  * 请求推荐新歌数据
  */
 const getRecommendNewSongsRequest = () => {
-  return axiosGet(GET_RECOMMEND_NEW_SONGS)
+  return httpGet(GET_RECOMMEND_NEW_SONGS)
     .then(res => {
       const list = res.result;
       return list.map(item => {

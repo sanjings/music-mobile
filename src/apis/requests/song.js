@@ -1,4 +1,4 @@
-import { axiosGet } from '../axios.js'
+import { httpGet } from '../http.js'
 import { GET_LYRIC } from '../url'
 
 /**
@@ -6,7 +6,7 @@ import { GET_LYRIC } from '../url'
  * @param {Number} id 
  */
 const getLyricRequest = id => {
-  return axiosGet(GET_LYRIC, { id })
+  return httpGet(GET_LYRIC, { id })
 }
 
 export {
