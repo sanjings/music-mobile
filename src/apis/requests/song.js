@@ -1,4 +1,4 @@
-import { httpGet } from '../http.js'
+import { ajaxGet } from '../ajax.js'
 import { GET_LYRIC } from '../url'
 
 /**
@@ -6,7 +6,7 @@ import { GET_LYRIC } from '../url'
  * @param {Number} id 
  */
 const getLyricRequest = id => {
-  return httpGet(GET_LYRIC, { id })
+  return ajaxGet(GET_LYRIC, { id })
 }
 
 export {

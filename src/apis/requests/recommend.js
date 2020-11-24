@@ -1,4 +1,4 @@
-import { httpGet } from '../http.js'
+import { ajaxGet } from '../ajax.js'
 import {
   GET_BANNERS,
   GET_RECOMMEND_LIST,
@@ -10,7 +10,7 @@ import {
  * @param {Number} type  
  */
 const getBannersRequest = type => {
-  return httpGet(GET_BANNERS, { type })
+  return ajaxGet(GET_BANNERS, { type })
 }
 
 /**
@@ -18,14 +18,14 @@ const getBannersRequest = type => {
  * @param {Number} limit 取出数量
  */
 const getRecommendListRequest = limit => {
-  return httpGet(GET_RECOMMEND_LIST, { limit })
+  return ajaxGet(GET_RECOMMEND_LIST, { limit })
 }
 
 /**
  * 请求推荐新歌数据
  */
 const getRecommendNewSongsRequest = () => {
-  return httpGet(GET_RECOMMEND_NEW_SONGS)
+  return ajaxGet(GET_RECOMMEND_NEW_SONGS)
     .then(res => {
       const list = res.result;
       return list.map(item => {
