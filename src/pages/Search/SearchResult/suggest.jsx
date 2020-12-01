@@ -19,7 +19,7 @@ const suggest = props => {
               key={item.id} 
               className={styles['item']}
             >
-              <div className={styles['img-wrapper']}>
+              <div className={styles['img-wrap']}>
                 <LazyLoad 
                   placeholder={<img src={require('assets/images/music.png')} width="100%" height="100%" alt="cover" />}
                 >

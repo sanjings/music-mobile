@@ -140,7 +140,7 @@ const Scroll = forwardRef((props, ref) => {
   })
 
   return (
-    <div ref={scrollRef} className={styles['scroll-wrapper']}>
+    <div ref={scrollRef} className={styles['scroll-wrap']}>
       { children}
       { pullDownLoading && <div className={styles['pulldown-loading']}><LoadingV3 /></div>}
       { pullUpLoading && <div className={styles['pullup-loading']}><LoadingV2 label="加载中" /></div>}

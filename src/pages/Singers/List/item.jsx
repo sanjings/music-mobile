@@ -11,7 +11,7 @@ const ListItem = props => {
   return (
     <Link to={`/singers/${id}`} className={styles['list-item']}>
       {/* 照片 */}
-      <div className={styles['img-wrapper']}>
+      <div className={styles['img-wrap']}>
         <LazyLoad 
           placeholder={<img src={require('assets/images/singer.png')} width="100%" height="100%" alt="歌手" />}
         >

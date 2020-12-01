@@ -33,7 +33,7 @@ const Lyric = props => {
   return (
     <div
       style={{display: show ? 'block' : 'none'}} 
-      className={styles['lyric-wrapper']} 
+      className={styles['lyric-wrap']} 
       onClick={() => toggleCd(true)}
     >
       <Scroll ref={scrollRef}>

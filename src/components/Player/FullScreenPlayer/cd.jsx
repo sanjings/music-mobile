@@ -12,7 +12,7 @@ const CD = forwardRef((props, ref) => {
   return (
     <div
       style={{display: show ? 'flex' : 'none'}} 
-      className={styles['cd-wrapper']} 
+      className={styles['cd-wrap']} 
       ref={ref} 
       onClick={() => toggleCd(false)}
     >

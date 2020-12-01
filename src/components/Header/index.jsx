@@ -1,15 +1,18 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
-
-import styles from './index.module.scss'
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { showToastAction } from '@/store/actions';
+import styles from './index.module.scss';
 
 const Header = props => {
   const { title } = props;
 
+  const dispatch = useDispatch();
+
   return (
     <header className={styles['header']}>
-      <div className={styles['menu']} onClick={() => alert('暂未开发')}>
+      <div className={styles['menu']} onClick={() => dispatch(showToastAction())}>
         <i className="iconfont icon-menu"></i>
       </div>
 

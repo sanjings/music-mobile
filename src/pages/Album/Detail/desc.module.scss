@@ -1,7 +1,7 @@
 .desc{
   display: flex;
   padding: 20px 20px 0;
-  .img-wrapper{
+  .img-wrap{
     position: relative;
     width: 120px;
     height: 120px;
@@ -25,7 +25,7 @@
       }
     }
   }
-  .info-wrapper{
+  .info-wrap{
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -39,7 +39,7 @@
     .person{
       display: flex;
       align-items: center;
-      .avatar-wrapper{
+      .avatar-wrap{
         margin-right: 5px;
         width: 20px;
         height: 20px;

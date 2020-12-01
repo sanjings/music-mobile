@@ -87,7 +87,7 @@ const SearchBox = forwardRef((props, ref) => {
       <div className={styles['back']} onClick={clickBack}>
         <i className="iconfont icon-leftarrow" />
       </div>
-      <div className={styles['input-wrapper']}>
+      <div className={styles['input-wrap']}>
         <input
           ref={inputRef}
           type="text"

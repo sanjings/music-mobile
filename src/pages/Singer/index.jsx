@@ -85,7 +85,7 @@ const Singer = props => {
       unmountOnExit
       onExited={props.history.goBack}
     >
-      <div className={styles['singer-wrapper']} style={{bottom: playList.length ? '60px': 0}}>
+      <div className={styles['singer-wrap']} style={{bottom: playList.length ? '60px': 0}}>
         {
           singerDetail
           &&

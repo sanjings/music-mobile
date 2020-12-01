@@ -16,7 +16,7 @@ const Carousel = props => {
    */
   useEffect(() => {
     if (banners.length && !swiper) {
-      const newSwiper = new Swiper('.swiper-container', {
+      const swiperInstance = new Swiper('.swiper-container', {
         speed: 1200,
         autoplay: {
           delay: 3000, // 3秒切换一次
@@ -28,7 +28,7 @@ const Carousel = props => {
         loop: true
       })
 
-      setSwiper(newSwiper)
+      setSwiper(swiperInstance)
     }
   }, [banners, swiper])
 

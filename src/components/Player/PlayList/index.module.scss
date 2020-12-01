@@ -7,14 +7,14 @@
   z-index: 1001;
   &:global(.move-enter), &:global(.move-appear) {
     opacity: 0;
-    .list-wrapper{
+    .list-wrap{
       transform: translate3d(0, 100%, 0);
     }
   }
   &:global(.move-enter-active), &:global(.move-appear-active){
     opacity: 1;
     transition: opacity .3s;
-    .list-wrapper{
+    .list-wrap{
       transform: translate3d(0, 0, 0);
       transition: transform 0.3s;
     }
@@ -23,7 +23,7 @@
   &:global(.move-exit-active){
     opacity: 0;
     transition: opacity .3s;
-    .list-wrapper{
+    .list-wrap{
       transform: translate3d(0, 100%, 0);
       transition: transform .3s;
     }
@@ -37,7 +37,7 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  .list-wrapper{
+  .list-wrap{
     position: absolute;
     left: 0;
     bottom: 0;
@@ -58,7 +58,7 @@
         }
       }
     }
-    .list-scroll-wrapper{
+    .list-scroll-wrap{
       height: 380px;
       overflow: hidden;
     }

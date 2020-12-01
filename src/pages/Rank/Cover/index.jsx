@@ -8,7 +8,7 @@ const Cover = props => {
   const { coverImgUrl, updateFrequency } = props
 
   return (
-    <div className={styles['img-wrapper']}>
+    <div className={styles['img-wrap']}>
       <LazyLoad 
         placeholder={<img src={require('assets/images/music.png')} height="100%" alt="榜单封面" />}
       >

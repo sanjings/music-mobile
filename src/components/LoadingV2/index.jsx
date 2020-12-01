@@ -7,7 +7,7 @@ const LoadingV2 = props => {
   const { label } = props;
 
   return (
-    <div className={styles['loading-wrapper']}>
+    <div className={styles['loading-wrap']}>
       <div className={styles['line-group']}>
         <span className={styles['line']}></span>
         <span className={styles['line']}></span>

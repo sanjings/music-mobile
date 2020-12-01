@@ -73,7 +73,7 @@ const Album = props => {
       unmountOnExit
       onExited={props.history.goBack}
     >
-      <div className={styles['album-wrapper']} style={{bottom: playList.length ? '60px': 0}}>
+      <div className={styles['album-wrap']} style={{bottom: playList.length ? '60px': 0}}>
         <Header
           ref={headerRef}
           title={title}

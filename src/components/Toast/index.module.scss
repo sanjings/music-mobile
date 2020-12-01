@@ -1,0 +1,43 @@
+.toast-wrap{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2001;
+  &:global(.drop-enter), &:global(.drop-appear){
+    opacity: 0;
+  }
+  &:global(.drop-enter-active), &:global(.drop-appear-active){
+    opacity: 1;
+    transition: all 0.2s;
+  }
+  &:global(.drop-exit-active){
+    opacity: 0;
+    transition: all 0.2s;
+  }
+  .mask{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2002;
+    background-color: rgba($color: #000, $alpha: .3);
+  }
+  .toast-label{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2003;
+    transform: translate(-50%, -50%);
+    padding: 15px 20px;
+    width: 70%;
+    line-height: 20px;
+    text-align: center;
+    font-weight: 500;
+    color: $color-default;
+    background-color: #fff;
+    border-radius: 6px;
+  }
+}

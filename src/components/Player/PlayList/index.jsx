@@ -87,7 +87,7 @@ const PlayList = props => {
 
         {/* 歌曲列表 */}
         <div 
-          className={styles['list-wrapper']} 
+          className={styles['list-wrap']} 
           ref={listRef}
           onClick={e => e.stopPropagation()}
           onTouchStart={handleTouchStart}
@@ -102,7 +102,7 @@ const PlayList = props => {
             </div>
           </div>
           {/* 滚动列表 */}
-          <div className={styles['list-scroll-wrapper']}>
+          <div className={styles['list-scroll-wrap']}>
             <Scroll onScroll={handleScroll}>
               <List 
                 listData={playList} 

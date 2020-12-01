@@ -73,9 +73,9 @@ const Singers = props => {
 
   return (
     <>
-      <div className={styles['singers-wrapper']}>
+      <div className={styles['singers-wrap']}>
         {/* 分类字母 */}
-        <div className={styles['tab-wrapper']}>
+        <div className={styles['tab-wrap']}>
           <Tab
             currentType={currentTabType}
             listData={alphaTypes}

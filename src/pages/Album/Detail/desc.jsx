@@ -10,7 +10,7 @@ const AlbumDesc = props => {
 
   return (
     <div className={styles['desc']} >
-      <div className={styles['img-wrapper']}>
+      <div className={styles['img-wrap']}>
         {/* 点击量 */}
         <div className={styles['play-count']}>
           <i className="iconfont icon-headset"></i>
@@ -18,10 +18,10 @@ const AlbumDesc = props => {
         </div>
         <img src={coverImgUrl} width="100%" height="100%" alt="歌单封面" />
       </div>
-      <div className={styles['info-wrapper']}>
+      <div className={styles['info-wrap']}>
         <h1 className={styles['title']}>{ name }</h1>
         <div className={styles['person']}>
-          <div className={styles['avatar-wrapper']}>
+          <div className={styles['avatar-wrap']}>
             <img src={creator.avatarUrl} width="100%" height="100%" alt="歌单封面" />
           </div>
           <p className={styles['person-name']}>{ creator.nickname }</p>

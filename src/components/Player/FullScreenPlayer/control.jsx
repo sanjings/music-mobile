@@ -1,23 +1,27 @@
-import React, { memo } from "react"
-import classnames from 'classnames'
+import React, { memo } from "react";
+import classnames from 'classnames';
+import { useDispatch } from 'react-redux';
 
-import ProgressBar from '../ProgressBar'
+import ProgressBar from '../ProgressBar';
 
-import { formatPlayTime } from 'utils/filters'
+import { formatPlayTime } from 'utils/filters';
+import { showToastAction } from '@/store/actions';
 
-import styles from './control.module.scss'
+import styles from './control.module.scss';
 
 const Control = props => {
-  const { playingStatus, currentTime, duration, percent } = props
+  const { playingStatus, currentTime, duration, percent } = props;
 
-  const { togglePlayingState, toggleShowPlayList, onProgressChange, onClickPrev, onClickNext } = props
+  const { togglePlayingState, toggleShowPlayList, onProgressChange, onClickPrev, onClickNext } = props;
+
+  const dispatch = useDispatch();
 
   return (
-    <div className={styles['control-wrapper']}>
+    <div className={styles['control-wrap']}>
       {/* 进度条 */}
       <div className={styles['progress-bar']}>
         <span>{ formatPlayTime(currentTime) }</span>
-        <div className={styles['progress-bar-wrapper']}>
+        <div className={styles['progress-bar-wrap']}>
           <ProgressBar percent={percent} onChange={onProgressChange}/>
         </div>
         <span>{ formatPlayTime(duration) }</span>
@@ -25,7 +29,7 @@ const Control = props => {
 
       <ul className={styles['btn-group']}>
         {/* 播放模式 */}
-        <li className={styles['btn-item']} onClick={() => alert('目前只能顺序播放')}>
+        <li className={styles['btn-item']} onClick={() => dispatch(showToastAction('目前只能顺序播放'))}>
           <i className="iconfont icon-loop"></i>
         </li>
         {/* 上一首 */}

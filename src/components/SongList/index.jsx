@@ -49,7 +49,7 @@ const SongList = props => {
       }
 
       {/* 歌曲列表 */}
-      <ul className={styles['list-wrapper']} >
+      <ul className={styles['list-wrap']} >
         {
           listData.map((item, index) => {
             return (

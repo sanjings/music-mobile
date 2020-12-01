@@ -13,7 +13,7 @@ const SearchResult = props => {
   } = props;
 
   return (
-    <div className="result-wrapper">
+    <div className="result-wrap">
       {/* 相关歌手建议 */}
       {
         artists

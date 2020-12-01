@@ -14,7 +14,7 @@ const ListItem = props => {
   return (
     <Link to={`/recommend/${id}`} className={styles['list-item']}>
       {/* 封面图片 */}
-      <div className={styles['img-wrapper']}>
+      <div className={styles['img-wrap']}>
         {/* 点击量 */}
         <div className={styles['play-count']}>
           <i className="iconfont icon-headset"></i>

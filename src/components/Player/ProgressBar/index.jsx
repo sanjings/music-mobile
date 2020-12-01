@@ -118,7 +118,7 @@ const ProgressBar = props => {
   }
 
   return (
-    <div className={styles['progress-wrapper']}>
+    <div className={styles['progress-wrap']}>
       <div className={styles['bar-inner']} ref={barRef} onClick={handleClick}>
         <div className={styles['progress']} ref={progressRef}></div>
         <span
