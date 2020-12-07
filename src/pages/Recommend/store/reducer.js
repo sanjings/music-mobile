@@ -4,7 +4,7 @@ import {
   SET_RECOMMEND_LIST,
   SET_RECOMMEND_NEW_SONGS
 } from './actionTypes';
-import { produce } from 'immer'
+import { produce } from 'immer';
 
 const initialState = {
   loading: false,
@@ -31,4 +31,4 @@ export default produce((state, action) => {
     default: 
       break;
   }
-}, initialState)
+}, initialState);

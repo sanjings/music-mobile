@@ -1,22 +1,22 @@
-import React, { memo, useCallback, useState, useRef } from "react"
-import PropTypes from 'prop-types'
-import { CSSTransition } from 'react-transition-group'
+import React, { memo, useCallback, useState, useRef } from "react";
+import PropTypes from 'prop-types';
+import { CSSTransition } from 'react-transition-group';
 
-import Scroll from 'components/Scroll'
-import List from './list'
+import Scroll from 'components/Scroll';
+import List from './list';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const PlayList = props => {
-  const { playList, currentIndex } = props
+  const { playList, currentIndex } = props;
 
-  const { toggleShowPlayList, onClickPlay, onClickDelete } = props
+  const { toggleShowPlayList, onClickPlay, onClickDelete } = props;
 
   const [show, setShow] = useState(true),
         [canTouch, setCanTouch] = useState(true),
         [touchInfo, setTouchInfo] = useState({});
 
-  const listRef = useRef()
+  const listRef = useRef();
 
   /**
    * bScroll滚动事件回调

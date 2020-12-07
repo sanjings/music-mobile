@@ -1,15 +1,15 @@
-import React, { memo, useState, useEffect, useCallback, useRef } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { memo, useState, useEffect, useCallback, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { CSSTransition } from "react-transition-group";
 
-import Header from './Header'
-import Scroll from 'components/Scroll'
-import SongList from 'components/SongList'
-import Loading from 'components/Loading'
+import Header from './Header';
+import Scroll from 'components/Scroll';
+import SongList from 'components/SongList';
+import Loading from 'components/Loading';
 
-import { actions } from './store'
+import { actions } from './store';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const { getSingerDetailAction } = actions
 
@@ -18,15 +18,15 @@ const Singer = props => {
     loading: state.singer.loading,
     singerDetail: state.singer.singerDetail,
     playList: state.player.playList
-  }))
+  }));
 
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(true);
 
   const layerRef = useRef(),
         coverRef = useRef(),
         buttonRef = useRef();
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   /**
    * 获取歌手详情数据

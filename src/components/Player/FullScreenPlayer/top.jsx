@@ -1,12 +1,12 @@
-import React, { memo } from "react"
-import PropTypes from 'prop-types'
+import React, { memo } from "react";
+import PropTypes from 'prop-types';
 
-import styles from './top.module.scss'
+import styles from './top.module.scss';
 
 const Top = props => {
   const { songName, singerName } = props;
 
-  const { toggleFullScreen } = props
+  const { toggleFullScreen } = props;
 
   return (
     <div className={styles['top']}>

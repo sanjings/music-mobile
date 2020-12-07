@@ -10,11 +10,11 @@
   }
   &:global(.drop-enter-active), &:global(.drop-appear-active){
     opacity: 1;
-    transition: all 0.2s;
+    transition: all 0.3s;
   }
   &:global(.drop-exit-active){
     opacity: 0;
-    transition: all 0.2s;
+    transition: all 0.3s;
   }
   .mask{
     position: absolute;
@@ -23,7 +23,7 @@
     top: 0;
     bottom: 0;
     z-index: 2002;
-    background-color: rgba($color: #000, $alpha: .3);
+    background-color: rgba($color: #000, $alpha: .5);
   }
   .toast-label{
     position: absolute;
@@ -39,5 +39,6 @@
     color: $color-default;
     background-color: #fff;
     border-radius: 6px;
+    box-shadow: 0 2px 4px rgba($color: #000, $alpha: .3);
   }
 }

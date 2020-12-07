@@ -1,5 +1,5 @@
-import { SET_RANK_LOADING, SET_RANK_DATA } from './actionTypes'
-import { produce } from 'immer'
+import { SET_RANK_LOADING, SET_RANK_DATA } from './actionTypes';
+import { produce } from 'immer';
 
 const initialState = {
   loading: false,
@@ -20,4 +20,4 @@ export default produce((state, action) => {
     default:
       break;
   }
-}, initialState)
+}, initialState);

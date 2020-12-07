@@ -1,14 +1,14 @@
 import React, { memo, useEffect, useRef } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
 import { forceCheck } from 'react-lazyload';
 
-import Scroll from 'components/Scroll'
-import Loading from 'components/Loading'
-import Carousel from 'components/Carousel'
-import ModuleTitle from 'components/ModuleTitle'
-import SongList from 'components/SongList'
-import RecommendList from './List'
+import Scroll from 'components/Scroll';
+import Loading from 'components/Loading';
+import Carousel from 'components/Carousel';
+import ModuleTitle from 'components/ModuleTitle';
+import SongList from 'components/SongList';
+import RecommendList from './List';
 
 import { actions } from './store';
 
@@ -25,11 +25,11 @@ const Recommend = props => {
     recommendList: state.recommend.recommendList,
     newSongs: state.recommend.recommendNewSongs,
     playList: state.player.playList
-  }))
+  }));
 
-  const scrollRef = useRef(null)
+  const scrollRef = useRef(null);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   /**
    * 获取banner、recommend数据

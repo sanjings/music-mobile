@@ -1,17 +1,17 @@
-import React, { memo, useCallback, useRef, useState } from "react"
-import PropTypes from 'prop-types'
-import { CSSTransition } from 'react-transition-group'
-import animations from 'create-keyframe-animation'
+import React, { memo, useCallback, useRef, useState } from "react";
+import PropTypes from 'prop-types';
+import { CSSTransition } from 'react-transition-group';
+import animations from 'create-keyframe-animation';
 
-import Background from './background'
-import Top from './top'
-import CD from './cd'
-import Lyric from './lyric'
-import Control from './control'
+import Background from './background';
+import Top from './top';
+import CD from './cd';
+import Lyric from './lyric';
+import Control from './control';
 
-import { formatSingerName } from 'utils/filters'
+import { formatSingerName } from 'utils/formats';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const FullScreenPlayer = props => {
   const { 
@@ -24,7 +24,7 @@ const FullScreenPlayer = props => {
     currentLyric,
     currentPlayingLyric,
     currentLineNum 
-  } = props
+  } = props;
 
   const {
     toggleFullScreen,
@@ -33,9 +33,9 @@ const FullScreenPlayer = props => {
     onProgressChange, 
     onClickNext, 
     onClickPrev 
-  } = props
+  } = props;
 
-  const [showCd, setShowCd] = useState(true)
+  const [showCd, setShowCd] = useState(true);
 
   const fullPlayerRef = useRef(),
         cdRef = useRef();

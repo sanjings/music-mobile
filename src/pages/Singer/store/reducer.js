@@ -1,8 +1,8 @@
 import {
   SET_SINGER_DETAIL,
   SET_SINGER_LOADING
-} from './actionTypes'
-import { produce } from 'immer'
+} from './actionTypes';
+import { produce } from 'immer';
 
 const initialState = {
   singerDetail: null,
@@ -21,4 +21,4 @@ export default produce((state, action) => {
     default:
       break;
   }
-}, initialState)
+}, initialState);

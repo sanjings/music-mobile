@@ -3,8 +3,8 @@ import {
   CONCAT_SINGER_LIST,
   SET_PULL_DOWN_LOADING,
   SET_PULL_UP_LOADING
-} from './actionTypes'
-import { produce } from 'immer'
+} from './actionTypes';
+import { produce } from 'immer';
 
 const initialState = {
   pullDownLoading: false,

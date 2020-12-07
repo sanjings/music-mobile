@@ -1,5 +1,5 @@
-import { SET_ALBUM_DETAIL, SET_ALBUM_LOADING } from './actionTypes'
-import { getAlbumDetailRequest } from 'requests/album'
+import { SET_ALBUM_DETAIL, SET_ALBUM_LOADING } from './actionTypes';
+import { getAlbumDetailRequest } from 'requests/album';
 
 export const changeLoadingAction = payload => {
   return {

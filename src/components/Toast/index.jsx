@@ -4,9 +4,9 @@ import { CSSTransition } from 'react-transition-group';
 
 import { hideToastAction } from '@/store/actions';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
-const Toast = props => {
+const Toast = () => {
   const { showToast, toastText } = useSelector(state => ({
     showToast: state.global.showToast,
     toastText: state.global.toastText,
@@ -26,7 +26,6 @@ const Toast = props => {
         <p className={styles['toast-label']}>{ toastText }</p>
       </div>
     </CSSTransition>
-
   )
 }
 

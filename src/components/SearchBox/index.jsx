@@ -6,23 +6,23 @@ import React, {
   useRef,
   useImperativeHandle,
   forwardRef
-} from "react"
-import PropTypes from 'prop-types'
-import classnames from 'classnames'
+} from "react";
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
-import { debounce } from 'utils/tools'
+import { debounce } from 'utils/tools';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const SearchBox = forwardRef((props, ref) => {
-  const { keywords } = props
+  const { keywords } = props;
 
-  const { clickBack, onInput } = props
+  const { clickBack, onInput } = props;
 
   const [showClear, setShowClear] = useState(false),
         [queryStr, setQueryStr] = useState('');
 
-  const inputRef = useRef(null)
+  const inputRef = useRef(null);
 
   /**
    * 节流处理

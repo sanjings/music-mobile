@@ -1,5 +1,5 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
 import globalReducer from './reducer';
 import { reducer as recommendReducer } from '../pages/Recommend/store';

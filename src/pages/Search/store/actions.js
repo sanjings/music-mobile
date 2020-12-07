@@ -1,13 +1,13 @@
 import {
   SET_HOT_KEYWORDS_LIST,
   SET_SEARCH_DATA
-} from './actionTypes'
+} from './actionTypes';
 
 import {
   getHotKeywordsListRequest,
   getSearchListRequest,
   getSearchSuggestRequest
-} from 'requests/search'
+} from 'requests/search';
 
 
 export const changeHotKeywordsListAction = payload => ({

@@ -1,18 +1,18 @@
-import React, { memo, useRef } from "react"
-import PropTypes from 'prop-types'
-import { CSSTransition } from 'react-transition-group'
-import classnames from 'classnames'
+import React, { memo, useRef } from "react";
+import PropTypes from 'prop-types';
+import { CSSTransition } from 'react-transition-group';
+import classnames from 'classnames';
 
-import { formatSingerName } from 'utils/filters'
+import { formatSingerName } from 'utils/formats';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const MiniPlayer = props => {
-  const { song: { name, album, singers }, fullScreen, playingStatus } = props
+  const { song: { name, album, singers }, fullScreen, playingStatus } = props;
 
-  const { toggleFullScreen, togglePlayingState, toggleShowPlayList } = props
+  const { toggleFullScreen, togglePlayingState, toggleShowPlayList } = props;
 
-  const miniPlayerRef = useRef()
+  const miniPlayerRef = useRef();
 
   /**
    * 歌曲播放/暂停

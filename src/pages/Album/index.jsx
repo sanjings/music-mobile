@@ -1,15 +1,15 @@
 import React, { memo, useCallback, useEffect, useState, useRef } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 import { CSSTransition } from "react-transition-group";
 
-import Scroll from 'components/Scroll'
-import Loading from 'components/Loading'
-import Header from './Header'
-import Detail from './Detail'
+import Scroll from 'components/Scroll';
+import Loading from 'components/Loading';
+import Header from './Header';
+import Detail from './Detail';
 
-import { actions } from './store'
+import { actions } from './store';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const { getAlbumDetailAction } = actions;
 
@@ -18,7 +18,7 @@ const Album = props => {
     loading: state.album.loading,
     albumDetail: state.album.albumDetail,
     playList: state.player.playList
-  }))
+  }));
 
   const [title, setTitle] = useState('歌单'),
         [isTitleMarquee, setIsTitleMarquee] = useState(false),
@@ -26,7 +26,7 @@ const Album = props => {
 
   const headerRef = useRef();
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   /**
    * 获取榜单详情数据

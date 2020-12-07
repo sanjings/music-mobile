@@ -6,8 +6,8 @@ import {
   SET_PLAY_LIST,
   SET_SHOW_PLAY_LIST,
   DELETE_SONG
-} from './actionTypes'
-import { produce } from 'immer'
+} from './actionTypes';
+import { produce } from 'immer';
 
 const initialState = {
   fullScreen: false,

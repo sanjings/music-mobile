@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-import ListItem from './item'
+import ListItem from './item';
 
 const SingerList = props => {
-  const { listData } = props
+  const { listData } = props;
 
   return (
     <div className="singer-list">

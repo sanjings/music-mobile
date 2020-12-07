@@ -1,6 +1,6 @@
-const timeExp = /\[(\d{2,}):(\d{2})(?:\.(\d{2,3}))?]/g
-const STATE_PAUSE = 0
-const STATE_PLAYING = 1
+const timeExp = /\[(\d{2,}):(\d{2})(?:\.(\d{2,3}))?]/g;
+const STATE_PAUSE = 0;
+const STATE_PLAYING = 1;
 
 export default class LyricParser {
   /**

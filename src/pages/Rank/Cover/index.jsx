@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import LazyLoad from "react-lazyload";
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const Cover = props => {
-  const { coverImgUrl, updateFrequency } = props
+  const { coverImgUrl, updateFrequency } = props;
 
   return (
     <div className={styles['img-wrap']}>

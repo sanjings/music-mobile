@@ -1,7 +1,7 @@
-import React, { memo } from "react"
-import PropTypes from 'prop-types'
+import React, { memo } from "react";
+import PropTypes from 'prop-types';
 
-import styles from './background.module.scss'
+import styles from './background.module.scss';
 
 const Background = props => {
   const { picUrl } = props;

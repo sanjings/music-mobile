@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-import ListItem from './item'
+import ListItem from './item';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const OfficialList = (props) => {
-  const { listData } = props
+  const { listData } = props;
 
   return (
     <div className={styles['official-list']}>

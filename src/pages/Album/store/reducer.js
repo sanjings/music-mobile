@@ -1,5 +1,5 @@
-import { SET_ALBUM_DETAIL, SET_ALBUM_LOADING } from './actionTypes'
-import { produce } from 'immer'
+import { SET_ALBUM_DETAIL, SET_ALBUM_LOADING } from './actionTypes';
+import { produce } from 'immer';
 
 const initialState = {
   loading: false,

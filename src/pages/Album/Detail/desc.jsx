@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-import { formatCount } from 'utils/filters'
+import { formatCount } from 'utils/formats';
 
-import styles from './desc.module.scss'
+import styles from './desc.module.scss';
 
 const AlbumDesc = props => {
-  const { subscribedCount, coverImgUrl, creator, name } = props
+  const { subscribedCount, coverImgUrl, creator, name } = props;
 
   return (
     <div className={styles['desc']} >

@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import Cover from '../Cover'
+import Cover from '../Cover';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const GlobalList = props => {
   const { listData } = props;

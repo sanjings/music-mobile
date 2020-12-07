@@ -1,13 +1,13 @@
-import React, { memo, forwardRef } from "react"
-import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import React, { memo, forwardRef } from "react";
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
-import styles from './cd.module.scss'
+import styles from './cd.module.scss';
 
 const CD = forwardRef((props, ref) => {
-  const { show, picUrl, playingStatus, currentPlayingLyric } = props
+  const { show, picUrl, playingStatus, currentPlayingLyric } = props;
 
-  const { toggleCd } = props
+  const { toggleCd } = props;
 
   return (
     <div

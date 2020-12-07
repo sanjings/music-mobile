@@ -1,7 +1,7 @@
 import React, { memo, forwardRef } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const AlbumHeader = forwardRef((props, ref) => {
   const { title, isTitleMarquee } = props;

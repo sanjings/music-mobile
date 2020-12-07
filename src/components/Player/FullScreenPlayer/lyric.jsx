@@ -1,15 +1,15 @@
-import React, { memo, useEffect, useRef, createRef } from "react"
-import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import React, { memo, useEffect, useRef, createRef } from "react";
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
-import Scroll from 'components/Scroll'
+import Scroll from 'components/Scroll';
 
-import styles from './lyric.module.scss'
+import styles from './lyric.module.scss';
 
 const Lyric = props => {
-  const { show, currentLyric, currentLineNum } = props
+  const { show, currentLyric, currentLineNum } = props;
 
-  const { toggleCd } = props
+  const { toggleCd } = props;
 
   const scrollRef = useRef(),
         lyricLineRefs = useRef([]);

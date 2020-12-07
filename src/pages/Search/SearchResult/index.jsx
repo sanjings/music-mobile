@@ -1,8 +1,8 @@
-import React, { memo } from "react"
-import PropTypes from 'prop-types'
+import React, { memo } from "react";
+import PropTypes from 'prop-types';
 
-import Suggest from './suggest'
-import SongList from 'components/SongList'
+import Suggest from './suggest';
+import SongList from 'components/SongList';
 
 const SearchResult = props => {
   const { 

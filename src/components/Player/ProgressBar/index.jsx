@@ -1,12 +1,12 @@
 import React, { memo, useState, useRef, useEffect } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const ProgressBar = props => {
-  const { percent } = props
+  const { percent } = props;
 
-  const { onChange } = props
+  const { onChange } = props;
 
   const [touchInfo, setTouchInfo] = useState({}),
         [barWidth, setBarWidth] = useState();

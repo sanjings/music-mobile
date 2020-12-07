@@ -1,5 +1,5 @@
-import { SET_RANK_LOADING, SET_RANK_DATA } from './actionTypes'
-import { getRankListRequest } from 'requests/rank'
+import { SET_RANK_LOADING, SET_RANK_DATA } from './actionTypes';
+import { getRankListRequest } from 'requests/rank';
 
 export const changeLoadingAction = payload => {
   return {

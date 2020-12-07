@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const Loading = () => {
   return (

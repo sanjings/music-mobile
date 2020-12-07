@@ -1,14 +1,14 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-import { formatCount } from 'utils/filters'
+import { formatCount } from 'utils/formats';
 
-import styles from './menu.module.scss'
+import styles from './menu.module.scss';
 
 const ListMenu = props => {
-  const { songCount, subscribedCount, showCollect } = props
+  const { songCount, subscribedCount, showCollect } = props;
 
-  const { onClickPlayAll } = props
+  const { onClickPlayAll } = props;
 
   return (
     <div className={styles['list-menu']}>

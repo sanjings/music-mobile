@@ -1,12 +1,12 @@
-import React, { memo } from "react"
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import React, { memo } from "react";
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import LazyLoad from "react-lazyload";
 
-import styles from './suggest.module.scss'
+import styles from './suggest.module.scss';
 
 const suggest = props => {
-  const { listData, type } = props
+  const { listData, type } = props;
 
   return (
     <div className={styles['suggest']}>

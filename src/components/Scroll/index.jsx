@@ -7,16 +7,16 @@ import React,
   useMemo,
   useRef,
   forwardRef
-} from 'react'
-import PropTypes from 'prop-types'
-import BScroll from 'better-scroll'
+} from 'react';
+import PropTypes from 'prop-types';
+import BScroll from 'better-scroll';
 
-import LoadingV3 from 'components/LoadingV3'
-import LoadingV2 from 'components/LoadingV2'
+import LoadingV3 from 'components/LoadingV3';
+import LoadingV2 from 'components/LoadingV2';
 
-import { debounce } from 'utils/tools'
+import { debounce } from 'utils/tools';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const Scroll = forwardRef((props, ref) => {
   const {
@@ -29,13 +29,13 @@ const Scroll = forwardRef((props, ref) => {
     pullDownLoading,
     pullUpLoading,
     children
-  } = props
+  } = props;
 
-  const { onScroll, onPullDown, onPullUp } = props
+  const { onScroll, onPullDown, onPullUp } = props;
 
-  const [bScroll, setBScroll] = useState(null)
+  const [bScroll, setBScroll] = useState(null);
 
-  const scrollRef = useRef()
+  const scrollRef = useRef();
 
   const pullDownDebounce = useMemo(() => {
     return debounce(onPullDown, 500)

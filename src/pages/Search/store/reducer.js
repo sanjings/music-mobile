@@ -1,8 +1,8 @@
 import {
   SET_HOT_KEYWORDS_LIST,
   SET_SEARCH_DATA
-} from './actionTypes'
-import { produce } from 'immer'
+} from './actionTypes';
+import { produce } from 'immer';
 
 const initialState = {
   hotKeywordsList: [],

@@ -1,12 +1,12 @@
-import React, { memo } from "react"
-import PropTypes from 'prop-types'
+import React, { memo } from "react";
+import PropTypes from 'prop-types';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const HotSearch = props => {
-  const { listData } = props
+  const { listData } = props;
 
-  const { onItemClick } = props
+  const { onItemClick } = props;
 
   /**
    * item点击事件

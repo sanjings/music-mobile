@@ -1,31 +1,31 @@
-import React, { memo, useState, useCallback, useEffect } from "react"
-import { useDispatch, useSelector } from 'react-redux'
-import { CSSTransition } from 'react-transition-group'
-import { forceCheck } from 'react-lazyload'
-import classnames from 'classnames'
+import React, { memo, useState, useCallback, useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { CSSTransition } from 'react-transition-group';
+import { forceCheck } from 'react-lazyload';
+import classnames from 'classnames';
 
-import Scroll from 'components/Scroll'
-import SearchBox from 'components/SearchBox'
-import HotSearch from './HotSearch'
-import SearchResult from './SearchResult'
+import Scroll from 'components/Scroll';
+import SearchBox from 'components/SearchBox';
+import HotSearch from './HotSearch';
+import SearchResult from './SearchResult';
 
-import { actions } from './store'
+import { actions } from './store';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
-const { getHotKeywordsListAction, getSearchDataAction, changeSearchDataAction } = actions
+const { getHotKeywordsListAction, getSearchDataAction, changeSearchDataAction } = actions;
 
 const Search = props => {
   const { hotKeywordsList, searchData, playList } = useSelector(state => ({
     hotKeywordsList: state.search.hotKeywordsList,
     searchData: state.search.searchData,
     playList: state.player.playList
-  }))
+  }));
 
   const [show, setShow] = useState(true),
         [keywords, setKeywords] = useState('');
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   /**
    * 请求热门关键词数据

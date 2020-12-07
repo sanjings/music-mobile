@@ -3,7 +3,7 @@
  * @param {Object}} data 
  */
 export const deepClone = data => {
-  return JSON.parse(JSON.stringify(data))
+  return JSON.parse(JSON.stringify(data));
 }
 
 /**
@@ -21,7 +21,7 @@ export const debounce = (fn, delayTime = 300) => {
     timer = setTimeout(() => {
       fn.apply(_this, args);
     }, delayTime)
-  }
+  };
 }
 
 /**
@@ -39,7 +39,7 @@ export const throttle = (fn, waitTime) => {
       fn.apply(this, args);
       preTime = nowTime;
     }
-  }
+  };
 }
 
 /**
@@ -47,7 +47,7 @@ export const throttle = (fn, waitTime) => {
  * @param {Object} obj 
  */
 export const isEmptyObject = obj => {
-  return JSON.stringify(obj) === '{}' ? true : false
+  return JSON.stringify(obj) === '{}' ? true : false;
 }
 
 

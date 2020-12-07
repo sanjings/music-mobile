@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 import { renderRoutes } from 'react-router-config';
 import { useDispatch } from 'react-redux';
 
@@ -13,10 +13,19 @@ import { showToastAction } from '@/store/actions';
 const HomeLayout = props => {
   const { route } = props;
 
+  const timer = useRef(null);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(showToastAction('本项目仿网易云音乐开发，使用开源接口，仅供学习交流使用！'));
+    timer.current = setTimeout(() => {
+      dispatch(showToastAction('本项目仿网易云音乐开发，使用开源接口，仅供学习交流使用！'));
+    }, 600);
+
+    return () => {
+      clearTimeout(timer);
+      timer.current = null;
+    }
   }, []);
 
   return (

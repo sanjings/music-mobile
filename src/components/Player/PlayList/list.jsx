@@ -1,13 +1,13 @@
-import React, { memo } from "react"
+import React, { memo } from "react";
 
-import { formatSingerName } from 'utils/filters'
+import { formatSingerName } from 'utils/formats';
 
-import styles from './list.module.scss'
+import styles from './list.module.scss';
 
 const List = props => {
-  const { listData, currentIndex } = props
+  const { listData, currentIndex } = props;
 
-  const { onClickPlay, onClickDelete } = props
+  const { onClickPlay, onClickDelete } = props;
 
   /**
    * 删除

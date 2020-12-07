@@ -1,15 +1,15 @@
-import React, { memo, useCallback, useRef, useEffect, useState } from "react"
-import { useDispatch, useSelector } from 'react-redux'
+import React, { memo, useCallback, useRef, useEffect, useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
 
-import FullScreenPlayer from './FullScreenPlayer'
-import MiniPlayer from './MiniPlayer'
-import PlayList from './PlayList'
+import FullScreenPlayer from './FullScreenPlayer';
+import MiniPlayer from './MiniPlayer';
+import PlayList from './PlayList';
 
-import { isEmptyObject } from 'utils/tools'
-import { formatSongUrl } from 'utils/filters'
-import { getLyricRequest } from 'requests/song'
-import LyricParser from 'plugins/LyricParser'
-import { actions } from './store'
+import { isEmptyObject } from 'utils/tools';
+import { formatSongUrl } from 'utils/formats';
+import { getLyricRequest } from 'requests/song';
+import LyricParser from 'plugins/LyricParser';
+import { actions } from './store';
 
 const { 
   changeFullScreenAction, 
@@ -18,7 +18,7 @@ const {
   changeCurrentIndexAction,
   changeCurrentSongAction,
   deleteSongAction 
-} = actions
+} = actions;
 
 const Player = () => {
   const { 
@@ -35,7 +35,7 @@ const Player = () => {
     currentSong: state.player.currentSong,
     showPlayList: state.player.showPlayList,
     playList: state.player.playList
-  }))
+  }));
 
   const [preSongId, setPreSongId] = useState(),
         [currentTime, setCurrentTime] = useState(0),
@@ -48,7 +48,7 @@ const Player = () => {
         currentLyric = useRef(),
         currentLineNum = useRef(0);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
         
   useEffect(() => {
     if (

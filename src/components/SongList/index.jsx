@@ -1,16 +1,16 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types'
-import { useDispatch } from 'react-redux'
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 
-import ListItem from './item'
-import ListMenu from './menu'
+import ListItem from './item';
+import ListMenu from './menu';
 
-import { deepClone } from 'utils/tools'
-import { actions } from '../Player/store'
+import { deepClone } from 'utils/tools';
+import { actions } from '../Player/store';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
-const { changeCurrentIndexAction, changePlayListAction } = actions
+const { changeCurrentIndexAction, changePlayListAction } = actions;
 
 const SongList = props => {
   const {
@@ -22,7 +22,7 @@ const SongList = props => {
     subscribedCount
   } = props;
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleClickPlay = index => {
     dispatch(changePlayListAction(deepClone(listData)))

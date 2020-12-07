@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
-import { formatNumber, formatSingerName } from 'utils/filters'
+import { formatNumber, formatSingerName } from 'utils/formats';
 
-import styles from './item.module.scss'
+import styles from './item.module.scss';
 
 const ListItem = props => {
   const { 
@@ -12,9 +12,9 @@ const ListItem = props => {
     index, 
     showPlay, 
     showIndex 
-  } = props
+  } = props;
 
-  const { onClickPlay } = props
+  const { onClickPlay } = props;
 
   return (
     <li className={styles['list-item']} onClick={() => onClickPlay(index)}>

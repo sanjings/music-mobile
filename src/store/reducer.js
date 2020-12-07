@@ -18,4 +18,4 @@ export default produce((state, action) => {
     default:
       break;
   }
-}, initialState)
+}, initialState);

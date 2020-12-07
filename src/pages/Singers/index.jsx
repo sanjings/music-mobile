@@ -1,16 +1,16 @@
 import React, { memo, useRef, useState, useEffect, useCallback } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
-import { forceCheck } from 'react-lazyload'
+import { forceCheck } from 'react-lazyload';
 
-import Scroll from 'components/Scroll'
-import SingerList from './List'
-import Tab from './Tab'
+import Scroll from 'components/Scroll';
+import SingerList from './List';
+import Tab from './Tab';
 
-import { actions } from './store'
-import { alphaTypes } from '../../apis/data'
+import { actions } from './store';
+import { alphaTypes } from '../../apis/data';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const {
   getSingerListAction,
@@ -23,13 +23,13 @@ const Singers = props => {
     pullUpLoading: state.singers.pullUpLoading,
     singerList: state.singers.singerList,
     playList: state.player.playList
-  }))
+  }));
 
-  const [currentTabType, setCurrentTabType] = useState('')
+  const [currentTabType, setCurrentTabType] = useState('');
 
-  const scrollRef = useRef(null)
+  const scrollRef = useRef(null);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   /**
    * 获取歌手数据

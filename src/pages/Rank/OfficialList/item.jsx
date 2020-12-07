@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import Cover from "../Cover"
+import Cover from "../Cover";
 
-import styles from './item.module.scss'
+import styles from './item.module.scss';
 
 const ListItem = props => {
   const { itemData: { id, coverImgUrl, updateFrequency, tracks } } = props;

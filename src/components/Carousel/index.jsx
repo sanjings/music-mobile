@@ -1,15 +1,15 @@
 import React, { memo, useState, useEffect } from 'react';
-import PropTypes from 'prop-types'
-import classnames from 'classnames'
-import Swiper from 'swiper'
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import Swiper from 'swiper';
 
 import 'swiper/css/swiper.min.css';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const Carousel = props => {
-  const { banners } = props
+  const { banners } = props;
 
-  const [swiper, setSwiper] = useState(null)
+  const [swiper, setSwiper] = useState(null);
 
   /**
    * 初始化swiper组件

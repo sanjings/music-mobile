@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import LazyLoad from "react-lazyload";
-import classnames from 'classnames'
+import classnames from 'classnames';
 
-import { formatCount } from 'utils/filters'
+import { formatCount } from 'utils/formats';
 
-import styles from './item.module.scss'
+import styles from './item.module.scss';
 
 const ListItem = props => {
   const { itemData: { id, picUrl, playCount, name } } = props;

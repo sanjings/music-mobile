@@ -1,8 +1,8 @@
 import {
   SET_SINGER_DETAIL,
   SET_SINGER_LOADING
-} from './actionTypes'
-import { getSingerDetailRequest } from 'requests/singer'
+} from './actionTypes';
+import { getSingerDetailRequest } from 'requests/singer';
 
 export const changeSingerDetailAction = (payload) => {
   return {

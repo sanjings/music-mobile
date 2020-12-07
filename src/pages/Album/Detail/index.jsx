@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-import SongList from 'components/SongList'
-import AlbumDesc from './desc'
-import AlbumMenu from './menu'
+import SongList from 'components/SongList';
+import AlbumDesc from './desc';
+import AlbumMenu from './menu';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const AlbumDetail = props => {
   const { data: { coverImgUrl, subscribedCount, name, creator, tracks } } = props;

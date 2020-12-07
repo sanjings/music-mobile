@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const LoadingV2 = props => {
   const { label } = props;
