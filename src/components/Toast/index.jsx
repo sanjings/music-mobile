@@ -20,7 +20,7 @@ const Toast = () => {
   }
 
   return (
-    <CSSTransition in={showToast} timeout={300} classNames="drop" unmountOnExit>
+    <CSSTransition in={showToast} timeout={200} classNames="drop" unmountOnExit>
       <div className={styles['toast-wrap']}>
         <div className={styles['mask']} onClick={ hideToast }></div>
         <p className={styles['toast-label']}>{ toastText }</p>

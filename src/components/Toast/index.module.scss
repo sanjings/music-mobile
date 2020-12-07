@@ -10,11 +10,11 @@
   }
   &:global(.drop-enter-active), &:global(.drop-appear-active){
     opacity: 1;
-    transition: all 0.3s;
+    transition: all 0.2s;
   }
   &:global(.drop-exit-active){
     opacity: 0;
-    transition: all 0.3s;
+    transition: all 0.2s;
   }
   .mask{
     position: absolute;
@@ -38,7 +38,7 @@
     font-weight: 500;
     color: $color-default;
     background-color: #fff;
-    border-radius: 6px;
+    border-radius: 4px;
     box-shadow: 0 2px 4px rgba($color: #000, $alpha: .3);
   }
 }
