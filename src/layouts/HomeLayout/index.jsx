@@ -19,7 +19,7 @@ const HomeLayout = props => {
 
   useEffect(() => {
     timer.current = setTimeout(() => {
-      dispatch(showToastAction('本项目仿网易云音乐开发，使用开源接口，仅供学习交流使用！'));
+      dispatch(showToastAction('本项目仿网易云音乐开发，使用开源接口，仅供学习交流使用！网易云音乐官方网址: music.163.com'));
     }, 600);
 
     return () => {
