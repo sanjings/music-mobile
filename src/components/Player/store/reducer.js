@@ -15,18 +15,18 @@ const initialState = {
   currentIndex: -1,
   currentSong: {},
   playList: [],
-  showPlayList: false,
-}
+  showPlayList: false
+};
 
-const deleteSongFormPlayList = (state, index) => {
-  const { playList, currentIndex } = state
+const deleteSongFromPlayList = (state, index) => {
+  const { playList, currentIndex } = state;
 
-  playList.splice(index, 1)
+  playList.splice(index, 1);
 
   if (index < currentIndex) {
     state.currentIndex--;
   }
-}
+};
 
 export default produce((state, action) => {
   switch (action.type) {
@@ -49,9 +49,9 @@ export default produce((state, action) => {
       state.showPlayList = action.payload;
       break;
     case DELETE_SONG:
-      deleteSongFormPlayList(state, action.payload);
+      deleteSongFromPlayList(state, action.payload);
       break;
     default:
       break;
   }
-}, initialState)
+}, initialState);
