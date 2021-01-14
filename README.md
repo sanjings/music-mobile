@@ -81,7 +81,7 @@
 ### 项目运行
 #### clone项目
 ```
-git clone https://github.com/sanjing14/react-hooks-music-h5.git
+git clone https://github.com/sanjings/react-hooks-music-h5.git
 ```
 #### 拉取后端项目
 ```
