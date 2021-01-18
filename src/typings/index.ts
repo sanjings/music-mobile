@@ -1,3 +1,7 @@
+export interface IAction {
+  type: string;
+}
+
 export interface ISong {
   id: number;
   name: string;
@@ -16,4 +20,8 @@ export interface ISinger {
   id: number;
   name: string;
   picUrl: string;
+}
+
+export interface IRecom extends IAlbum {
+  playCount: number;
 }

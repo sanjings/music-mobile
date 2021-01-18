@@ -1,5 +1,4 @@
 import React, { memo, useEffect, useRef, createRef, FC, ReactElement } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Scroll from '../../../components/Scroll';
@@ -20,7 +19,7 @@ const Lyric: FC<IFullLyricProps> = ({
   /**
    * 根据歌曲播放进度，滚动至相应的歌词
    */
-  useEffect(() => {
+  useEffect((): void => {
     if (!scrollRef.current) return;
 
     const bScroll = scrollRef.current!.getBScroll();

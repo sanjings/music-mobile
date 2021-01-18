@@ -2,11 +2,11 @@ import { ISong } from "../../typings";
 
 export interface IProps {
   listData: ISong[];
-  showIndex: boolean;
-  showMenu: boolean;
-  showCollect: boolean;
-  showPlay: boolean;
-  subscribedCount: number;
+  showIndex?: boolean;
+  showMenu?: boolean;
+  showCollect?: boolean;
+  showPlay?: boolean;
+  subscribedCount?: number;
 }
 
 export interface IMenuProps {

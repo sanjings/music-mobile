@@ -10,10 +10,18 @@ import { reducer as albumReducer } from '../pages/Album/store';
 import { reducer as playerReducer } from '../components/Player/store';
 import { reducer as searchReducer } from '../pages/Search/store';
 import { IPlayerState } from '../components/Player/store/reducer';
+import { IAlbumState } from './../pages/Album/store/reducer';
+import { IRecomState } from './../pages/Recommend/store/reducer';
+import { IRankState } from './../pages/Rank/store/reducer';
+import { ISearchState } from './../pages/Search/store/reducer';
 
 export interface IStoreState {
   global: IGlobalState;
   player: IPlayerState;
+  album: IAlbumState;
+  rank: IRankState;
+  recommend: IRecomState;
+  search: ISearchState;
 }
 
 const reducers = combineReducers({

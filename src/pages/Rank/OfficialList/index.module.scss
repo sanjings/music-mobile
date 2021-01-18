@@ -1,3 +1,25 @@
 .official-list{
   padding: 0 5px;
+  .list-item{
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid $color-deep-white;
+    .cover{
+      width: 102px;
+      height: 102px;
+    }
+    .song-list{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 10px;
+      height: 102px;
+      .song-item{
+        font-size: $font-size-mini;
+        color: $color-gray;
+      }
+    }
+  }
 }

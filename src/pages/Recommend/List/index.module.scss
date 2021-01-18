@@ -2,4 +2,39 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  .list-item{
+    position: relative;
+    padding-bottom: 15px;
+    width: 32.33%;
+    
+    .img-wrap{
+      position: relative;
+      width: 100%;
+      height: 0px;
+      padding-bottom: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+  
+      .play-count{
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 5px 5px 10px;
+        width: 100%;
+        font-size: $font-size-mini;
+        text-align: right;
+        color: #FFF;
+        background: linear-gradient(hsla(0,0%,43%,.4),hsla(0,0%,100%,0));
+        i{
+          margin-right: 2px;
+          font-size: $font-size-mini;
+        }
+      }
+    }
+  
+    .desc{
+      padding: 5px 2px 0 5px;
+      font-size: $font-size-mini;
+    }
+  }
 }
