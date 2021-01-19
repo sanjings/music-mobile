@@ -1,7 +1,7 @@
-# react+hooks+redux+immerjs打造音乐webapp
+# react+hooks+redux+typescript+immer打造音乐webapp
 
 ### 项目简介
-使用react hooks+redux+immerjs编写的仿网易云音乐移动端web项目。  
+使用react hooks+redux+typescript+immer编写的仿网易云音乐移动端web项目。  
 特别鸣谢huangyi大佬的课程[Vue2.0开发企业级移动端音乐Web App](https://coding.imooc.com/learn/list/107.html)，以及神三元大佬的小册[React Hooks 与 Immutable 数据流实战](https://juejin.im/book/6844733816460804104)
 
 #### 技术栈
@@ -9,6 +9,7 @@
 - **[redux](https://github.com/reduxjs/redux):**  状态管理容器
 - **[redux-thunk](https://github.com/reduxjs/redux-thunk):**  处理异步逻辑的redux中间件
 - **[react-lazyload](https://github.com/twobin/react-lazyload):**  懒加载库 
+- **[typescript](https://github.com/microsoft/TypeScript):**  javascript的超集
 - **[immer](https://github.com/immerjs/immer):**  一个不可变数据的库 
 - **[axios](https://github.com/axios/axios):**  基于promise的HTTP库
 - **[swiper](https://github.com/nolimits4web/swiper):** 著名轮播图插件 
