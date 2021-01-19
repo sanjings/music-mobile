@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import ListItem from './item';
 import ListMenu from './menu';
 
-import { deepClone } from '../../utils/tools';
+import { deepClone } from 'utils/tools';
 import { actions } from '../Player/store';
 
 import styles from './index.module.scss';

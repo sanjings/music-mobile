@@ -1,6 +1,6 @@
 import React, { FC, memo, ReactElement } from 'react';
 
-import { formatCount } from '../../utils/formats';
+import { formatCount } from 'utils/formats';
 
 import styles from './menu.module.scss';
 import { IMenuProps } from './typing';

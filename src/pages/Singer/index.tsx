@@ -4,15 +4,15 @@ import { CSSTransition } from 'react-transition-group';
 import { RouteComponentProps } from 'react-router-dom';
 
 import Header from './Header';
-import Scroll from '../../components/Scroll';
-import SongList from '../../components/SongList';
-import Loading from '../../components/Loading';
+import Scroll from 'components/Scroll';
+import SongList from 'components/SongList';
+import Loading from 'components/Loading';
 
 import { actions } from './store';
 
 import styles from './index.module.scss';
-import { IStoreState } from '../../store';
-import { IPosition } from '../../components/Scroll/typing';
+import { IStoreState } from '@/store';
+import { IPosition } from 'components/Scroll/typing';
 
 const { getSingerDetailAction } = actions;
 

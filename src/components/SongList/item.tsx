@@ -1,7 +1,7 @@
 import React, { FC, memo, ReactElement } from 'react';
 import classnames from 'classnames';
 
-import { formatNumber, formatSingerName } from '../../utils/formats';
+import { formatNumber, formatSingerName } from 'utils/formats';
 
 import styles from './item.module.scss';
 import { IItemProps } from './typing';

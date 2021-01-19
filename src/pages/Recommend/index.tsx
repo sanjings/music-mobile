@@ -3,16 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { renderRoutes, RouteConfigComponentProps } from 'react-router-config';
 import { forceCheck } from 'react-lazyload';
 
-import Scroll from '../../components/Scroll';
-import Loading from '../../components/Loading';
-import Carousel from '../../components/Carousel';
-import ModuleTitle from '../../components/ModuleTitle';
-import SongList from '../../components/SongList';
+import Scroll from 'components/Scroll';
+import Loading from 'components/Loading';
+import Carousel from 'components/Carousel';
+import ModuleTitle from 'components/ModuleTitle';
+import SongList from 'components/SongList';
 import RecommendList from './List';
 
 import { actions } from './store';
-import { IStoreState } from '../../store';
-import { IScrollInstance } from '../../components/Scroll/typing';
+import { IStoreState } from '@/store';
+import { IScrollInstance } from 'components/Scroll/typing';
 
 const { getBannersAction, getRecommendListAction, getRecommendNewSongsAction } = actions;
 

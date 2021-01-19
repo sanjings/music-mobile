@@ -1,7 +1,7 @@
 import React, { memo, useState, useEffect, useMemo, useRef, useImperativeHandle, forwardRef, FC, ReactElement } from 'react';
 import classnames from 'classnames';
 
-import { debounce } from '../../utils/tools';
+import { debounce } from 'utils/tools';
 
 import styles from './index.module.scss';
 import { IProps } from './typing';

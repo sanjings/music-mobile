@@ -1,5 +1,5 @@
-import LyricParser from '../../plugins/LyricParser';
-import { ISong } from '../../typings';
+import LyricParser from 'plugins/LyricParser';
+import { ISong } from '@/typings';
 
 type handleProgressChange = (percent: number) => void;
 

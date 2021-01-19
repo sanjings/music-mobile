@@ -9,12 +9,12 @@ import React, {
 } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
-import Scroll from '../../../components/Scroll';
+import Scroll from 'components/Scroll';
 import List from './list';
 
 import styles from './index.module.scss';
 import { IPlayListIndexProps, IPlayListTouchInfo } from '../typing';
-import { IPosition } from '../../Scroll/typing';
+import { IPosition } from 'components/Scroll/typing';
 
 const PlayList: FC<IPlayListIndexProps> = ({
   playList = [],

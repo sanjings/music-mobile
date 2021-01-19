@@ -6,7 +6,7 @@ import {
   getHotKeywordsListRequest,
   getSearchListRequest,
   getSearchSuggestRequest
-} from '../../../apis/requests/search';
+} from 'requests/search';
 import { IHotKey, ISearchResult } from '../typing';
 
 export const changeHotKeywordsListAction = (payload: IHotKey[]): ISearchAction => ({

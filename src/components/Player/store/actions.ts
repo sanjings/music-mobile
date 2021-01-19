@@ -1,4 +1,4 @@
-import { ISong } from '../../../typings';
+import { ISong } from '@/typings';
 import {
   SET_FULL_SCREEN,
   SET_PLAYING_STATUS,

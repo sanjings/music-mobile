@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 import classnames from 'classnames';
 
-import { formatCount } from '../../../utils/formats';
+import { formatCount } from 'utils/formats';
 
 import styles from './index.module.scss';
 import { IRecomListProps } from '../typing';

@@ -1,13 +1,13 @@
 import { Dispatch } from 'redux';
 import { ISingersAction } from './reducer';
-import { ISinger } from './../../../typings/index';
+import { ISinger } from '@/typings/index';
 import {
   SET_SINGER_LIST,
   CONCAT_SINGER_LIST,
   SET_PULL_DOWN_LOADING,
   SET_PULL_UP_LOADING
 } from './actionTypes';
-import { getSingerListRequest } from '../../../apis/requests/singer';
+import { getSingerListRequest } from 'requests/singer';
 
 export const changeSingerListAction = (payload: ISinger[]): ISingersAction => {
   return {

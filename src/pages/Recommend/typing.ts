@@ -1,4 +1,4 @@
-import { IRecom } from "../../typings";
+import { IRecom } from "@/typings";
 
 export interface IRecomListProps {
   listData: Array<IRecom>;

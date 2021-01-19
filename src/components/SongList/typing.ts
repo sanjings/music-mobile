@@ -1,4 +1,4 @@
-import { ISong } from "../../typings";
+import { ISong } from "@/typings";
 
 export interface IProps {
   listData: ISong[];

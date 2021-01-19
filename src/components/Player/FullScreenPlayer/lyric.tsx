@@ -1,11 +1,11 @@
 import React, { memo, useEffect, useRef, createRef, FC, ReactElement } from 'react';
 import classnames from 'classnames';
 
-import Scroll from '../../../components/Scroll';
+import Scroll from 'components/Scroll';
 
 import styles from './lyric.module.scss';
 import { IFullLyricProps } from '../typing';
-import { IScrollInstance } from '../../Scroll/typing';
+import { IScrollInstance } from 'components/Scroll/typing';
 
 const Lyric: FC<IFullLyricProps> = ({ 
   show = true, 

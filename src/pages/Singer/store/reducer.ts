@@ -1,6 +1,6 @@
 import { SET_SINGER_DETAIL, SET_SINGER_LOADING } from './actionTypes';
 import { produce } from 'immer';
-import { IAction, ISinger } from '../../../typings';
+import { IAction, ISinger } from '@/typings';
 
 export interface ISingerState {
   singerDetail: ISinger | null;

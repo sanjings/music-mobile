@@ -1,7 +1,7 @@
 import React, { FC, memo, ReactElement } from 'react';
 
 import Suggest from './suggest';
-import SongList from '../../../components/SongList';
+import SongList from 'components/SongList';
 import { ISearchResult } from '../typing';
 
 const SearchResult: FC<ISearchResult> = ({ 

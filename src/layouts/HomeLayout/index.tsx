@@ -2,12 +2,12 @@ import React, { FC, memo, ReactElement, useEffect, useRef } from 'react';
 import { renderRoutes, RouteConfigComponentProps } from 'react-router-config';
 import { useDispatch } from 'react-redux';
 
-import Header from '../../components/Header';
-import NavTab from '../../components/NavTab';
-import Player from '../../components/Player';
-import Toast from '../../components/Toast';
+import Header from 'components/Header';
+import NavTab from 'components/NavTab';
+import Player from 'components/Player';
+import Toast from 'components/Toast';
 
-import { showToastAction } from '../../store/actions';
+import { showToastAction } from '@/store/actions';
 
 const HomeLayout: FC<RouteConfigComponentProps> = ({
   route

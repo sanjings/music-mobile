@@ -3,16 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { renderRoutes, RouteConfigComponentProps } from 'react-router-config';
 import { forceCheck } from 'react-lazyload';
 
-import Scroll from '../../components/Scroll';
+import Scroll from 'components/Scroll';
 import SingerList from './List';
 import Tab from './Tab';
 
 import { actions } from './store';
-import { alphaTypes } from '../../apis/data';
+import { alphaTypes } from '@/apis/data';
 
 import styles from './index.module.scss';
-import { IStoreState } from '../../store';
-import { IScrollInstance } from '../../components/Scroll/typing';
+import { IStoreState } from '@/store';
+import { IScrollInstance } from 'components/Scroll/typing';
 
 const { getSingerListAction, getMoreSingerListAction } = actions;
 

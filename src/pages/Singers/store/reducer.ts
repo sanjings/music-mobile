@@ -5,7 +5,7 @@ import {
   SET_PULL_UP_LOADING
 } from './actionTypes';
 import { produce } from 'immer';
-import { IAction, ISinger } from '../../../typings';
+import { IAction, ISinger } from '@/typings';
 
 export interface ISingersState {
   pullDownLoading: boolean;

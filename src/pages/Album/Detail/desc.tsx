@@ -1,6 +1,6 @@
 import React, { FC, memo, ReactElement } from 'react';
 
-import { formatCount } from '../../../utils/formats';
+import { formatCount } from 'utils/formats';
 
 import styles from './desc.module.scss';
 import { IAlbumProps } from '../typing';

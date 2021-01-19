@@ -2,7 +2,7 @@ import { IRankItem } from './../typing';
 import { Dispatch } from 'redux';
 import { IRankAction, IRankPayload } from './reducer';
 import { SET_RANK_LOADING, SET_RANK_DATA } from './actionTypes';
-import { getRankListRequest } from '../../../apis/requests/rank';
+import { getRankListRequest } from 'requests/rank';
 
 
 

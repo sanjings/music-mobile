@@ -5,9 +5,8 @@ import {
   SET_RECOMMEND_NEW_SONGS
 } from './actionTypes';
 import { produce } from 'immer';
-import { IBanner } from '../../../components/Carousel/typing';
-import { IAction, ISong } from '../../../typings';
-import { IRecom } from './../../../typings/index';
+import { IBanner } from 'components/Carousel/typing';
+import { IAction, ISong, IRecom } from '@/typings';
 
 export interface IRecomState {
   loading: boolean;

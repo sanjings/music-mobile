@@ -1,4 +1,4 @@
-import { IAlpha } from '../typings/localData';
+import { IAlpha } from '@/typings/localData';
 
 // 歌手首字母
 const alphaTypes: Array<IAlpha> = [

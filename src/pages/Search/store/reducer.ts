@@ -1,6 +1,6 @@
 import { SET_HOT_KEYWORDS_LIST, SET_SEARCH_DATA } from './actionTypes';
 import { produce } from 'immer';
-import { IAction } from '../../../typings';
+import { IAction } from '@/typings';
 import { IHotKey, ISearchResult } from '../typing';
 
 export interface ISearchState {

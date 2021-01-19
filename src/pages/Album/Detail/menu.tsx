@@ -1,7 +1,7 @@
 import React, { FC, memo, ReactElement } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { showToastAction } from '../../../store/actions';
+import { showToastAction } from '@/store/actions';
 
 import styles from './menu.module.scss';
 

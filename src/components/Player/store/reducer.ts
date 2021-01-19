@@ -8,7 +8,7 @@ import {
   DELETE_SONG
 } from './actionTypes';
 import { produce } from 'immer';
-import { ISong } from '../../../typings';
+import { ISong } from '@/typings';
 
 export interface IPlayerState {
   fullScreen: boolean;

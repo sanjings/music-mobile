@@ -1,6 +1,6 @@
 import React, { FC, memo, ReactElement } from 'react';
 
-import SongList from '../../../components/SongList';
+import SongList from 'components/SongList';
 import AlbumDesc from './desc';
 import AlbumMenu from './menu';
 

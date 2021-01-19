@@ -3,14 +3,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { renderRoutes, RouteConfigComponentProps } from 'react-router-config';
 import { forceCheck } from 'react-lazyload';
 
-import Scroll from '../../components/Scroll';
-import Loading from '../../components/Loading';
-import ModuleTitle from '../../components/ModuleTitle';
+import Scroll from 'components/Scroll';
+import Loading from 'components/Loading';
+import ModuleTitle from 'components/ModuleTitle';
 import GlobalList from './GlobalList';
 import OfficialList from './OfficialList';
 
 import { actions } from './store';
-import { IStoreState } from '../../store';
+import { IStoreState } from '@/store';
 
 const { getRankListAction } = actions;
 

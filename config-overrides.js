@@ -7,7 +7,9 @@ const {
 const path = require("path");
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 
-const resolve = dir => path.join(__dirname, dir);
+const resolve = dir => path.resolve(__dirname, dir);
+
+process.env.GENERATE_SOURCEMAP = "false"; // 不生成source-map文件
 
 module.exports = override(
   addWebpackPlugin(

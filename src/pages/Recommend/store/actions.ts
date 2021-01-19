@@ -1,5 +1,3 @@
-import { IRecom, ISong } from './../../../typings/index';
-import { IRecomAction } from './reducer';
 import { Dispatch } from 'redux';
 import {
   SET_RECOM_LOADING,
@@ -12,8 +10,10 @@ import {
   getBannersRequest,
   getRecommendListRequest,
   getRecommendNewSongsRequest
-} from '../../../apis/requests/recommend';
-import { IBanner } from '../../../components/Carousel/typing';
+} from 'requests/recommend';
+import { IBanner } from 'components/Carousel/typing';
+import { IRecom, ISong } from '@/typings';
+import { IRecomAction } from './reducer';
 
 export const changeLoading = (payload: boolean): IRecomAction => {
   return {

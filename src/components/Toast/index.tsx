@@ -1,9 +1,9 @@
 import React, { FC, memo, ReactElement } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
-import { IStoreState } from '../../store';
+import { IStoreState } from '@/store';
 
-import { hideToastAction } from '../../store/actions';
+import { hideToastAction } from '@/store/actions';
 
 import styles from './index.module.scss';
 

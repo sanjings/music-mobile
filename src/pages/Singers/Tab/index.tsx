@@ -1,7 +1,7 @@
 import React, { FC, memo, MouseEvent, ReactElement, useEffect, useRef } from 'react';
 import classnames from 'classnames';
 
-import Scroll from '../../../components/Scroll';
+import Scroll from 'components/Scroll';
 
 import styles from './index.module.scss';
 import { ITabProps } from '../typing';

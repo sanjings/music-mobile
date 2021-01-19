@@ -1,8 +1,8 @@
 import { Dispatch } from 'redux';
 import { SET_SINGER_DETAIL, SET_SINGER_LOADING } from './actionTypes';
-import { getSingerDetailRequest } from '../../../apis/requests/singer';
+import { getSingerDetailRequest } from 'requests/singer';
 import { ISingerAction } from './reducer';
-import { ISinger } from '../../../typings';
+import { ISinger } from '@/typings';
 
 export const changeSingerDetailAction = (payload: ISinger): ISingerAction => {
   return {

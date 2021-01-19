@@ -14,13 +14,13 @@ import FullScreenPlayer from './FullScreenPlayer';
 import MiniPlayer from './MiniPlayer';
 import PlayList from './PlayList';
 
-import { isEmptyObject } from '../../utils/tools';
-import { formatSongUrl } from '../../utils/formats';
-import { getLyricRequest } from '../../apis/requests/song';
-import LyricParser, { IHandler } from '../../plugins/LyricParser';
+import { isEmptyObject } from 'utils/tools';
+import { formatSongUrl } from 'utils/formats';
+import { getLyricRequest } from 'requests/song';
+import LyricParser, { IHandler } from 'plugins/LyricParser';
 import { actions } from './store';
-import { IStoreState } from '../../store';
-import { ISong } from '../../typings';
+import { IStoreState } from '@/store';
+import { ISong } from '@/typings';
 
 const {
   changeFullScreenAction,

@@ -1,7 +1,7 @@
 import React, { FC, memo, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { showToastAction } from '../../store/actions';
+import { showToastAction } from '@/store/actions';
 import styles from './index.module.scss';
 import { IProps } from './typing';
 

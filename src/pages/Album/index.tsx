@@ -2,15 +2,15 @@ import React, { memo, useCallback, useEffect, useState, useRef, FC, ReactElement
 import { useSelector, useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 
-import Scroll from '../../components/Scroll';
-import Loading from '../../components/Loading';
+import Scroll from 'components/Scroll';
+import Loading from 'components/Loading';
 import Header from './Header';
 import Detail from './Detail';
 
 import { actions } from './store';
 
 import styles from './index.module.scss';
-import { IStoreState } from '../../store';
+import { IStoreState } from '@/store';
 import { RouteComponentProps } from 'react-router-dom';
 
 const { getAlbumDetailAction } = actions;

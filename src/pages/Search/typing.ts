@@ -1,4 +1,4 @@
-import { ISinger, ISong } from './../../typings/index';
+import { ISinger, ISong } from '@/typings';
 export interface IHotKey {
   first: string;
 }

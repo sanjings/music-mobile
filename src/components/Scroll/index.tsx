@@ -11,10 +11,10 @@ import React, {
 } from 'react';
 import BScroll, { BScrollInstance, Options } from 'better-scroll';
 
-import LoadingV3 from '../../components/LoadingV3';
-import LoadingV2 from '../../components/LoadingV2';
+import LoadingV3 from 'components/LoadingV3';
+import LoadingV2 from 'components/LoadingV2';
 
-import { debounce } from '../../utils/tools';
+import { debounce } from 'utils/tools';
 
 import styles from './index.module.scss';
 import { IPosition, IProps, IScrollInstance } from './typing';
