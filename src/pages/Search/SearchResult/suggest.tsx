@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 
 import styles from './suggest.module.scss';
-import { ISuggestAlbum, ISuggestProps } from '../typing';
-import { ISinger } from '../../../typings';
+import { ISuggestProps } from '../typing';
 
 const suggest: FC<ISuggestProps> = ({ 
   listData, 

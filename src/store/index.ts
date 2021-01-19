@@ -14,6 +14,8 @@ import { IAlbumState } from './../pages/Album/store/reducer';
 import { IRecomState } from './../pages/Recommend/store/reducer';
 import { IRankState } from './../pages/Rank/store/reducer';
 import { ISearchState } from './../pages/Search/store/reducer';
+import { ISingerState } from '../pages/Singer/store/reducer';
+import { ISingersState } from './../pages/Singers/store/reducer';
 
 export interface IStoreState {
   global: IGlobalState;
@@ -22,6 +24,8 @@ export interface IStoreState {
   rank: IRankState;
   recommend: IRecomState;
   search: ISearchState;
+  singer: ISingerState;
+  singers: ISingersState;
 }
 
 const reducers = combineReducers({

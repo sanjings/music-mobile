@@ -20,6 +20,7 @@ export interface ISinger {
   id: number;
   name: string;
   picUrl: string;
+  hotSongs?: ISong[];
 }
 
 export interface IRecom extends IAlbum {

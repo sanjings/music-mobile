@@ -15,11 +15,11 @@ import { RouteComponentProps } from 'react-router-dom';
 
 const { getAlbumDetailAction } = actions;
 
-interface IParams {
+interface IRouteParams {
   id: string;
 }
 
-const Album: FC<RouteComponentProps<IParams>> = ({
+const Album: FC<RouteComponentProps<IRouteParams>> = ({
   match: { params },
   history
 }): ReactElement => {

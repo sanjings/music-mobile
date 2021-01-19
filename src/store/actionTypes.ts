@@ -1,5 +1,5 @@
 // 展示toast
-export const SHOW_TOAST = 'SHOW_TOAST';
+export const SHOW_TOAST: string = 'SHOW_TOAST';
 
 // 关闭toast
-export const HIDE_TOAST = 'HIDE_TOAST';
+export const HIDE_TOAST: string = 'HIDE_TOAST';

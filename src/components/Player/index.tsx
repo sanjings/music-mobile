@@ -86,7 +86,6 @@ const Player: FC = (): ReactElement => {
    * @param param
    */
   const handleLyric: IHandler = ({ lineNum, txt }) => {
-    console.log(lineNum)
     if (!currentLyric.current) return;
     currentLineNum.current = lineNum;
     setPlayingLyric(txt);

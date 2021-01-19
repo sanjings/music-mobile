@@ -6,7 +6,7 @@ import { GET_SINGER_LIST, GET_SINGER_DETAIL_AND_HOT_SONGS } from '../url';
  * @param offset
  * @param initial 首字母
  */
-const getSingerListRequest = (offset: number, initial: string) => {
+const getSingerListRequest = (offset: number, initial?: string) => {
   return ajaxGet(GET_SINGER_LIST, { offset, initial });
 };
 
