@@ -1,6 +1,6 @@
 # react+hooks+redux+immerjs打造音乐webapp
 
-**[点击进入TS分支](https://github.com/sanjings/react-hooks-ts-music)**
+**[点击进入TS分支](https://github.com/sanjings/react-hooks-ts-music)** | **[点击进入JS分支](https://github.com/sanjings/react-hooks-ts-music/tree/js)**
 ### 项目简介
 使用react hooks+redux+immerjs编写的仿网易云音乐移动端web项目。  
 特别鸣谢huangyi大佬的课程[Vue2.0开发企业级移动端音乐Web App](https://coding.imooc.com/learn/list/107.html)，以及神三元大佬的小册[React Hooks 与 Immutable 数据流实战](https://juejin.im/book/6844733816460804104)
