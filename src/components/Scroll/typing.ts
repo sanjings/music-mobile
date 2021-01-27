@@ -1,5 +1,5 @@
 import { BScrollInstance } from 'better-scroll';
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 
 export interface IProps {
   ref?: any;
@@ -14,7 +14,7 @@ export interface IProps {
   onScroll?: (pos: IPosition) => void;
   onPullDown?: () => void;
   onPullUp?: () => void;
-  children: ReactElement;
+  children?: ReactNode;
 }
 
 export interface IScrollInstance {
