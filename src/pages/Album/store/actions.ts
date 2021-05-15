@@ -1,6 +1,6 @@
 import { IAlbumAction } from './reducer';
 import { SET_ALBUM_DETAIL, SET_ALBUM_LOADING } from './actionTypes';
-import { getAlbumDetailRequest } from 'requests/album';
+import { httpGetAlbumDetail } from '@/requests/album';
 import { Dispatch } from 'redux';
 
 export const changeLoadingAction = (payload: boolean): IAlbumAction => {
@@ -24,7 +24,7 @@ export const changeAlbumDetailAction = (payload: any): IAlbumAction => {
 export const getAlbumDetailAction = (id: number) => {
   return async (dispatch: Dispatch) => {
     dispatch(changeLoadingAction(true));
-    const resp = await getAlbumDetailRequest(id);
+    const resp = await httpGetAlbumDetail(id);
     dispatch(changeAlbumDetailAction(resp));
   };
 };

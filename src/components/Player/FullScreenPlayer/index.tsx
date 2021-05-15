@@ -8,7 +8,7 @@ import Cd from './cd';
 import Lyric from './lyric';
 import Control from './control';
 
-import { formatSingerName } from 'utils/formats';
+import { formatSingerName } from '@/utils/filters';
 
 import styles from './index.module.scss';
 import { IFullScreenPlayerProps, IPosAndScale } from '../typing';

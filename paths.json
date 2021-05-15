@@ -21,7 +21,10 @@
         "src/plugins/*"
       ],
       "requests/*": [
-        "src/apis/requests/*"
+        "src/requests/*"
+      ],
+      "configs/*": [
+        "src/configs/*"
       ]
     }
   }

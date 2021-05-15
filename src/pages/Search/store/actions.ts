@@ -3,10 +3,10 @@ import { ISearchAction } from './reducer';
 import { SET_HOT_KEYWORDS_LIST, SET_SEARCH_DATA } from './actionTypes';
 
 import {
-  getHotKeywordsListRequest,
-  getSearchListRequest,
-  getSearchSuggestRequest
-} from 'requests/search';
+  httpGetHotKeywordsList,
+  httpGetSearchList,
+  httpGetSearchSuggest
+} from '@/requests/search';
 import { IHotKey, ISearchResult } from '../typing';
 
 export const changeHotKeywordsListAction = (payload: IHotKey[]): ISearchAction => ({
@@ -21,7 +21,7 @@ export const changeSearchDataAction = (payload: ISearchResult | null): ISearchAc
 
 export const getHotKeywordsListAction = () => {
   return async (dispatch: Dispatch) => {
-    const resp = await getHotKeywordsListRequest();
+    const resp = await httpGetHotKeywordsList();
     dispatch(changeHotKeywordsListAction(resp.result.hots));
   };
 };
@@ -29,8 +29,8 @@ export const getHotKeywordsListAction = () => {
 export const getSearchDataAction = (keywords: string) => {
   return async (dispatch: Dispatch) => {
     const resp = await Promise.all([
-      getSearchListRequest(keywords),
-      getSearchSuggestRequest(keywords)
+      httpGetSearchList(keywords),
+      httpGetSearchSuggest(keywords)
     ]);
 
     dispatch(changeSearchDataAction({

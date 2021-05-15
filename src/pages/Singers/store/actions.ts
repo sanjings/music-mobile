@@ -7,7 +7,7 @@ import {
   SET_PULL_DOWN_LOADING,
   SET_PULL_UP_LOADING
 } from './actionTypes';
-import { getSingerListRequest } from 'requests/singer';
+import { httpGetSingerList } from '@/requests/singer';
 
 export const changeSingerListAction = (payload: ISinger[]): ISingersAction => {
   return {
@@ -44,7 +44,7 @@ export const changePullUpLoadingAction = (payload: boolean): ISingersAction => {
 export const getSingerListAction = (initial?: string) => {
   return async (dispatch: Dispatch) => {
     dispatch(changePullDownLoadingAction(true));
-    const resp = await getSingerListRequest(0, initial);
+    const resp = await httpGetSingerList(0, initial);
     dispatch(changeSingerListAction(resp.artists));
   };
 };
@@ -57,7 +57,7 @@ export const getSingerListAction = (initial?: string) => {
 export const getMoreSingerListAction = (offset: number, initial: string) => {
   return async (dispatch: Dispatch) => {
     dispatch(changePullUpLoadingAction(true));
-    const resp = await getSingerListRequest(offset, initial);
+    const resp = await httpGetSingerList(offset, initial);
     dispatch(concatSingerListAction(resp.artists));
   };
 };

@@ -23,12 +23,13 @@ module.exports = override(
   ),
   addWebpackAlias({
     '@': resolve('src'),
-    'requests': resolve('src/apis/requests'),
+    'requests': resolve('src/requests'),
     'assets': resolve('src/assets'),
     'components': resolve('src/components'),
     'pages': resolve('src/pages'),
     'utils': resolve('src/utils'),
-    'plugins': resolve('src/plugins')
+    'plugins': resolve('src/plugins'),
+    'configs': resolve('src/configs')
   }),
   adjustStyleLoaders(rule => {
     if (rule.test.toString().includes("scss")) {

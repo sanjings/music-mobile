@@ -2,7 +2,7 @@ import { IRankItem } from './../typing';
 import { Dispatch } from 'redux';
 import { IRankAction, IRankPayload } from './reducer';
 import { SET_RANK_LOADING, SET_RANK_DATA } from './actionTypes';
-import { getRankListRequest } from 'requests/rank';
+import { httpGetRankList } from '@/requests/rank';
 
 
 
@@ -26,7 +26,7 @@ export const changeRankDataAction = (payload: IRankPayload): IRankAction => {
 export const getRankListAction = () => {
   return async (dispatch: Dispatch) => {
     dispatch(changeLoadingAction(true));
-    const resp: any = await getRankListRequest();
+    const resp: any = await httpGetRankList();
 
     const list = resp.list,
           globalList = list.filter((item: IRankItem) => !item.tracks?.length),

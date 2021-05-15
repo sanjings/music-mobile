@@ -15,8 +15,8 @@ import MiniPlayer from './MiniPlayer';
 import PlayList from './PlayList';
 
 import { isEmptyObject } from 'utils/tools';
-import { formatSongUrl } from 'utils/formats';
-import { getLyricRequest } from 'requests/song';
+import { formatSongUrl } from '@/utils/filters';
+import { httpGetLyric } from '@/requests/song';
 import LyricParser, { IHandler } from 'plugins/LyricParser';
 import { actions } from './store';
 import { IStoreState } from '@/store';
@@ -96,7 +96,7 @@ const Player: FC = (): ReactElement => {
    * @param id 
    */
   const getLyric = async (id: number) => {
-    const resp: any = await getLyricRequest(id),
+    const resp: any = await httpGetLyric(id),
           lyric = resp.lrc ? resp.lrc.lyric : null;
 
     if (!lyric) {

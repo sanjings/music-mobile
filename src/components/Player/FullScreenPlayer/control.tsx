@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import ProgressBar from '../ProgressBar';
 
-import { formatPlayTime } from 'utils/formats';
+import { formatPlayTime } from '@/utils/filters';
 import { showToastAction } from '@/store/actions';
 
 import styles from './control.module.scss';

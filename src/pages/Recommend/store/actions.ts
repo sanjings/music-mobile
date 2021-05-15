@@ -7,10 +7,10 @@ import {
 } from './actionTypes';
 
 import {
-  getBannersRequest,
-  getRecommendListRequest,
-  getRecommendNewSongsRequest
-} from 'requests/recommend';
+  httpGetBanners,
+  httpGetRecommendList,
+  httpGetRecommendNewSongs
+} from '@/requests/recommend';
 import { IBanner } from 'components/Carousel/typing';
 import { IRecom, ISong } from '@/typings';
 import { IRecomAction } from './reducer';
@@ -49,7 +49,7 @@ export const changeRecommendNewSongs = (payload: ISong[]): IRecomAction => {
  */
 export const getBannersAction = (type: number) => {
   return async (dispatch: Dispatch) => {
-    const resp: any = await getBannersRequest(type);
+    const resp: any = await httpGetBanners(type);
     dispatch(changeBanners(resp.banners))
   }
 }
@@ -61,7 +61,7 @@ export const getBannersAction = (type: number) => {
 export const getRecommendListAction = (limit: number) => {
   return async (dispatch: Dispatch) => {
     dispatch(changeLoading(true))
-    const resp: any = await getRecommendListRequest(limit);
+    const resp: any = await httpGetRecommendList(limit);
     dispatch(changeRecommendList(resp.result))
   }
 }
@@ -71,7 +71,7 @@ export const getRecommendListAction = (limit: number) => {
  */
 export const getRecommendNewSongsAction = () => {
   return async (dispatch: Dispatch) => {
-    const resp = await getRecommendNewSongsRequest();
+    const resp = await httpGetRecommendNewSongs();
     dispatch(changeRecommendNewSongs(resp))
   }
 }

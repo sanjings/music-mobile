@@ -1,10 +1,10 @@
-import { ajaxGet } from '../ajax';
-import { GET_ALBUM_DETAIL_BY_ID } from '../url';
+import { ajaxGet } from '../utils/http';
+import { GET_ALBUM_DETAIL_BY_ID } from '../configs/api';
 
 /**
  * 请求歌单详情
  */
-const getAlbumDetailRequest = async (id: number) => {
+export const httpGetAlbumDetail = async (id: number) => {
   const { playlist }: any = await ajaxGet(GET_ALBUM_DETAIL_BY_ID, { id });
   return {
     ...playlist,
@@ -19,5 +19,3 @@ const getAlbumDetailRequest = async (id: number) => {
     })
   };
 };
-
-export { getAlbumDetailRequest };

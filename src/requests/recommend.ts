@@ -1,11 +1,11 @@
-import { ajaxGet } from '../ajax';
-import { GET_BANNERS, GET_RECOMMEND_LIST, GET_RECOMMEND_NEW_SONGS } from '../url';
+import { ajaxGet } from '../utils/http';
+import { GET_BANNERS, GET_RECOMMEND_LIST, GET_RECOMMEND_NEW_SONGS } from '../configs/api';
 
 /**
  * 请求banner数据
  * @param type
  */
-const getBannersRequest = (type: number) => {
+export const httpGetBanners = (type: number) => {
   return ajaxGet(GET_BANNERS, { type });
 };
 
@@ -13,14 +13,14 @@ const getBannersRequest = (type: number) => {
  * 请求推荐歌单数据
  * @param limit 取出数量
  */
-const getRecommendListRequest = (limit: number) => {
+export const httpGetRecommendList = (limit: number) => {
   return ajaxGet(GET_RECOMMEND_LIST, { limit });
 };
 
 /**
  * 请求推荐新歌数据
  */
-const getRecommendNewSongsRequest = async () => {
+export const httpGetRecommendNewSongs = async () => {
   const { result } = await ajaxGet(GET_RECOMMEND_NEW_SONGS);
   return result.map((item: any) => {
     return {
@@ -31,10 +31,4 @@ const getRecommendNewSongsRequest = async () => {
       dt: item.song.duration
     };
   });
-};
-
-export { 
-  getBannersRequest, 
-  getRecommendListRequest, 
-  getRecommendNewSongsRequest 
 };

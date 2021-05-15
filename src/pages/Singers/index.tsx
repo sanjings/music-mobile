@@ -8,7 +8,7 @@ import SingerList from './List';
 import Tab from './Tab';
 
 import { actions } from './store';
-import { alphaTypes } from '@/apis/data';
+import { alphaTypes } from '@/configs/localData';
 
 import styles from './index.module.scss';
 import { IStoreState } from '@/store';

@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 
-import { BASE_URL, TIME_OUT, errorHandle } from "./config";
+import { BASE_URL, TIME_OUT, errorHandle } from "@/configs/http";
 
 interface IResponseData {
   code: number;
@@ -18,7 +18,7 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.response.use(
   (res: AxiosResponse) => {
     if (res.status === 200) {
-      const code: number = res.data.code;
+      const code = res.data.code;
       if (code === 200) {
         return Promise.resolve(res.data);
       }

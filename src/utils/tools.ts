@@ -1,10 +1,10 @@
 /**
  * 简易深拷贝
- * @param data 
+ * @param data
  */
 export const deepClone = <T = any>(data: T): T => {
   return JSON.parse(JSON.stringify(data));
-}
+};
 
 /**
  * 防抖函数
@@ -18,9 +18,9 @@ export const debounce = (fn: Function, delayTime: number = 300) => {
     timer && clearTimeout(Number(timer));
     timer = setTimeout(() => {
       fn.apply(null, args);
-    }, delayTime)
+    }, delayTime);
   };
-}
+};
 
 /**
  * 节流函数
@@ -38,16 +38,13 @@ export const throttle = (fn: Function, waitTime: number = 300) => {
       preTime = nowTime;
     }
   };
-}
+};
 
 /**
  * 判断是否是空对象
- * @param obj 
+ * @param obj
  */
 export const isEmptyObject = (obj: object | null): boolean => {
   if (!obj) return true;
   return JSON.stringify(obj) === '{}' ? true : false;
-}
-
-
-
+};

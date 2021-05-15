@@ -1,6 +1,6 @@
 import React, { FC, memo, ReactElement, MouseEvent } from 'react';
 
-import { formatSingerName } from 'utils/formats';
+import { formatSingerName } from '@/utils/filters';
 import { IPlayListProps } from '../typing';
 
 import styles from './list.module.scss';

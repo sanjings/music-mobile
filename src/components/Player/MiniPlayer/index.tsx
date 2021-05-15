@@ -2,7 +2,7 @@ import React, { FC, memo, ReactElement, useRef, MouseEvent } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import classnames from 'classnames';
 
-import { formatSingerName } from 'utils/formats';
+import { formatSingerName } from '@/utils/filters';
 
 import styles from './index.module.scss';
 import { IMiniPlayerProps } from '../typing';

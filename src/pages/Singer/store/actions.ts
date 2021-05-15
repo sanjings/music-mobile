@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
 import { SET_SINGER_DETAIL, SET_SINGER_LOADING } from './actionTypes';
-import { getSingerDetailRequest } from 'requests/singer';
+import { httpGetSingerDetail } from '@/requests/singer';
 import { ISingerAction } from './reducer';
 import { ISinger } from '@/typings';
 
@@ -21,7 +21,7 @@ export const changeLoadingAction = (payload: boolean): ISingerAction => {
 export const getSingerDetailAction = (id: number) => {
   return async (dispatch: Dispatch) => {
     dispatch(changeLoadingAction(true));
-    const resp = await getSingerDetailRequest(id);
+    const resp = await httpGetSingerDetail(id);
     dispatch(changeSingerDetailAction(resp));
   };
 };
