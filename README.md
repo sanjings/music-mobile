@@ -1,4 +1,4 @@
-# react+hooks+redux+typescript+immer打造音乐webapp
+# react+hooks+redux+typescript+immer开发的仿网易云音乐web-h5
 
 **[点击进入JS分支](https://github.com/sanjings/react-hooks-ts-music/tree/js)**  
 **[项目预览](http://music.sanjings.com)**
