@@ -2,7 +2,7 @@
 
 ## 由于版权问题，NeteaseCloudMusicApi仓库已停止维护，此项目只做学习使用
 
-**[点击进入TS分支](https://github.com/sanjings/react-hooks-ts-music)**  
+**[点击进入TS分支](https://github.com/sanjings/music-mobile)**  
 **[项目预览](http://music.sanjings.com)**
 
 ### 项目简介
